@@ -1,0 +1,793 @@
+.deshabilitado {                       
+	        color: #CCCCCC;
+	        background-color: #CCCCCC;	
+	        font-family:Verdana;	
+	        border-top:1px solid #41778B;
+	        border-right:1px solid #D6D3CE;
+	        border-bottom:1px solid #D6D3CE;
+	        border-left:1px solid #42758C;
+	        font-size:10px;
+	        background-repeat:repeat-x;	
+  }
+
+    
+
+.thumbs {
+  border: #ff0000 1px solid;cursor: pointer; margin-right: 1px
+}
+
+.ToolTip
+{
+	background-color: InfoBackground;
+	color: Black;
+	font: 10px Arial;
+	position: absolute;
+	display: none;
+	padding: 4px;
+	text-align: left;
+
+}
+
+.ToolTip H5{margin: 0px}
+.ToolTip P{margin-top: 4px}
+
+.popUpForm
+{
+	position: absolute;
+	z-index: 200;
+	background-color: #F2C797;
+	width: 200px; /*w\idth: 210px; /* Moz */
+	padding: 5px;
+	border: 1px solid #F2A46A;
+	font: 10px Verdana, Arial, Helvetica, sans-serif;
+}
+
+.trigger_btn_class
+{
+	width: 16px;
+	height: 16px;
+	padding: 0px;
+}
+.trigger_btn_class IMG
+{
+	margin-left: -3px;
+	margin-top: -3px;
+}
+
+.container
+{
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	background-color: #EEA827;
+	font-size: 10px;
+	padding-bottom: 8px;
+}
+.pnlStyle3D
+{
+	border-bottom: 1px solid #b87010;
+	border-left: 1px solid #edc07c;
+	border-top: 1px solid #edc07c;
+	border-right: 1px solid #b87010;
+	background-color: #FAB11D;
+	float: left;
+	padding: 5px;
+	margin: 7px 0px 0px 7px;
+}
+.pnlForm
+{
+	padding: 5px;
+	background: #F2C797;
+	color: #85481B;
+}
+
+.pnlFormFloat
+{
+	padding: 5px;
+	background: #F2C797;
+	color: #85481B;
+	float: left;
+}
+
+
+.pnlGridContainer
+{
+	padding: 0px 5px 5px 0px;
+	background: #F2C797;
+	overflow: auto;
+}
+
+.Button48Left
+{
+	margin-right: 5px;
+}
+.Button48Right
+{
+	margin-left: 5px;
+}
+
+body
+{
+	font-family: Verdana;
+	color: #FFF;
+	line-height: 1.166;
+	margin: 0px;
+	padding: 0px;
+	background: #F0800F url(../images/BgGradOrange.jpg) repeat-x;
+	text-align: center;
+}
+#TableHeader
+{
+	background-image: url(../images/HeaderIn.gif);
+}
+div.Header
+{
+	background: url(../images/HeaderIn.gif) #FFFFFF repeat-x;
+	height: 69px;
+	font: 0px/0px verdana;
+	margin-top: 2px;
+}
+div.HeaderLeft
+{
+	background: url(../images/HeaderLeft.gif) no-repeat;
+	float: left;
+	width: 230px;
+	height: 69px;
+	font: 0.6em/10px tahoma;
+	vertical-align: bottom;
+	color: #A95B35;
+	text-align: left;
+	padding-left: 15px;
+	margin-bottom: 0px;
+}
+div.HeaderRight
+{
+	background: url(../images/HeaderRight.gif) no-repeat;
+	float: right;
+	width: 373px;
+	height: 69px;
+	font: 0px/0px verdana;
+}
+#LoginImage
+{
+	background: Transparent url(../images/LogImage.jpg) no-repeat;
+	margin-top: 5px;
+	width: 304px;
+	height: 104px;
+}
+#Form
+{
+	margin: 0px;
+	padding: 0px;
+}
+.FormText
+{
+	font-family: Verdana;
+	color: #652101;
+	border-top: 1px solid #A95B35;
+	border-right: 1px solid #F0B471;
+	border-bottom: 1px solid #F0B471;
+	border-left: 1px solid #A95B35;
+	font-size: 10px;
+	text-transform: uppercase;
+}
+
+.FormTextNoUpperCase
+{
+	font-family: Verdana;
+	color: #652101;
+	border-top: 1px solid #A95B35;
+	border-right: 1px solid #F0B471;
+	border-bottom: 1px solid #F0B471;
+	border-left: 1px solid #A95B35;
+	font-size: 10px;
+
+}
+
+.EmailCase
+{
+  font-family: Verdana;
+	color: #652101;
+	border-top: 1px solid #A95B35;
+	border-right: 1px solid #F0B471;
+	border-bottom: 1px solid #F0B471;
+	border-left: 1px solid #A95B35;
+	font-size: 10px;
+	text-transform: lowercase;
+}
+
+.FormDisabled
+{
+	font-family: Verdana;
+	color: #014170;
+	border-top: 1px solid #3785B9;
+	border-right: 1px solid #CEE9F7;
+	border-bottom: 1px solid #CEE9F7;
+	border-left: 1px solid #3785B9;
+	font-size: 10px;
+	text-transform: uppercase;
+	background-color: #DDD;
+}
+.FormLabel
+{
+	font-family: Verdana;
+	color: #652101;
+	background-color: Transparent;
+	border: none;
+	font-size: 10px;
+	text-transform: uppercase;
+}
+.FormSelect
+{
+	font-family: Verdana;
+	color: #003C77;
+	border-top: 1px solid #D6D3CE;
+	border-right: 1px solid #41778B;
+	border-bottom: 1px solid #42758C;
+	border-left: 1px solid #D6D3CE;
+	font-size: 10px;
+}
+.FormRadio
+{
+	color: #FFFFFF;
+	font-size: 10px;
+	padding: 0px;
+	margin: -5px;
+}
+.FormRadio TR TD
+{
+	padding: 0px;
+	height: 10px;
+}
+.FormRadio TR TD INPUT
+{
+	margin: -2px;
+}
+.FormButton
+{
+	font-family: Verdana;
+	color: #2E1001;
+	border-top: 1px solid #F7D6B0;
+	border-right: 1px solid #832B01;
+	border-bottom: 1px solid #832B01;
+	border-left: 1px solid #F7D6B0;
+	font-size: 10px;
+	background-color: #F7DCBF;
+}
+.FormCheck INPUT{margin:-3px 0px -3px 0px}
+.FormCheck LABEL
+{
+	color: #541C01;
+}
+.hr
+{
+	margin: 5px 0px;
+	padding: 0px 15px;
+	font: 1px/1px monospace;
+	height: 2px;
+	background: url(../images/Division.gif) repeat-x left top;
+	text-align: left;
+}
+HTML .hr
+{
+	height: 2px;
+}
+#Data
+{
+	width: 95%;
+}
+.DataTable
+{
+	background-color: #F2C797;
+	padding: 5px 0px;
+}
+.DataTable TD
+{
+	color: #541C01;
+	padding: 0px 2px;
+}
+.DataImage
+{
+	background: #417EC2 url(../images/Morten600Image.gif) no-repeat;
+	margin-top: 5px;
+	width: 604px;
+	height: 69px;
+}
+.DataLabel
+{
+	font-size: 10px;
+	color: #541C01;
+	background-color: #F2C797;
+	padding: 0px 2px;
+}
+.DataLabelDark
+{
+	font-size: 10px;
+	color: #FFF;
+	background-color: #541C01;
+	font-weight: bold;
+	padding: 2px;
+}
+.DataLabel UL
+{
+	margin: 0px;
+}
+.DataLabelBig
+{
+	font-size: 12px;
+	font-weight: bold;
+}
+.DataValidator
+{
+	font-family: Verdana;
+	font-size: 11px;
+	font-weight: bold;
+	color: #FFCC00;
+	text-align: left;
+	margin: 0px;
+	visibility: visible;
+	position: absolute;
+}
+
+div.DataTop
+{
+	background: url(../images/DataTopLine.gif) repeat-x;
+	height: 6px;
+	font: 0px/0px verdana;
+	margin-top: 2px;
+	margin-bottom: 0px;
+}
+div.DataTopLeft
+{
+	background: url(../images/DataTopLeft.gif) no-repeat;
+	float: left;
+	width: 7px;
+	height: 6px;
+	font: 0px/0px verdana;
+}
+div.DataTopRight
+{
+	background: url(../images/DataTopRight.gif) no-repeat;
+	float: right;
+	width: 7px;
+	height: 6px;
+	font: 0px/0px verdana;
+	text-align: left;
+}
+div.DataContent
+{
+	background: url(../images/DataContentLeft.gif) #EA9537 repeat-y left;
+}
+div.DataContentRight
+{
+	background: url(../images/DataContentRight.gif) repeat-y right;
+	padding: 0px 10px;
+}
+HTML div.DataContentRight
+{
+	padding: 0px 10px;
+	text-align: left;
+}
+div.DataContentRight Table
+{
+	font-size: 10px;
+	color: #FFFFFF;
+}
+div.DataContentRight H2
+{
+	margin: 0px;
+	padding: 0px 6px 0px 0px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+div.DataContentRight H5
+{
+	margin: 3px 0px -5px;
+	padding: 0px;
+	font-weight: bold;
+}
+div.DataBottom
+{
+	height: 7px;
+	background: url(../images/DataBottomLine.gif) repeat-x;
+	font: 0px/0px verdana;
+}
+div.DataBottomLeft
+{
+	float: left;
+	background: url(../images/DataBottomLeft.gif) no-repeat;
+	width: 7px;
+	height: 7px;
+	font: 0px/0px verdana;
+}
+div.DataBottomRight
+{
+	float: right;
+	background: url(../images/DataBottomRight.gif) no-repeat;
+	width: 7px;
+	height: 7px;
+	font: 0px/0px verdana;
+}
+.DataActions
+{
+	padding: 0px 0px 5px 0px;
+	margin: 0px;
+	text-align: right;
+}
+.GridLista
+{
+	font: 10px Verdana;
+}
+.GridLista a:link, .GridLista a:visited
+{
+	color: White;
+	font-weight: bold;
+	text-decoration: none;
+}
+.GridLista a:hover
+{
+	background-color: #d18507;
+}
+
+.HeaderStyle
+{
+	text-align: center;
+	background: #541C01 url(../images/hsBG.png) repeat-x top;
+	height: 18px;
+}
+.HeaderStyle TD
+{
+	color: #FFFFFF;
+	background-color: #003366;
+	font-weight: bold;
+	padding: 0px 2px;
+	text-align: center;
+}
+
+.HeaderStyle TH A
+{
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.ItemStyle TD A
+{
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+
+
+.HiddenStyle
+{
+	display: none;
+}
+.ItemStyle
+{
+	color: #541C01;
+	background-color: #F2C797;
+	padding: 0px 2px;
+	height: 15px;
+}
+.ItemStyle span
+{
+	color: #541C01;
+}
+.ItemStyleOver
+{
+	color: #541C01;
+	background-color: #FFCC00;
+	padding: 0px 2px;
+	height: 15px;
+	cursor: pointer;
+}
+.ItemStyleOver span
+{
+	color: #541C01;
+}
+
+.ItemStyleSelected
+{
+	color: #541C01;
+	background-color: #e3b578;
+	padding: 0px 2px;
+	height: 15px;
+	cursor: pointer;
+}
+.ItemStyleSelected span
+{
+	color: #541C01;
+}
+
+
+.PagerStyle
+{
+	color: #000066;
+	background-color: #F7DCBF;
+	padding: 2px 2px;
+	text-align: left;
+}
+#MenuLink
+{
+	height: 25px;
+	background: url(../images/MainLnkOut.gif) repeat-x;
+	margin-bottom: 2px;
+}
+#MenuLink DIV
+{
+	float: left;
+	height: 25px;
+}
+#MenuLink A
+{
+	height: 25px;
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 10px;
+	color: #FFF;
+	float: left;
+	padding: 6px 6px 0px 6px;
+	margin-bottom: -10px;
+}
+#MenuLink SPAN
+{
+	padding-top: 6px;
+}
+#MenuLink A:visited
+{
+	color: #FFF;
+}
+#MenuLink A:hover
+{
+	color: #D27E00;
+	background: url(../images/MainLnkOver.gif) repeat-x;
+}
+#MenuLink A.MenuItemOver
+{
+	color: #D27E00;
+	background: url(../images/MainLnkOver.gif) repeat-x;
+}
+#MenuLink A.MenuItemOver:visited
+{
+	color: #D27E00;
+	background: url(../images/MainLnkOver.gif) repeat-x;
+}
+
+#MenuLink A.ItemSelected
+{
+	color: #025C8B;
+	background: url(../images/MainLnkOver.gif) repeat-x;
+}
+#MenuLink DIV.separador
+{
+	margin: 0px;
+	padding: 0px;
+	font: 1px/1px monospace;
+	width: 2px;
+	height: 25px;
+	background-color: #FF9900;
+	border-right: 1px solid #EAE3D5;
+}
+HTML #MenuLink DIV.separador
+{
+	width: 1px;
+	height: 25px;
+}
+A.LnkVineta
+{
+	color: #FFFFFF;
+	font-size: 11px;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 2px 2px 0px 2px;
+	margin: 2px 0px 0px 0px;
+	height: 18px;
+	background-color: #EA9537;
+}
+PanelImages
+{
+	overflow: auto;
+}
+.PanelResp
+{
+	border: solid 1px #541C01;
+	width: 200;
+	height: 20;
+	font-size: 9px;
+	font-family: Curier;
+	text-transform: uppercase;
+	color: #541C01;
+	background-color: #FFEC9D;
+	visibility: hidden;
+	position: absolute;
+	text-align: left;
+	padding: 3px;
+}
+.PanelResp P
+{
+	margin: -1px 0px 0px 0px;
+	font-size: 0.95em;
+	font-family: Arial;
+}
+.PanelResp P
+{
+	font-size: 0.95em;
+	font-family: Arial;
+}
+.tab
+{
+	background-position: left top;
+	background-image: url(../Images/tabBack.gif);
+	background-repeat: repeat-x;
+	height: 22px;
+	text-align: left;
+	margin-top: 1px;
+}
+.tabBackRight
+{
+	background-position: right bottom;
+	background-image: url(../Images/tabBackRight.gif);
+	background-repeat: no-repeat;
+	background-color: Transparent;
+	width: 3px;
+	height: 22px;
+	float: right;
+}
+.Button48Left
+{
+	margin-right: 5px;
+}
+.Button48Right
+{
+	margin-left: 5px;
+}
+.FiltroCelda
+{
+	font-size: 0px;
+	text-align: right;
+}
+.FiltroCelda DIV
+{
+	font-size: 10px;
+	margin: 0px;
+	height: 13px;
+	background-color: Transparent;
+}
+.FiltroCelda DIV DIV
+{
+	font-size: 10px;
+	height: 13px;
+	float: left;
+	padding: 2px;
+	width: 70px;
+	text-align: right;
+	background-color: Transparent;
+}
+
+.PanelItem
+{
+	float: left;
+	margin-right: 4px;
+	font-family: Verdana;
+}
+.PanelItem A
+{
+	text-decoration: none;
+	color: White;
+	font-size: 12px;
+	font-weight: bold;
+}
+.PanelItem A:visited
+{
+	color: White;
+}
+.PanelItem A:hover
+{
+	text-decoration: underline;
+}
+
+.LoadingLayer
+{
+	position: absolute;
+	font-size: 0.85em;
+	font-family: Tahoma;
+}
+.LoadingLayer IMG
+{
+	float: left;
+}
+.LoadingLayer SPAN
+{
+	float: left;
+	text-align: left;
+	padding-left: 2px;
+	line-height: 8px;
+}
+
+.PanelStyle
+{
+	margin-top: 8px; /*position:relative;*/
+	padding: 5px;
+	border-bottom: 1px solid #b87010;
+	border-left: 1px solid #edc07c;
+	border-top: 1px solid #edc07c;
+	border-right: 1px solid #b87010;
+}
+
+.PanelInset
+{
+	border-bottom: 1px solid #edc07c;
+	border-left: 1px solid #b87010;
+	border-top: 1px solid #b87010;
+	border-right: 1px solid #edc07c;
+	height: 86px; /*width:650px;*/
+	overflow: auto;
+}
+
+span
+{
+	color: White;
+}
+
+.CenterPage
+{
+	margin-left: auto;
+	margin-right: auto;
+	width: 920px;
+}
+.invisible
+{
+	display: none;
+}
+
+.PanelEncabezado
+{
+	height: 16px;
+	margin-bottom: 4px; /*background-color:#d46420; 	padding:5px;*/
+}
+.PanelEncabezado SPAN
+{
+	float: left;
+	height: 16px;
+	font-size: 14px;
+	font-weight: bold;
+	font-family: Verdana;
+	cursor: pointer;
+}
+.PanelEncabezado IMG
+{
+	border: 0px;
+	float: right;
+	margin-left: 3px;
+	cursor: pointer;
+}
+
+.btnCollapse
+{
+	cursor: pointer;
+	position: absolute;
+	right: 11px;
+	top: 10px;
+}
+
+.panelMensaje
+{
+	cursor: pointer;
+	background-color: #FFCC00;
+	color: #CC3300;
+	padding-top: 5px;
+	font-weight: bold;
+}
+
+.panelMensaje div.icoIdea
+{
+	width: 16px;
+	height: 16px;
+	background: url(../Images/idea.jpg) no-repeat;
+	float: left;
+	margin-left: 3px;
+	margin-right: 2px;
+}
+
+

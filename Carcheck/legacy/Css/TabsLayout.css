@@ -1,0 +1,67 @@
+
+
+.TabsMenu {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+}
+.TabsMenu p {
+	margin:0px;
+}
+.TabsMenu .topeIzquierdo {
+	width:4px;
+	margin:0px;
+	height:31px;
+	float:left;
+	background:url(../Images/Tabs/topeIzquierdo.jpg)
+}
+.TabsMenu .topeDerecho {
+	width:4px;
+	margin:0px;
+	height:31px;
+	float:left;
+	background:url(../Images/Tabs/topeDerecho.jpg)
+}
+.TabsMenu  .tabSeparador {
+	float: left;
+	background:url(../Images/Tabs/separador.jpg);
+	width:7px;
+	height:31px;
+}
+.TabsMenu a{
+	height:29px;	
+	width:115px;
+	
+	color: #740016;	
+	float: left;	
+	background:url(../Images/Tabs/tabInactive.jpg);	
+	text-align:center;
+	text-decoration:none;
+	border-top:1px solid #CC6600;
+	border-bottom:1px solid #CC6600;
+		
+}
+.TabsMenu a:hover{	
+	
+	background:url(../Images/Tabs/tabOver.jpg);	
+	border-top:1px solid #CC6600;	
+}
+.TabsMenu a.selected {
+	background:url(../Images/Tabs/tabSelected.jpg);	
+	border-bottom:1px solid #f9a84f;
+		
+	color:White;
+}
+.tabDisplayContentArea {
+	background-color:#f9a84f;
+	height:500px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #CC6600;
+	border-bottom-color: #CC6600;
+	border-left-color: #CC6600;
+}

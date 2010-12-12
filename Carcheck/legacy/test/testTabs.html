@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>PruebaTabs Pagina 1</title>
+<script type="text/javascript" src="Scripts/functions.js"></script>
+<script type="text/javascript" src="Scripts/lib/x_event.js"></script>
+<script type="text/javascript" src="Scripts/lib/x_core.js"></script>
+<script type="text/javascript" src="Scripts/lib/x_dom.js"></script>
+
+<script type="text/javascript" src="Scripts/lib/xtabpanelgroup.js"></script>
+<link rel='stylesheet' type='text/css' href='Scripts/tabCSS/tpg_def.css'>
+<script type='text/javascript'>
+
+var tpg1;
+function winOnLoad()
+{
+  tpg1 = new xTabPanelGroup('tpg1', 300, 150, 22, 'tabPanel', 'tabGroup', 'tabDefault', 'tabSelected');
+ 
+}
+window.onload = winOnLoad;
+window.onunload = function()
+{
+  if (tpg1) tpg1.onUnload();
+
+}
+</script>
+
+
+</head>
+
+<body>
+<div style="position:relative;">
+<div id='tpg1' class='tabPanelGroup'>
+
+  <div class='tabGroup'>
+    <a href='#tpg11' class='tabDefault'>General</a><span class='linkDelim'>&nbsp;|&nbsp;</span>
+    <a href='#tpg12' class='tabDefault'>Javascript</a><span class='linkDelim'>&nbsp;|&nbsp;</span>
+    <a href='#tpg13' class='tabDefault'>CSS</a><span class='linkDelim'>&nbsp;|&nbsp;</span>
+    <a href='#tpg14' class='tabDefault'>HTML</a>
+  </div>
+  
+  <div id='tpg11' class='tabPanel'>
+    <h4>General</h4>
+    <p>Tab panel groups. Multiple objects can be instantiated on one page.</p>
+  </div>
+  
+  <div id='tpg12' class='tabPanel'>
+    <h4>Javascript</h4>
+    <p>Cross-browser, downgradeable, and unobtrusive. Disable Javascript and reload this page.</p>
+  </div>
+  
+  <div id='tpg13' class='tabPanel'>
+    <h4>CSS</h4>
+    <p>In 2 files: tpg_def.css for default styles, and tpg_dyn.css for dynamic overrides when Javascript is enabled.</p>
+  </div>
+  
+  <div id='tpg14' class='tabPanel'>
+    <h4>HTML</h4>
+    <p>The content is in the HTML - it is not written with Javascript.</p>
+  </div>
+  
+</div></div>
+</body>
+</html>

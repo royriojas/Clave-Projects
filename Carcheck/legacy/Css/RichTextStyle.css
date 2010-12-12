@@ -1,0 +1,33 @@
+
+/*<style>*/
+#CE_Editor1_ID { background-color:#CFE2FB!important; border: #FEA21F 1px solid!important;}
+#CE_Editor1_ID IMG { border:0px;display:inline;}
+
+#CE_Editor1_ID .CuteEditorSelect { font:normal 11px Tahoma; width:100px;margin-left:1px; margin-top:1px; height:21px; vertical-align:middle;}
+#CE_Editor1_ID .CuteEditorDropDown {	margin-left:1px; margin-right:1px; width:80px; border:#dad6d0 1px solid!important; height:21px; vertical-align:middle;}
+#CE_Editor1_ID .CuteEditorDropDown Span {font:normal 11px Tahoma;}
+#CE_Editor1_ID .CuteEditorToolbar {vertical-align:middle;}
+#CE_Editor1_ID .CuteEditorToolBarContainer {padding:0px;height:1;overflow-y:visible;}
+#CE_Editor1_ID .CuteEditorFrameContainer {padding:1px 4px 2px 4px;}
+#CE_Editor1_ID .CuteEditorBottomBarContainer {padding:3px 3px 3px 3px;height:1;overflow-y:visible;}
+#CE_Editor1_ID .CuteEditorGroupMenu {background-image: url(../images/richtext/horizontal.background.gif); display: inline;}
+#CE_Editor1_ID .CuteEditorGroupImage { margin:0px; vertical-align:middle;}
+#CE_Editor1_ID .CuteEditorLineBreak {}
+#CE_Editor1_ID .CuteEditorFrame {padding:0px 0px 0px 0px;border: #9FBDDC 1px solid!important;}
+
+#CE_Editor1_ID .CuteEditorButton { margin:1px; vertical-align:middle;}
+#CE_Editor1_ID .CuteEditorButtonOver { margin:0px;vertical-align:middle;border:#000080 1px solid!important;  background-image: url(../images/richtext/toolbarbutton.over.gif)}
+#CE_Editor1_ID .CuteEditorButtonDown { border-right: buttonhighlight 1px solid!important; border-top: buttonshadow 1px solid!important; border-left: buttonshadow 1px solid!important; border-bottom: buttonhighlight 1px solid!important; margin:0px;vertical-align:middle; }
+#CE_Editor1_ID .CuteEditorButtonActive { margin:0px; vertical-align:middle; border:#0a246a 1px solid!important; background-image: url(../images/richtext/toolbarbutton.over.gif)}
+#CE_Editor1_ID .CuteEditorButtonDisabled { /* filter:gray alpha(opacity=25); margin:1px;vertical-align:middle; */ margin:1px;vertical-align:middle;}
+
+#CE_Editor1_ID .ToolControl{}
+#CE_Editor1_ID .ToolControlOver{}
+#CE_Editor1_ID .ToolControlDown{}
+#CE_Editor1_ID .separator {background-image: url(images/Separator.gif); height:23px; background-repeat: no-repeat; vertical-align:middle; width:2px;margin-left:2px; margin-right:2px;	}
+
+/*case sensive for CSS1*/
+#CE_Editor1_ID #cmd_tofullpage.CuteEditorButtonActive { display:none }
+#CE_Editor1_ID #cmd_fromfullpage.CuteEditorButton { display:none }
+
+/*</style>*/

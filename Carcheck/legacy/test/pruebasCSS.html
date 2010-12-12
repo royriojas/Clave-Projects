@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Untitled Document</title>
+
+    <script type='text/javascript' src="../Scripts/lib/x_core.js"></script>
+
+    <script type='text/javascript' src='../Scripts/lib/x_dom.js'></script>
+
+    <script type="text/javascript" src="../Scripts/lib/x_event.js"></script>
+
+    <script type="text/javascript" src="../Scripts/lib/CollapsibleDiv.js"></script>
+
+    <script type="text/javascript">
+    
+    window.onload = function () {
+//        try {
+//            var b = new CollapsibleDiv ('imgCollapse',
+//						 'pnlNuevaComunicacion',
+//						 true,
+//						 null
+//						) 	
+//        }
+//        catch(e)
+//        {
+//            alert(e.message);
+//        }
+    }
+    
+    </script>
+
+    <script type="text/javascript" src="../Scripts/functions.js"></script>
+
+    <link href="../Css/layout.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="width: 604px; margin-left: auto; margin-right: auto;">
+            <div class="DataTop">
+                <div class="DataTopLeft">
+                </div>
+                <div class="DataTopRight">
+                </div>
+            </div>
+            <div class="DataContent">
+                <div class="DataContentRight" style="height: 1px;">
+                    <div class="PanelStyle">
+                        <div class="PanelEncabezado">
+                            <span id="ComunicacionLable" style="cursor: pointer"
+                                title="Mostrar / Ocultar Panel">Comunicación</span>
+                            <img id="image" alt="Mostrar / Ocultar Panel" src="../Images/IconHide16Dark.gif"
+                                title="Mostrar / Ocultar Panel" /></div>
+                        <table border="0" cellpadding="5" cellspacing="0" width="100%">
+                            <tr>
+                                <td style="width: 286px" valign="top">
+                                    <div class="DataTable" style="padding: 5px;">
+                                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td style="width: 86px">
+                                                    Fecha / Hora</td>
+                                                <td>
+                                                    <input id="Text1" class="FormText" style="width: 150px" type="text" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 86px">
+                                                    Contacto</td>
+                                                <td>
+                                                    <input id="Text2" class="FormText" style="width: 150px" type="text" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 86px">
+                                                    Tipo Actividad</td>
+                                                <td>
+                                                    <select id="Select1" class="FormText" style="width: 153px">
+                                                        <option selected="selected"></option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 86px">
+                                                    Estado</td>
+                                                <td>
+                                                    <select id="Select2" class="FormText" style="width: 153px">
+                                                        <option selected="selected"></option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 86px">
+                                                </td>
+                                                <td>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 86px">
+                                                </td>
+                                                <td>
+                                                    <input id="Submit1" class="FormButton" type="submit" value="Agregar" /></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                                <td valign="top">
+                                    <div class="DataTable" style="padding: 5px;">
+                                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td>
+                                                    Fecha de la Inspección</td>
+                                                <td style="width: 100px">
+                                                    <input id="Text3" class="FormText" style="width: 100px" type="text" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Hora Inicio</td>
+                                                <td>
+                                                    <input id="Text4" class="FormText" style="width: 100px" type="text" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    Hora Fin</td>
+                                                <td>
+                                                    <input id="Text5" class="FormText" style="width: 100px" type="text" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                </td>
+                                                <td>
+                                                    &nbsp;</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="PanelStyle" style="width: 570px;">
+                        <div class="pnlGridContainer" style="width: 560px; height: 200px;">
+                            <table width="538" border="0" cellpadding="0" cellspacing="0">
+                                <tr >
+                                    <td class="HeaderStyle">
+                                        Fecha Hora</td>
+                                    <td class="HeaderStyle">
+                                        Contacto</td>
+                                    <td class="HeaderStyle">
+                                        T. Actividad</td>
+                                    <td class="HeaderStyle">
+                                        Estado</td>
+                                </tr>
+                                <tr class="ItemStyle">
+                                    <td class="ItemStyle">
+                                        04/05/2006 10:00</td>
+                                    <td class="ItemStyle">
+                                        Juan Lopez Carillo</td>
+                                    <td class="ItemStyle">
+                                        Llamada</td>
+                                    <td class="ItemStyle">
+                                        No Atendida</td>
+                                </tr>
+                                <tr class="ItemStyle">
+                                    <td class="ItemStyle">
+                                        04/05/2006 10:30</td>
+                                    <td class="ItemStyle">
+                                        Juan Lopez Carillo</td>
+                                    <td class="ItemStyle">
+                                        Llamada</td>
+                                    <td class="ItemStyle">
+                                        Exitosa</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="DataBottom">
+                <div class="DataBottomLeft">
+                </div>
+                <div class="DataBottomRight">
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

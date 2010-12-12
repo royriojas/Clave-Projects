@@ -1,0 +1,47 @@
+	.asbMenu 
+	{
+	border: 1px solid #417EC2;
+	background:#F5F8FA;
+	
+	position: absolute;
+	padding: 5px;
+	white-space: nowrap;
+	z-index: 600;
+	filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=3, OffY=3, Color=#666699, Positive='true');	
+	}
+	
+	.asbMenuBase
+	{
+		position: absolute;
+		z-index: 600;
+	}
+	
+					
+	.asbMenuItem
+	{			
+		color: #003366;
+		background: #ffffff;
+		cursor: pointer;
+		z-index: 600;
+		font-family:Verdana, Arial, Helvetica, sans-serif;
+		font-size:10px;
+		line-height:12px;
+	}
+	
+	.asbSelMenuItem
+	{			
+		color: #FFFFFF;
+		background: #006699;
+
+		cursor: pointer;
+		white-space: nowrap;
+		z-index: 600;
+		font-family:Verdana, Arial, Helvetica, sans-serif;
+		font-size:10px;
+		line-height:12px;
+	}
+	
+	.asbNonValueSelected
+	{
+	background-color:#FFCC99;border:#FF0000 1px solid
+	}

@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>ImagesTooltipGetter</title>
+<link href="../Css/imageGallery.css"  rel="stylesheet" type="text/css"/>
+<script type="text/javascript"  src="../Scripts/lib/xDropDownMenu.js"></script>
+
+<link href="../Scripts/xMenuCSS/xmenu.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="../Scripts/lib/x.js"></script>
+<script type="text/javascript" src="../Scripts/lib/x_common.js"></script>
+<script type="text/javascript" src="../Scripts/lib/x_especialTooltip.js"></script>
+<script type="text/javascript">
+
+	
+
+	function showIMGAttribute(imgId) {	
+		$('the_id').innerHTML = imgId;
+	}
+	var aTimeOutHnd;
+	function onToolTipDisplay(e) {		
+		var xE = new xEvent(e);
+		clearTimeout(aTimeOutHnd);
+		//simulando una llamada a un metodo AJAX
+		$('the_id').innerHTML = 'loading...';
+		
+		var theTrigger = (xE.target.tagName == 'A')?xE.target:xE.target.parentNode;
+		
+		var imgId = CCSOL.DOM.x_GetAttribute(theTrigger,'imagenid');
+		//simulando la demora AJAX
+		var aRndValue = CCSOL.MathUtils.randomFromTo(100,400);
+	
+		aTimeOutHnd = setTimeout("showIMGAttribute("+imgId+")",aRndValue);
+	}
+	function getImageInfo (e) {
+		var xE = new xEvent(e);
+		
+		//show the Data 
+		var theTrigger = (xE.target.tagName == 'A')?xE.target:xE.target.parentNode;
+		if (!$('ContextMenuId').data) $('ContextMenuId').data = new Object();
+		$('ContextMenuId').data.imgId = CCSOL.DOM.x_GetAttribute(theTrigger,'imagenid');
+	}
+	window.onload = function() {
+		var t = new x_ToolTip('A',
+							  'frontPictures',
+							  10,
+							  10,
+							  'theTooltip',
+							  onToolTipDisplay);
+							  
+		//the context menu
+		var xMenu;
+		
+		var all_links = xGetElementsByTagName('A',$('frontPictures'));
+		for (var i = 0; i < all_links.length; i++) {
+			
+			xMenu = new xDropDownMenu('ContextMenuId',all_links[i]);//,'d','mousemove','left');
+			xAddEventListener(all_links[i],'mouseover',getImageInfo,false);
+		}
+		
+		
+		
+			//xAddEventListener($('MenuItem1'),'click',doMenuAction,false);
+			//xMenuContext = new xDropDownMenu('ContextMenuId','Layer1');
+			//xAddEventListener('Layer2','click',onclickHandler,false);
+		
+		}
+</script>
+</head>
+
+<body>
+<div id="frontPictures" class="galleryContent">
+	<a imagenid='1'  href="##"><img src="images/027_Launch.jpg" width="150" height="113" /></a>
+	<a imagenid='2'  href="##"><img src="images/031 Alberi.jpg" width="104" height="113" /></a>
+	<a imagenid='3'  href="##"><img src="images/037.jpg" width="150" height="113" /></a>
+	<a imagenid='4'  href="##"><img src="images/24hmansfond4.jpg" width="150" height="113" /></a>
+	<a imagenid='5'  href="##"><img src="images/24hmansfond5.jpg" width="150" height="113" /></a>
+	<a imagenid='6'  href="##"><img src="images/24hmansfond6.jpg" width="150" height="113" /></a>
+	<a imagenid='7'  href="##"><img src="images/24hmansfond7.jpg" width="150" height="113" /></a>
+	<a imagenid='8'  href="##"><img src="images/31_sway.800x600.jpg" width="150" height="113" /></a>
+	<a imagenid='9'  href="##"><img src="images/32_sworl.800x600.jpg" width="150" height="113" /></a>
+	<a imagenid='10'  href="##"><img src="images/79.jpg" width="150" height="113" /></a>
+	<a imagenid='11'  href="##"><img src="images/56.jpg" width="150" height="113" /></a>
+	<div class="clear"></div>
+</div>
+<p>contenidos</p>
+<div id="theTooltip" class="holder">
+	<h4>This is a holder for a value <span id='the_id'>this content will change</span></h4>
+	<p>This div is supposed to be floating all over the page, where you pass your mouse over a image on a link tag ('a')</p>
+</div>
+<div id="ContextMenuId" class="ContextMenu" style="display:block">
+      <div class="MenuGroup">
+        <div class="MenuHeader" style="height:1px;">          
+        </div>
+        <a id="MenuItem1" class="MenuItem" href="#" onclick="alert($('ContextMenuId').data.imgId);" >
+        <div class="MenuItemTextHolder">
+          <h4>Ver Imagen </h4>          
+        </div>
+          <img class="MenuItemIco"  src="../Scripts/xMenuCSS/MenuItems/14_layer_novisible.png" /> </a> 
+		
+		<a class="MenuItem" href="#" >
+            <div class="MenuItemTextHolder">
+          		<h4>Editar la Imagen</h4>
+        </div>
+		<img class="MenuItemIco" src="../Scripts/xMenuCSS/MenuItems/mode.design.gif" width="20" height="20" />		</a>
+		<a class="MenuItem" href="#" >
+            <div class="MenuItemTextHolder">
+          		<h4>Eliminar la imagen </h4>
+        	</div>
+			<img class="MenuItemIco" src="../Images/richtext/Delete.gif" width="20" height="20" />
+		</a>
+		<div class="MenuSeparator">
+			<div style="margin-left:40px;margin-right:5px; border-bottom:1px solid #CCCCCC;"></div>
+		</div>
+		<a id="MenuItem1" class="MenuItem" href="#" onclick="alert($('ContextMenuId').data.imgId);" >
+        <div class="MenuItemTextHolder">
+          <h4>Ver Imagen </h4>          
+        </div>
+          <img class="MenuItemIco"  src="../Scripts/xMenuCSS/MenuItems/14_layer_novisible.png" /> </a> 
+		
+		<a class="MenuItem" href="#" >
+            <div class="MenuItemTextHolder">
+          		<h4>Editar la Imagen</h4>
+        </div>
+		<img class="MenuItemIco" src="../Scripts/xMenuCSS/MenuItems/mode.design.gif" width="20" height="20" />		</a>
+		<a class="MenuItem" href="#" >
+            <div class="MenuItemTextHolder">
+          		<h4>Eliminar la imagen </h4>
+        	</div>
+			<img class="MenuItemIco" src="../Images/richtext/Delete.gif" width="20" height="20" />
+		</a>
+		<div class="MenuSeparator">
+			<div style="margin-left:40px;margin-right:5px; border-bottom:1px solid #CCCCCC;"></div>
+		</div>
+		<a class="MenuItem" href="#" >
+            <div class="MenuItemTextHolder">
+         		<h4>Enviar Por correo </h4>
+        	</div>
+            <img class="MenuItemIco"  src="../Scripts/xMenuCSS/MenuItems/mail_forward.png" width="16" height="16" /> 
+		</a>
+        <div style="background-color:#D0E6EA;height:1px;border:1px solid #0066CC;overflow:hidden;"></div>
+      </div>
+</div>
+<div id='trace'>
+here is trace
+</div>
+</body>
+</html>

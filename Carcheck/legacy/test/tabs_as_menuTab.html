@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+
+<script type="text/javascript" src="../Scripts/lib/x.js"></script>
+<script type="text/javascript" src="../Scripts/lib/x_common.js"></script>
+
+
+
+<script type="text/javascript"  src="../Scripts/lib/xDropDownMenu.js"></script>
+<script type="text/javascript">	
+	var xMenu = new Array();
+	window.onload = function () {
+		//$('MenuItem1').v_alue = 2;
+		var a = null;
+		//alert((a != null) && (a == "rosa"));
+		//alert (typeof(a));
+		
+		xMenu[0] = new xDropDownMenu('ContextMenuId','trigger_1','d','mouseover','right');
+		xMenu[1] = new xDropDownMenu('menu2','trigger_2','d','mouseover','left');
+		
+		//alert ();
+		
+		/*
+		xMenu[0] = new xMenu1('trg_menu1', 'ContextMenuId', 0, 'mouseover');
+
+		//
+		xMenu[1] =  new xMenu1('trg_menu2', 'ContextMenuId', 0, 'mouseover');
+		xMenu[2] =  new xMenu1('trg_menu3', 'ContextMenuId', 0, 'mouseover');
+		xMenu[3] =  new xMenu1('trg_menu4', 'ContextMenuId', 0, 'mouseover');
+		xMenu[4] =  new xMenu1('trg_menu5', 'ContextMenuId', 0, 'mouseover');
+		*/
+		
+		//xAddEventListener($('MenuItem1'),'click',doMenuAction,false);
+		xMenuContext = new xDropDownMenu('ContextMenuId',document);
+		//xAddEventListener('Layer2','click',onclickHandler,false);
+	}
+
+</script>
+<link href="../Scripts/xMenuCSS/xmenu.css" rel="stylesheet" type="text/css" />
+<link href="../css/TabsLayout.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+
+<body>
+<div style="position:relative;">
+<div class="TabsMenu" style="vertical-align:middle;">
+	<div class="topeIzquierdo"></div><a id="trigger_1" href="#datosPersonales">Datos Personales</a><div class="tabSeparador"></div> <a id="trigger_2" href="datosVehiculo">Datos Veh&iacute;culo</a><div class="tabSeparador"></div> <a href="#caracteristicasExteriores">Caracter&iacute;sticas Exteriores</a><div class="tabSeparador"></div> <a href="#CaracteristicasSalon">Caracter&iacute;sticas de Sal&oacute;n</a><div class="tabSeparador"></div> <a href="#accesorios">Accesorios</a><div class="tabSeparador"></div> <a href="#seguridad">Seguridad</a><div class="tabSeparador"></div> <a href="#imagenes">Im&aacute;genes </a>
+  <div class="topeDerecho"></div></div>
+  
+  <iframe src="borrar.html" width="600" height="480"></iframe>
+  
+  </div>
+ <div>
+<div id="ContextMenuId" class="ContextMenu">
+      <div class="MenuGroup">
+        <div class="MenuHeader">
+          <p class="MenuTitle">Elija Una Opci&oacute;n </p>
+        </div>
+        <a id="MenuItem1" class="MenuItem" href="http://www.google.com" >
+        <div class="MenuItemTextHolder">
+          <h4><strong>B&uacute;squeda de Productos </strong></h4>
+          <p>&iquest;Desea un producto en part&iacute;cular?, Pruebe nuestro nuevo buscador </p>
+        </div>
+          <img class="MenuItemIco"  src="../newItems/14_layer_novisible.png" /> </a> <a class="MenuItem" href="http://www.google.com" >
+            <div class="MenuItemTextHolder">
+          <h4><strong>Lo Nuevo</strong></h4>
+              <p>&iquest;&iquest;&iquest;Es de los impacientes y le encantan las novedades???</p>
+              <p>Entonces esta es su secci&oacute;n... </p>
+            </div>
+            <img class="MenuItemIco"  src="../newItems/mail_forward.png" width="16" height="16" /> </a>
+        <div style="background-color:#D0E6EA;height:10px;border:1px solid #0066CC;"></div>
+      </div>
+</div>
+<div id="menu2" class="ContextMenu" style="left:142px;top:81px;">
+      <div class="MenuGroup">
+        <div class="MenuHeader">
+          <p class="MenuTitle">Elija Una Opci&oacute;n </p>
+        </div>
+        <a id="MenuItem1" class="MenuItem" href="http://www.google.com" >
+        <div class="MenuItemTextHolder">
+          <h4><strong>Este es otro menu </strong></h4>
+          <p>Veamos si podemos hacer que este desaparezca </p>
+        </div>
+          <img class="MenuItemIco"  src="../newItems/14_layer_novisible.png" /> </a> <a class="MenuItem" href="http://www.google.com" >
+            <div class="MenuItemTextHolder">
+          <h4><strong>Lo Nuevo</strong></h4>
+              <p>&iquest;&iquest;&iquest;Es de los impacientes y le encantan las novedades???</p>
+              <p>Entonces esta es su secci&oacute;n... </p>
+            </div>
+            <img class="MenuItemIco"  src="../newItems/mail_forward.png" width="16" height="16" /> </a>
+        <div style="background-color:#D0E6EA;height:10px;border:1px solid #0066CC;"></div>
+      </div>
+</div>
+</div>
+</body>
+
+</html>

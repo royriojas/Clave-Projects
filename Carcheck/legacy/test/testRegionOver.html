@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Carcheck | test HotSpot</title>
+
+  <script type="text/javascript" src="../Scripts/lib/x.js"></script>
+
+  <script type="text/javascript" src="../Scripts/lib/x_common.js"></script>
+
+  <script type="text/javascript" src="../Scripts/lib/xDropDownMenu.js"></script>
+
+  <script type="text/javascript">
+
+	function onMouseClic(e) {	
+		//anulo la función de los links normales	
+		xStopPropagation(e);
+		return false;
+	}
+	function doSaveDamage() {
+		//en este punto podemos obtener los valores que fueron guardados en el objeto "data"
+		alert('Grabando el Daño con Id : ' + $('popUpForm').data.damageId);
+	}
+	function closeThis() {
+		xMenu.hide();
+	}
+	function onAutoHide(evt) {
+		//return false to aovid the window be auto hidden on mouseout
+		//return true to enable the auto hide feature;
+		return false;
+	}
+	function onDisplayMenu(e,theMenu) {
+		xE = new xEvent(e);		
+		
+		//asumimos que no siempre es posible mostrar el menu
+		theMenu.doShow = false;
+		//asumimos que por defecto queremos que se ejecute la acción por defecto de los links
+		theMenu.doReturn = true;
+		//sobre q elemento se ha hecho click
+		var theTrigger = xE.target;
+		
+		if(theTrigger.parentNode.tagName == "A") theTrigger = theTrigger.parentNode;
+		var doShow = CCSOL.DOM.x_GetAttribute(theTrigger,'doShow');				
+		//si es un tipo link y tiene el atributo doRedirect 
+		
+		if (doShow  == 'show') {
+			theMenu.doShow = true;
+			theMenu.doReturn = false;
+		}
+		if (theTrigger.type == 'checkbox') { 			
+			//alert(theTrigger.type);
+			theMenu.doShow = false;	
+			theMenu.doReturn = true;
+//			theTrigger.check();	
+		}
+		
+		
+		
+		//copiamos los valores que tiene el elemento en los atributos que se le han asignado
+		$('damagedZone').value = CCSOL.DOM.x_GetAttribute(theTrigger,'desc');
+		
+		//guardamos en el objeto data los valores que necesitamos que se queden en memoria para accesarlos 
+		//después desde otros métodos podemos recuperar el ultimo valor guardado en este objeto
+		if (!$('popUpForm').data) $('popUpForm').data = new Object();
+		$('popUpForm').data.damageId = CCSOL.DOM.x_GetAttribute(theTrigger,'damageId');
+		
+		
+				
+	}
+	function onDisplayMenu1(e,theMenu) {
+		xE = new xEvent(e);		
+		var theTrigger = xE.target;		
+		
+		//copiamos los valores que tiene el elemento en los atributos que se le han asignado
+		$('damagedZone').value = CCSOL.DOM.x_GetAttribute(theTrigger,'desc');
+		
+		//guardamos en el objeto data los valores que necesitamos que se queden en memoria para accesarlos 
+		//después desde otros métodos podemos recuperar el ultimo valor guardado en este objeto
+		if (!$('popUpForm').data) $('popUpForm').data = new Object();
+		$('popUpForm').data.damageId = CCSOL.DOM.x_GetAttribute(theTrigger,'damageId');
+		
+		
+				
+	}
+	var xMenu;
+	window.onload = function () {
+		/*
+		asignamos un listener para anular la acción normal de los HOTSPOTS, 
+		de manera normal se comportan como links. Por lo que hay que evitar 
+		que hagan que la página se vaya a algun lado		
+		*/		
+		xAddEventListener($('m_AutoDamage'),'click',onMouseClic,false);
+		
+		/*
+		Creamos el objeto DropDownMenu, por defecto este objeto se puede usar para mostrar un div, 
+		ya sea como un menu dropdown, o uno contextual, o como en este caso uno que aparece en el punto
+		en que se ha hecho click en la página
+		*/
+		xMenu = new xDropDownMenu('popUpForm',       //el div que aparecerá en el punto de click
+									  'm_AutoDamage', //el "map" area que contiene los hotspots que provocarán que aparezca el PopUpForm
+									  'context',		 //Se muestra en el punto de click ('d' = dropDownMenu,null = en el punto de click, 'context' = menu contextual
+									  'click',			 //el evento al que queremos asociar la aparición del Div
+									  null,			 	 //posicion en la que queremos que aparezca el div, 'left', 'right' o null solo tiene sentido cuando el menu es tipo 'd'
+									  onDisplayMenu1,	 //evento que se ejecuta al mostrarse el div
+
+									  onAutoHide             //evento que se llama al ocurrir un mouseout 
+									  );
+									  
+									  
+		
+		
+		xMenu2 = new xDropDownMenu('popUpForm',       //el div que aparecerá en el punto de click
+									  'tableSection', //el "map" area que contiene los hotspots que provocarán que aparezca el PopUpForm
+									  null,//'context',		 //Se muestra en el punto de click ('d' = dropDownMenu,null = en el punto de click, 'context' = menu contextual
+									  'click',			 //el evento al que queremos asociar la aparición del Div
+									  null,			 	 //posicion en la que queremos que aparezca el div, 'left', 'right' o null solo tiene sentido cuando el menu es tipo 'd'
+									  onDisplayMenu,	 //evento que se ejecuta al mostrarse el div
+
+									  null             //evento que se llama al ocurrir un mouseout 
+									  );
+		
+	}
+	
+  </script>
+
+  <link href="../Scripts/xManualesCSS/xLibrary.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div class="MainContainer">
+    <div class="Header" style="height: 60px; he\ight: 80px; padding: 10px; background-color: #006699;">
+      <h1 style="color: #FFFFFF;">
+        x-objects...</h1>
+      <p style="color: #FFFFFF;">
+        un intento de un blog sobre algunas cosas que aún no defino...</p>
+    </div>
+    <div class="InnerContainer" style="margin: 10px;">
+      <h1 class="MainTitle">
+        Probando el DropDown Menu Object
+      </h1>
+      <p>
+        La imagen que se muestra en la parte inferior tiene definidas algunos HOTSPOTS,
+        probaremos la capacidad del DropDown Menu Object para hacer aparecer un div que
+        deber&iacute;a contener un formulario.</p>
+      <p>
+        Se debe poder saber sobre que objeto se ha hecho click y mostrar el formulario de
+        acuerdo a esa data obtenida.</p>
+      <p>
+        La Imagen del Auto:</p>
+      <p>&nbsp;
+      </p>
+      <div id='ImageContainer' class="imgContainer" style="width: 493px; height: 323px;">
+        <img name="AutoDamage" src="../Images/AutoDamage.jpg" width="493" height="323" border="0"
+          id="AutoDamage" usemap="#m_AutoDamage" alt="" /><map name="m_AutoDamage" id="m_AutoDamage">
+            <area id="area_1" damageid='1' shape="poly" coords="249,263,251,275,248,302,307,306,310,295,317,282,315,266,249,263"
+              href="#" alt="" />
+            <area id="area_2" damageid='2' shape="poly" coords="181,255,178,279,192,302,246,305,248,287,248,274,243,261,190,258,181,255"
+              href="#" alt="" />
+            <area id="area_3" damageid='3' shape="poly" coords="320,301,321,294,326,288,332,283,339,282,346,283,352,288,357,294,358,301,357,308,352,314,346,319,339,320,332,319,326,314,321,308,320,301,320,301"
+              href="#" alt="" />
+            <area id="area_4" damageid='35' shape="circle" coords="166,300, 20" href="#" alt="" />
+            <area id="area_5" damageid='29' shape="poly" coords="185,230,180,236,183,250,189,254,217,257,236,258,230,232,185,230"
+              href="#" alt="" />
+            <area id="area_6" damageid='33' shape="poly" coords="240,232,248,259,311,263,312,256,289,243,256,231,240,232"
+              href="#" alt="" />
+            <area id="area_7" title="Luna Delantera" damageid='12' desc="Luna Delantera" shape="poly"
+              coords="266,128,266,195,321,212,337,186,338,155,337,135,330,118,322,111,266,128"
+              href="#" alt="Luna Delantera" />
+            <area id="area_8" damageid='36' desc="Luna Trasera" shape="poly" coords="142,118,144,209,163,198,164,125,142,118"
+              href="#" alt="" />
+            <area id="area_9" desc="Retrovisores" damageid='323' shape="poly" coords="63,212,65,227,75,225,76,213,63,212"
+              href="#" alt="" />
+            <area id="area_10" desc="Retrovisores" damageid='356' shape="poly" coords="63,91,62,105,72,110,80,98,63,91"
+              href="#" alt="Retrovisores" />
+          </map>
+      </div>
+     
+      <div id="Description">
+        <p>&nbsp;
+        </p>
+        <p>
+          Si todo ha salido bien en este momento al hacer clic sobre algunas de las partes
+          del vehiculo, por ejemplo las lunas delantera y trasera, las ruedas y algunas más,
+          podremos ver como el Formulario PopUp que aparece queda informado de sobre que objeto
+          ha hecho click.</p>
+        <p>
+          Bueno al hacer click sobre el botón guardar de este formulario podemos llamar a
+          un m&eacute;todo callback o AJAX que haga la inserci&oacute;n. (para este tipo de
+          cosas me parece m&aacute;s f&aacute;cil usar un m&eacute;todo de AJAX, porque soporta
+          el paso de objetos al codeBehind, con un callback tendr&iacute;amos que pasar cada
+          parametro como string, separado por ~).</p>
+        <p>&nbsp;</p>
+        <p><strong>Time to enable some new Features, </strong></p>
+        <p>Este objeto tiene algunas otras caracter&iacute;sticas, unos &quot;handlers&quot; para eventos, que pueden ser pasados en el constructor o ser declarados de la forma xMenu.onDisplay y xMenu.onAutoHide </p>
+
+        <ul>
+			<li>
+			<strong>onDisplay </strong>se ejecuta al mostrar el elemento elegido para contener el menu o el formulario a mostrar	</li>
+		    <li><strong>onAutorHide</strong> se ejecuta durante el evento onMouseOut, tanto del trigger_element, como del elemento a mostrar. Si esta funci&oacute;n retorna false, el elemento debe cerrarse de manera manual, si se retorna true, se cerrar&aacute; autom&aacute;ticamente al perder el foco. </li>
+        </ul>
+		
+        <p>Para ver como est&aacute; hecho esto, &eacute;chele una mirada al source de esta
+        p&aacute;gina... </p>
+        <p>&nbsp;</p>
+		<div id='tableSection'>
+        <table width="500" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="151" bgcolor="#CCCCCC">&nbsp;</td>
+            <td width="184" bgcolor="#CCCCCC">&nbsp;</td>
+            <td width="65" bgcolor="#CCCCCC">&nbsp;</td>
+            <td width="100" bgcolor="#CCCCCC">&nbsp;</td>
+          </tr>
+          <tr>
+            <td bgcolor="#CCCCCC"><a href="show" doShow="show" >este no funciona </a></td>
+            <td bgcolor="#CCCCCC"><input type="checkbox" name="checkbox" value="checkbox" />
+            chk</td>
+            <td bgcolor="#CCCCCC">&nbsp;</td>
+            <td bgcolor="#CCCCCC"><a href="http://www.google.com" target="_blank">google</a></td>
+          </tr>
+          <tr>
+            <td bgcolor="#CCCCCC">&nbsp;</td>
+            <td bgcolor="#CCCCCC">&nbsp;</td>
+            <td bgcolor="#CCCCCC">&nbsp;</td>
+            <td bgcolor="#CCCCCC"><a href="javascript:alert('hola capuñay');" >google</a></td>
+          </tr>
+        </table>
+		</div>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp; </p>
+        <p>
+          Roy Riojas Montenegro.</p>
+        <p>
+          C&amp;C Solutions
+        </p>
+        <p>&nbsp;
+        </p>
+      </div>
+    </div>
+  </div>
+  <div id="popUpForm" class="popUpForm">
+    <div class="FormHeader" style="margin-bottom: 5px; background-color: #FEF4E7; padding: 3px;">
+      Registro de Zona ...
+        <button onclick="closeThis();">close</button>
+    </div>
+    <div style="padding: 2px;">
+      <table width="69%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="30%">
+            Zona Da&ntilde;ada
+          </td>
+        </tr>
+        <tr>
+          <td valign="top" style="padding-top: 2px;">
+            <input id='damagedZone' name="textfield" type="text" class="FormText" style="width: 200px;" /></td>
+        </tr>
+        <tr>
+          <td>
+            <span style="padding-top: 2px;">Descripci&oacute;n</span></td>
+        </tr>
+        <tr>
+          <td>
+            <textarea name="textarea" rows="4" class="FormText" style="width: 200px;"></textarea></td>
+        </tr>
+        <tr>
+          <td>
+            <img src="../Images/IconSave24.gif" onclick="doSaveDamage();return false;" style="cursor: pointer;"
+              width="24" height="24" /></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

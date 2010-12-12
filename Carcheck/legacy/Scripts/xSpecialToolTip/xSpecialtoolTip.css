@@ -1,0 +1,34 @@
+
+/* CSS Document */
+	.holder {
+		background:#FFFFCC;
+		width:230px;
+		w\idth: 240px; /* Moz */
+		padding: 5px;
+		position:absolute;
+		font-family: Verdana, Arial, Helvetica, sans-serif;		
+		border: 1px solid #993300;
+		color:#993300;
+		text-align:left;
+	}
+	.holder h4, p {
+		color:#993300;
+		margin:1px;
+		font-size: 10px;
+	}
+	.holder h4.titulo 
+	{
+		background:#A93605;display:block;color:White;margin-bottom:2px;padding:2px;
+		filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr= '#c1794b' , EndColorStr= '#933b08' );
+	}
+	.holder h4 span {
+		color:#993300;
+		margin:1px;
+		font-size: 10px;
+	}
+
+	.holder table 
+	{
+		font-size:10px;
+		color:#993300;
+	}

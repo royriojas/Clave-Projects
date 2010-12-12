@@ -1,0 +1,46 @@
+BODY {
+	FONT-FAMILY: verdana,helvetica,arial;
+	FONT-SIZE: x-small
+}
+P {
+	FONT-FAMILY: verdana,helvetica,arial;
+	COLOR: #6A5000
+}
+TABLE	{
+	font-family:verdana,helvetica,arial;
+	font-size: xx-small;
+	border:0px
+}
+.item {
+	text-align: center;
+	FONT-FAMILY: verdana,helvetica,arial;
+	font-size: xx-small;
+	BACKGROUND-COLOR: #FFFFFF;
+	FONT-WEIGHT: bold;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr= '#FFFFFF' , EndColorStr= '#CCCCCC' );
+}
+.bground {
+	FONT-FAMILY: verdana,helvetica,arial;
+	font-size: xx-small;
+	BACKGROUND-COLOR: #EEEEEE;
+}
+.title {
+	text-align: center;
+	FONT-FAMILY: verdana,helvetica,arial;
+	font-size: xx-small;
+	BACKGROUND-COLOR: #DDDDDD;
+	FONT-WEIGHT: bold;
+	color: white;
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr= '#DDDDDD' , EndColorStr= '#000000' );
+}
+.rangeheader {
+	text-align: center;
+	VERTICAL-ALIGN: middle;
+	FONT-FAMILY: verdana,helvetica,arial;
+	font-size: xx-small;
+	BACKGROUND-COLOR: #EEEEEE;
+    /*border-bottom:1px solid #EEEEEE;
+    border-right:1px solid #EEEEEE;
+    border-top:1px solid #EEEEEE;
+    border-left:1px solid #EEEEEE;*/
+}

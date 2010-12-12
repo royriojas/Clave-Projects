@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Prueba de DropDownList</title>
+<script type="text/javascript" src="../Scripts/lib/x.js"></script>
+<script type="text/javascript" src="../Scripts/lib/x_common.js"></script>
+<script type="text/javascript">	
+	
+	CCSOL.Utiles.LoadScript("../Scripts/lib/x_especialTooltip.js");
+	CCSOL.Utiles.LoadCSS("../Scripts/x_info/xInfo.css");
+	CCSOL.Utiles.LoadScript("../Scripts/lib/xInfoSystem.js");
+	function activateInfo() {			
+		var info = new infoSystem('holder_info','DivContainer','tt_help_info','tt_title','tt_text');
+	}
+	xAddEventListener(window,'load', activateInfo,false);
+</script>
+
+
+<script type="text/javascript" src="../Scripts/jsAutoComplete/autocomplete.js"></script>
+
+<script type="text/javascript">
+	function cargaDropDownList(textField,dropField) {
+		var aTextField = $(textField);
+		var aDropField = $(dropField);
+		try {
+			xAddEventListener(aTextField,'keyup',onKeyUpHandler,true);
+			xAddEventListener(aDropField,'change',onChangeHandler,true);
+		}
+		catch(e) {
+			alert(e.message);
+		}
+		
+		function onKeyUpHandler(evt) {
+			autoComplete (aTextField, aDropField, 'text', true);
+		}
+		
+		function onChangeHandler(evt) {
+			try {
+				aTextField.value = aDropField.options[aDropField.selectedIndex].text;
+			}
+			catch(e) {
+				alert(e.message);
+			}
+		}
+		
+		
+	}
+	function xDropDownToolTip(aClass,aParent) {
+		var drops = xGetElementsByClassName(aClass,aParent,'SELECT');		
+		var me = this;
+		try {
+			for(i = 0; i < drops.length; i++) 
+			{
+				xAddEventListener(drops[i],'change',onChangeHandler,true);	
+				drops[i].title = drops[i].options[drops[i].selectedIndex].text;
+			}
+			xAddEventListener(window,'unload',_unload,true);
+			
+		}
+		catch(e) {
+			
+			alert('Error: ' + e.message);
+		}						
+		function onChangeHandler(e) {
+			var evt = new xEvent(e);
+			var aDrop = evt.target;
+			try {
+				aDrop.title = aDrop.options[aDrop.selectedIndex].text;
+			}
+			catch(e) {
+				alert(e.message);
+			}
+		}
+		function _unload() {
+			me.unload();
+		}
+		this.unload = function() {
+			try {
+				for(i = 0; i < drops.length; i++) 
+				{
+					xRemoveEventListener(drops[i],'change',onChangeHandler,true);	
+				}
+				
+			}
+			catch(e) {
+				alert(e.message);
+			}
+		}
+	}
+	window.onload = function () {
+		var autoComplete = new cargaDropDownList('myText','mySelect');
+		var dropDownTitle = new xDropDownToolTip('aDropDownWithTitle',null);
+		
+	}
+	function doNewOptions() {
+		$('mySelect').options.length = 0;	
+		$('mySelect').options.add(new Option('aValue','otherValue'));
+		$('mySelect').options.add(new Option('aValue 1','otherValue 1'));
+		$('mySelect').options.add(new Option('aValue 2','otherValue 2'));
+	}
+	
+	function clearOptions(selectId) {
+		$(selectId).options.length = 0;
+	}
+	
+	function addOption(selectId,text,value,selected) {
+		$(selectId).options.add(new Option(text,value,false,selected));
+	}
+	
+	function addOptions(selectId,opArr) {
+		var aSelect = $(selectId);
+		try {
+			for (i = 0; i < opArr.length; i++) {
+				aSelect.options.add(new Option(opArr[i].text,opArr[i].value));
+			}
+		}
+		catch(e) {
+			alert(e.message);
+		}
+	}
+	
+	</script>
+</head>
+
+<body>
+<div id='DivContainer'>
+  <p>texto
+    <input id = 'myText' name="myText" type="text" />
+    <select  id='mySelect' name="select" class="aDropDownWithTitle tt_help_info" style="width:100px;">
+      <option selected="selected" value="-1">[ - elija - ]</option>
+      <option selected="selected" value="1">AUTOMOVIL</option>
+      <option value="2">CAMIONETA</option>
+      <option value="3">CAMION</option>
+      <option value="4">OMNIBUS</option>
+      <option value="5">TRACTO</option>
+      <option value="6">SEMI-REMOLQUE</option>
+      <option value="7">CARRETA</option>
+      <option value="8">CAVALO</option>
+      <option value="9">COMANDO</option>
+      <option value="10">MOTOFURGON</option>
+      <option value="11">MOTOCICLETA</option>
+      <option value="12">MOTONETA</option>
+      <option value="13">FURGONETA</option>
+      <option value="14">MOTOCAR</option>
+      <option value="15">BICICLETA</option>
+      <option value="16">MOTOTAXI</option>
+      <option value="17">REMOLCADOR</option>
+      <option value="18">CUATRIMOTO</option>
+      <option value="19">FURGON</option>
+      <option value="20">CARGADOR FRONTAL</option>
+      <option value="21">MOTOKAR</option>
+      <option value="22">VOLQUETE</option>
+      <option value="23">DUMPER</option>
+      <option value="24">MOTO ACUATICA</option>
+      <option value="25">EXCAVADORA</option>
+      <option value="26">TRACTOR</option>
+      <option value="27">AUTOHORMIGUERO</option>
+      <option value="28">PAVIMENTADORA</option>
+      <option value="29">RETROEXCAVADORA</option>
+      <option value="30">BARREDORA</option>
+      <option value="31">MOTONIVELADORA</option>
+      <option value="32">MINI BUS</option>
+      <option value="33">GRUA</option>
+      <option value="34">AMBULANCIA</option>
+      <option value="35">REMOLQUE</option>
+      <option value="36">MONTACARGA</option>
+      <option value="37">TOLVAS</option>
+      <option value="38">PLATAFORMAS</option>
+      <option value="39">PORTACONTAINERAS</option>
+      <option value="40">CAMARA FRIGORIFICA</option>
+      <option value="41">NO METROPOLITANO</option>
+      <option value="42">MICROBUS</option>
+      <option value="43">TRACTO CAMION</option>
+      <option value="44">CAMPER</option>
+      <option value="77">SEGURO PLACAS EXHIBICION</option>
+      <option value="78">METROPOLITANO</option>
+      <option value="79">BORDEADOR</option>
+      <option value="80">PLACA DE EXHIBICION</option>
+      <option value="81">PORTABOTES</option>
+      <option value="88">SEGURO DE BREVETES</option>
+      <option value="89">FURGON FRIGORIFICO</option>
+      <option value="99">CUALQUIERA</option>
+    </select>
+</p>
+  <button onclick="doNewOptions();">new Options</button>
+</div>
+</body>
+</html>

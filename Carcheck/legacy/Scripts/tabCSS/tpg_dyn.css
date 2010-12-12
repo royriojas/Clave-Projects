@@ -1,0 +1,189 @@
+/*
+  xTabPanelGroup Demo
+  dynamic css
+*/
+
+.tabPanelGroup {  
+  position:relative; overflow:hidden;  
+}
+.tabPanel {
+  position:absolute; overflow:auto;
+  display:none;
+  background: #4C96C9;
+  border: solid 2px #498ABD;
+}
+.tabGroup {
+	position:absolute;
+	overflow:hidden;
+	height:40px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height:11px;
+	font-weight:bold;
+	color:#FFFFFF;
+}
+
+.tabGroup a.tabDefault:link,
+.tabGroup a.tabDefault:visited,
+.tabGroup a.tabDefault:active,
+/* .tabGroup a.tabDefault:hover, */
+.tabDefault {
+  position:absolute; overflow:hidden;
+  cursor:pointer;
+  text-align:center;
+  vertical-align:middle;/*
+  border-top:none;
+  border-left:1px solid #4C96C9;
+  border-right:1px solid #4C96C9;
+  border-bottom:1px solid #4C96C9;*/
+  background:url(../tabImg/cabecera.gif) top left;
+  text-decoration:none;
+  height:40px;
+  
+  
+}
+.tabGroup a.tabDefault:hover,
+.tabDefault:hover {
+  position:absolute; overflow:hidden;
+  cursor:pointer;
+  text-align:center;
+  vertical-align:middle;/*
+  border-top:none;
+  border-left:1px solid #CFD4E6;
+  border-right:1px solid #CFD4E6;
+  border-bottom:1px solid #596380;*/
+  background:url(../tabImg/cabecera_over.gif) top left;
+  text-decoration:none;
+  height:40px;
+  
+}
+
+.tabGroup a.tabSelected:link,
+.tabGroup a.tabSelected:visited,
+.tabGroup a.tabSelected:active,
+.tabGroup a.tabSelected:hover,
+.tabSelected {
+  position:absolute; overflow:hidden;
+  cursor:pointer;
+  text-align:center;
+  vertical-align:middle;
+  height:40px;  /*
+  border-top:1px solid #4C96C9;
+  border-right:1px solid #4C96C9;
+  border-bottom:1px solid #498ABD;
+  border-left:1px solid #4C96C9;*/
+  background-image: url(../tabImg/cabecera_selected.gif);
+   text-decoration:none;
+  
+}
+
+span.linkDelim {
+  display:none;
+}
+.TextoLinkTab {
+  margin-top:5px;	
+  text-decoration:none;
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  line-height:13px;
+  font-weight:bold;
+  color:#FFFFFF;
+}
+
+#OtrasOpciones {
+	position:absolute;
+	left:468px;
+	top:11px;
+	width:418px;
+	height:63px;
+	z-index:1;
+}
+
+
+a.tabOtrasOpciones:link,
+a.tabOtrasOpciones:visited,
+a.tabOtrasOpciones:active
+{
+ 
+  cursor:pointer;
+  text-align:center;
+  vertical-align:middle;
+  /*
+  border-top:none;
+  border-left:1px solid #4C96C9;
+  border-right:1px solid #4C96C9;
+  border-bottom:1px solid #4C96C9;
+  */
+  border:#B5D8EA 1px solid;
+  background:url(../tabImg/otrasOpciones.gif) repeat-x top left;
+  text-decoration:none;
+  height:40px;
+  
+  
+}
+a.tabOtrasOpciones:hover{
+ 
+  cursor:pointer;
+  text-align:center;
+  vertical-align:middle;
+  /*border-top:none;
+  border-left:1px solid #CFD4E6;
+  border-right:1px solid #CFD4E6;
+  border-bottom:1px solid #596380;*/
+  background:url(../tabImg/otrasOpciones_over.gif) repeat-x top left;
+  text-decoration:none;
+  height:40px;
+  
+}
+#Seccionbusqueda {
+	position:absolute;
+	left:-457px;
+	top:0px;
+	width:326px;
+	height:38px;
+	z-index:1;
+	border:#B5D8EA 1px solid;
+}
+#btnLayerHide {
+	position:absolute;
+	left:404px;
+	top:-14px;
+	width:21px;
+	height:16px;
+	z-index:1;
+
+}
+/*
+a.tabDefault:link,
+a.tabDefault:visited,
+a.tabDefault:active {
+  display:block;
+  position:absolute; overflow:hidden;
+  cursor:pointer;
+  text-align:center;
+  border-top:none;
+  border-left:1px solid #CFD4E6;
+  border-right:1px solid #CFD4E6;
+  border-bottom:1px solid #596380;
+}
+.tabGroup a.tabSelected:link,
+.tabGroup a.tabSelected:visited,
+.tabGroup a.tabSelected:active,
+.tabGroup a.tabSelected:hover {
+  display:block;
+  position:absolute; overflow:hidden;
+  cursor:pointer;
+  text-align:center;
+  border-top:1px solid #596380;
+  border-right:1px solid #596380;
+  border-bottom:1px solid #CFD4E6;
+  border-left:1px solid #596380;
+}
+
+
+a.tabGroup:link,
+a.tabGroup:visited,
+a.tabGroup:active {
+  background:transparent;
+}
+*/

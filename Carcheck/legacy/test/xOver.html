@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Documento sin t&iacute;tulo</title>
+
+<style type="text/css">
+.itemStyle {
+	background-color:#66CC99;
+}
+.itemStyleOver {
+	background:#66CC66;
+}
+.itemStyleSelected {
+	background:#CCFF00;
+}
+
+</style>
+<script type="text/javascript" src="../Scripts/lib/x.js"></script>
+<script type="text/javascript" src="../Scripts/lib/x_common.js"></script>
+
+<script type="text/javascript">
+
+
+
+window.onload = function () {
+    CCSOL.Utiles.LoadScript('../Scripts/lib/xTable.js');
+	var x = new xTable( 'theTable',
+						'itemStyleSelected',
+						'itemStyleOver');	
+	
+}
+</script>
+	
+</head>
+
+<body>
+
+
+<table id='theTable' width="500" border="0" cellspacing="0" cellpadding="0">
+  <tr class="itemStyle">
+    <td width="120">cabecera</td>
+    <td width="117">cabecera</td>
+    <td width="170">cabecera</td>
+    <td width="93">cabecera</td>
+  </tr>
+  <tr class="itemStyle">
+    <td>fila2</td>
+    <td>&nbsp;</td>
+    <td><input type="text" name="textfield" /></td>
+    <td><input name="radiobutton" type="radio" value="radiobutton" /></td>
+  </tr>
+  <tr class="itemStyle">
+    <td>fila3</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr class="itemStyle">
+    <td>fila4</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<div style="position:absolute;right:20px;top:20px; background-color:#FF0000; padding:5px; font:14px/14px 'Trebuchet MS'; color:#FFFFFF; font-weight:bold; width: 107px; height: 13px;">
+	:: LOADING ::
+</div>
+</body>
+</html>

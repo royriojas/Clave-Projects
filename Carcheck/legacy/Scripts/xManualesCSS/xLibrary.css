@@ -1,0 +1,55 @@
+/* CSS Document */
+
+html {
+	font: 14px Trebuchet MS, Arial, Helvetica, Sans Serif;
+}
+body {
+	background:#336699 url(bg.jpg) repeat-x;
+}
+p, h3, h4 {
+	margin: 5px;
+}
+
+h1.MainTitle {
+	color:#336699;
+}
+
+.MainContainer {
+	width:760px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:5px;
+	position:relative;
+	background:#FFFFFF;
+}
+.imgContainer {
+	background:#FFCC00; border:5px solid #FFCC00; margin-right:auto;margin-left:auto; text-align:center;
+	position:relative;
+	
+}
+
+.popUpForm {
+	position:absolute;
+	z-index:200;
+	background-color: #F2C797;
+	width:200px;
+	w\idth: 210px; /* Moz */
+	padding: 5px;
+	border:1px solid #F2A46A;
+	font: 10px Verdana, Arial, Helvetica, sans-serif ;
+	
+}
+.popUpForm h4, .popUpForm p{
+	font-size:10px;
+}
+
+.FormText
+{
+	font-family: Verdana;
+	color: #652101;
+	border-top: 1px solid #A95B35;
+	border-right: 1px solid #F0B471;
+	border-bottom: 1px solid #F0B471;
+	border-left: 1px solid #A95B35;
+	font-size: 10px; /*text-transform: uppercase;*/
+}
