@@ -1,0 +1,43 @@
+Caso Uso
+Nueva Solicitud 
+
+1. El sistema genera el número de la solicitud.
+   -> SI LA SOLICITUD SE CANCELA POR ALGÚN MOTIVO ESTE NÚMERO SE PIERDE!!!! TAL COMO CONSTA EN ACTA
+2. se asigna a la solicitud el contratante DUMMY y el contacto DUMMY.
+
+CASO NUEVA SOLICITUD - ROL CLIENTE
+
+3. Se presenta la pantalla al Usuario para que el pueda escoger los valores iniciales de los campos que desea registrar:
+   estos campos serán:
+   Usuario
+   Cliente
+   Aseguradora
+   Broker
+
+
+4. mientras no se envíe la solicitud en el caso del cliente todavía se pueden agregar inspecciones.
+5. despues de darle click a enviar la solicitud, esta solicitud ya no se puede modificar, solo podría modificar sus 
+   datos el administrador.
+   Se puede modificar: 
+   - Los datos de la cabecera
+   - Los Datos del Contratante
+   - Los Datos del Contacto
+   - Agregar Anexos.
+   - Agregar Inspecciones.
+ 
+6. Eliminar una inspección: 
+   - Solo se puede borrar una inspección si está en el estado de pendiente. En otro punto no se podrá borrar la inspección
+	 y lo que corresponde es una 
+	 - La inspección debe mostrarse en la solicitud cuando está en estado anulada, 
+	   cuando es borrada ya no se le muestra en la solicitud.
+	 - cuando se borra una inspección????
+	   --> si una inspección tiene ya asignado un inspector, la inspección ya no se puede borrar, solo podría anularse.
+	   --> entonces las condiciones que deben cumplirse son: 
+		   - 
+	 - Anular una inspección no es lo mismo que borrar la inspección, son dos métodos diferentes.
+	
+7. 
+
+
+
+para la primera vez que se graba, por lo que no puede grabarse si se tiene seleccionados el contratante dummy y el contacto dummy

@@ -1,0 +1,49 @@
+.page {
+  border-left: solid 1px #919B9C;
+  border-right: solid 1px #919B9C;
+  border-bottom: solid 1px #919B9C;
+  background-Color: #FCFCFD;
+}
+
+.pageGlass {
+  border-left: solid 1px #2C671C;
+  border-right: solid 1px #2C671C;
+  border-bottom: solid 1px #2C671C;
+  background-Color: #FBF5E3;
+  background-repeat: repeat-y;
+}
+
+.pageWin {
+  border-right: outset 2px #FFFFFF;
+  border-bottom: outset 2px #FFFFFF;
+  border-left: outset 2px #FFFFFF;
+  border-top: none 0px #FFFFFF;
+  background-color: #D4D0C8;
+  background-repeat: repeat-y;
+}
+
+.btn { font-family: Tahoma;  font-size: 11px;  font-style: normal;  text-decoration: none;    }
+
+A.menuLink {
+ font-family: Tahoma;  font-size: 11px;  text-decoration: none; color: #5E4200;
+}
+
+A.menuLink2 {
+ font-family: Tahoma;  font-size: 11px;  text-decoration: none; color: #FFFFFF;
+}
+
+A {
+ font-family: Tahoma;  font-size: 11px;  text-decoration: underline; color: #0582FF;
+}
+
+.topString {
+ font-family: Tahoma; font-size: 10px; color: #DCC451;
+}
+
+.tabPage {
+ font-family: Tahoma; font-size: 11px; color: #333333;
+}
+
+.copyright {
+ font-family: Tahoma; font-size: 11px; color: #444444;
+}

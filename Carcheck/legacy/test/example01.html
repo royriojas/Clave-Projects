@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+	<title>Destroydrop &raquo; Javascripts &raquo; Tree</title>
+
+	<link rel="StyleSheet" href="../Scripts/lib/dtree/dtree.css" type="text/css" />
+	<script type="text/javascript" src="../Scripts/lib/dtree/dtree.js"></script>
+
+</head>
+
+<body>
+
+<h1><a href="/">Destroydrop</a> &raquo; <a href="/javascripts/">Javascripts</a> &raquo; <a href="/javascripts/tree/">Tree</a></h1>
+
+<h2>Example</h2>
+
+<div class="dtree">
+
+	<p><a href="javascript: d.openAll();">open all</a> | <a href="javascript: d.closeAll();">close all</a></p>
+
+	<script type="text/javascript">
+		<!--
+
+
+    function sayHello() {
+      alert('hola');     
+    }
+		//document.write(d);
+    window.onload = function () {
+
+	    d = new dTree('d','../Scripts/lib/dtree/img/dtreeImg/');
+		
+  		d.add(0,-1,'My example tree');           
+  		d.add(1,0,'Node 1','javascript:sayHello()'); 
+  		d.add(2,0,'Node 2','example01.html');
+  		d.add(3,1,'Node 1.1','example01.html');
+  		d.add(4,0,'Node 3','example01.html');
+  		d.add(5,3,'Node 1.1.1','example01.html');
+  		d.add(6,5,'Node 1.1.1.1','example01.html');
+  		d.add(7,0,'Node 4','example01.html');
+  		d.add(8,1,'Node 1.2','example01.html');
+  		d.add(9,0,'My Pictures','example01.html','Pictures I\'ve taken over the years','','','../Scripts/lib/dtree/img/dtreeImg/imgfolder.gif');
+  		d.add(10,9,'The trip to Iceland','example01.html','Pictures of Gullfoss and Geysir');
+  		d.add(11,9,'Mom\'s birthday','example01.html');
+  		d.add(12,0,'Recycle Bin','example01.html','','','../Scripts/lib/dtree/img/dtreeImg/trash.gif');
+      
+      	d.render('theTree');
+      
+      	document.getElementById('theHtmlCode').innerText = d.toString();
+    }
+		//-->
+	</script>
+
+</div>
+<div id='theTree'></div>
+<div>
+	<div class = "dtree">
+    <div class = "dTreeNode">
+        <img id = "id0" src = "../Scripts/lib/dtree/img/dtreeImg/base.gif" alt = ""/>
+
+        <a alt = ""> My example tree</a></div>
+
+    <div id = "dd0" class = "clip" style = "display:block;">
+        <div class = "dTreeNode">
+            <a href = "javascript: d.o(1);"><img id = "jd1" src = "../Scripts/lib/dtree/img/dtreeImg/plus.gif" alt = ""/></a>
+
+            <img id = "id1" src = "../Scripts/lib/dtree/img/dtreeImg/folder.gif" alt = ""/>
+
+            <a id = "sd1" class = "node" href = "javascript: sayHello()"onclick = "javascript: d.s(1);"> Node 1</a></div>
+
+        <div id = "dd1" class = "clip" style = "display:block;">
+            <div class = "dTreeNode">
+                <img src = "../Scripts/lib/dtree/img/dtreeImg/line.gif" alt = ""/>
+
+                <a href = "javascript: d.o(3);"><img id = "jd3" src = "../Scripts/lib/dtree/img/dtreeImg/plus.gif" alt = ""/></a>
+
+                <img id = "id3" src = "../Scripts/lib/dtree/img/dtreeImg/folder.gif" alt = ""/>
+
+                <a id = "sd3" class = "node" href = "example01.html" onclick = "javascript: d.s(3);"> Node 1.1</a></div>
+
+            <div id = "dd3" class = "clip" style = "display:block;">
+                <div class = "dTreeNode">
+                    <img src = "../Scripts/lib/dtree/img/dtreeImg/line.gif" alt = ""/>
+
+                    <img src = "../Scripts/lib/dtree/img/dtreeImg/line.gif" alt = ""/>
+
+                    <a href = "javascript: d.o(5);"><img id = "jd5" src = "../Scripts/lib/dtree/img/dtreeImg/minusbottom.gif" alt = ""/></a>
+
+                    <img id = "id5" src = "../Scripts/lib/dtree/img/dtreeImg/folderopen.gif" alt = ""/>
+
+                    <a id = "sd5" class = "node" href = "example01.html" onclick = "javascript: d.s(5);"> Node 1.1.1</a></div>
+
+                <div id = "dd5" class = "clip" style = "display:block;">
+                    <div class = "dTreeNode">
+                        <img src = "../Scripts/lib/dtree/img/dtreeImg/line.gif" alt = ""/>
+
+                        <img src = "../Scripts/lib/dtree/img/dtreeImg/line.gif" alt = ""/>
+
+                        <img src = "../Scripts/lib/dtree/img/dtreeImg/empty.gif" alt = ""/>
+
+                        <img src = "../Scripts/lib/dtree/img/dtreeImg/joinbottom.gif" alt = ""/>
+
+                        <img id = "id6" src = "../Scripts/lib/dtree/img/dtreeImg/page.gif" alt = ""/>
+
+                        <a id = "sd6" class = "nodeSel" href = "example01.html" onclick = "javascript: d.s(6);"> Node 1.1.1.1</a></div></div></div>
+
+            <div class = "dTreeNode">
+                <img src = "../Scripts/lib/dtree/img/dtreeImg/line.gif" alt = ""/>
+
+                <img src = "../Scripts/lib/dtree/img/dtreeImg/joinbottom.gif" alt = ""/>
+
+                <img id = "id8" src = "../Scripts/lib/dtree/img/dtreeImg/page.gif" alt = ""/>
+
+                <a id = "sd8" class = "node" href = "example01.html" onclick = "javascript: d.s(8);"> Node 1.2</a></div></div>
+
+        <div class = "dTreeNode">
+            <img src = "../Scripts/lib/dtree/img/dtreeImg/join.gif" alt = ""/>
+
+            <img id = "id2" src = "../Scripts/lib/dtree/img/dtreeImg/page.gif" alt = ""/>
+
+            <a id = "sd2" class = "node" href = "example01.html" onclick = "javascript: d.s(2);"> Node 2</a></div>
+
+        <div class = "dTreeNode">
+            <img src = "../Scripts/lib/dtree/img/dtreeImg/join.gif" alt = ""/>
+
+            <img id = "id4" src = "../Scripts/lib/dtree/img/dtreeImg/page.gif" alt = ""/>
+
+            <a id = "sd4" class = "node" href = "example01.html" onclick = "javascript: d.s(4);"> Node 3</a></div>
+
+        <div class = "dTreeNode">
+            <img src = "../Scripts/lib/dtree/img/dtreeImg/join.gif" alt = ""/>
+
+            <img id = "id7" src = "../Scripts/lib/dtree/img/dtreeImg/page.gif" alt = ""/>
+
+            <a id = "sd7" class = "node" href = "example01.html" onclick = "javascript: d.s(7);"> Node 4</a></div>
+
+        <div class = "dTreeNode">
+            <a href = "javascript: d.o(9);"><img id = "jd9" src = "../Scripts/lib/dtree/img/dtreeImg/minus.gif" alt = ""/></a>
+
+            <img id = "id9" src = "../Scripts/lib/dtree/img/dtreeImg/imgfolder.gif" alt = ""/>
+
+            <a id = "sd9" class = "node" href = "example01.html" title = "Pictures I've taken over the years" onclick = "javascript: d.s(9);"> My Pictures</a></div>
+
+        <div id = "dd9" class = "clip" style = "display:block;">
+            <div class = "dTreeNode">
+                <img src = "../Scripts/lib/dtree/img/dtreeImg/line.gif" alt = ""/>
+
+                <img src = "../Scripts/lib/dtree/img/dtreeImg/join.gif" alt = ""/>
+
+                <img id = "id10" src = "../Scripts/lib/dtree/img/dtreeImg/page.gif" alt = ""/>
+
+                <a id = "sd10" class = "node" href = "example01.html" title = "Pictures of Gullfoss and Geysir" onclick = "javascript: d.s(10);"> The trip to Iceland</a></div>
+
+            <div class = "dTreeNode">
+                <img src = "../Scripts/lib/dtree/img/dtreeImg/line.gif" alt = ""/>
+
+                <img src = "../Scripts/lib/dtree/img/dtreeImg/joinbottom.gif" alt = ""/>
+
+                <img id = "id11" src = "../Scripts/lib/dtree/img/dtreeImg/page.gif" alt = ""/>
+
+                <a id = "sd11" class = "node" href = "example01.html" onclick = "javascript: d.s(11);"> Mom's birthday</a></div></div>
+
+        <div class = "dTreeNode">
+            <img src = "../Scripts/lib/dtree/img/dtreeImg/joinbottom.gif" alt = ""/>
+
+            <img id = "id12" src = "../Scripts/lib/dtree/img/dtreeImg/trash.gif" alt = ""/>
+
+            <a id = "sd12" class = "node" href = "example01.html" onclick = "javascript: d.s(12);"> Recycle Bin</a></div></div></div>
+
+</div>
+<div id='theHtmlCode'></div>
+<p><a href="mailto&#58;drop&#64;destroydrop&#46;com">&copy;2002-2003 Geir Landr&ouml;</a></p>
+
+</body>
+
+</html>

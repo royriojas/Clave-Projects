@@ -1,0 +1,103 @@
+/* CSS Document */
+
+.mainTab
+{
+	height:22px; 
+	font-size: 0px; 
+	background: Transparent url(tabBack.gif) repeat-x bottom;
+	margin-top: 1px; margin-bottom: 0px;
+}
+	
+.itemTab 
+{	
+	float:left; 
+	font-size: 10px; 
+	height:22px; 
+	cursor: pointer;
+}	
+.itemLeftTab
+{
+	float:left; 
+	width:5px; 
+	height:22px; 
+	background: Transparent url(tab_s_left.gif) no-repeat top left; 
+	font-size: 0px
+}	
+.itemCenterTab
+{   
+	float:left; 
+	color: White;
+	height:22px; 
+	font-size: 10px; 
+	font-weight: bold; 
+	padding: 4px 4px 4px 4px; 
+	margin-bottom: -8px;
+	background: Transparent url(tab_s_back.gif) repeat-x top center; 
+	cursor:pointer;
+}
+a.itemCenterTab {
+	text-decoration:none;
+	
+	color:#003366;
+}
+a.itemCenterBackTab {
+	text-decoration:none;
+	color:#336699;
+}
+
+a.itemCenterTab:hover {	
+	color:#3399CC;
+	background: Transparent url(tab_s_back.gif) repeat-x top center; 
+}
+
+a.itemCenterBackTab:hover {
+	background:none;
+	background: Transparent url(tab_s_back.gif) repeat-x top center; 
+}
+.itemRightTab
+{
+	float:left; 
+	width:7px; 
+	height:22px; 
+	background: Transparent url(tab_s_right.gif) no-repeat top left; 
+	font-size: 0px
+}	
+.itemLeftBackTab
+{
+	float:left; 
+	width:5px; 
+	height:22px; 
+	background: Transparent url(tab_n_left.gif) no-repeat top left; 
+	font-size: 0px
+}	
+.itemCenterBackTab
+{   
+	float:left; 
+	height:22px; 
+	font-size: 10px; 
+	font-weight: bold; 
+	padding: 4px 4px 4px 4px; 
+	margin-bottom: -8px;
+	background: Transparent url(tab_n_back.gif) repeat-x top center; 
+}
+.itemRightBackTab
+{
+	float:left; 
+	width:7px; 
+	height:22px; 
+	background: Transparent url(tab_n_right.gif) no-repeat top left; 
+	font-size: 0px
+}	
+.rightTab
+{
+	float:right; 
+	width:3px; 
+	height:22px; 
+	background: Transparent url(tabBackRight.gif) no-repeat bottom;
+}	
+
+.tabPanelContainer {
+	border:1px solid #89A2CB;
+	border-top:none;
+	padding:5px;
+}

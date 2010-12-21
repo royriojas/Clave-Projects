@@ -502,3 +502,25 @@ Parameter name: String
 
 12/12/2010 11:12:35 a.m. -- [Error 0] : El archivo no existe.
 
+12/12/2010 07:05:49 p.m. -- [INCIO DE LA CADENA DE ERRORES]
+
+12/12/2010 07:05:49 p.m. -- [Error 0] : El archivo no existe.
+
+12/12/2010 07:21:10 p.m. -- [INCIO DE LA CADENA DE ERRORES]
+
+12/12/2010 07:21:10 p.m. -- [Error 0] : El cliente está desconectado.
+
+12/12/2010 07:21:10 p.m. -- [Error 1] : Estado de vista no válido. 
+	Client IP: 127.0.0.1
+	Port: 
+	User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; GTB6.6; .NET CLR 2.0.50727; InfoPath.1; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; OfficeLiveConnector.1.3; OfficeLivePatch.0.0; .NET4.0C; .NET4.0E)
+	ViewState: /wEPDwUJMTgwNDQ4MjI5D2QWAgIDD2QWBAIBDxYCHgVzdHlsZQUMZGlzcGxheTpub25lFgICAw88KwANAQAPFgQeC18hRGF0YUJvdW5kZx4LXyFJdGVtQ291bnQCBmQWAmYPZBYQZg8PZBYCHglub3Rvb2x0aXAFCW5vdG9vbHRpcGQCAQ8PZBYCHgxpbnNwZWNjaW9uSWQFATEWEgIBDw8WAh4EVGV4dAUHUlEtMDAwMGRkAgIPDxYCHwUFCVBlbmRpZW50ZWRkAgMPDxYCHwUFCjE0LTEyLTIwMTBkZAIEDw8WAh8FBQUyMDoxOWRkAgUPDxYCHwUFBTIxOjE5ZGQCBg9kFgICAQ8PFgIfBQULSW5zcGVjdG9yIDBkZAIHD2QWAgIBDw8WAh8FBQtEaXJlY2Npb24gMGRkAggPZBYCAgEPDxYCHwUFCFViaWdlbyAwZGQCCQ8PZBYCHwMFCW5vdG9vbHRpcBYCAgEPD2QWAh4EYXR0cgUBMGQCAg8PZBYCHwQFATEWEgIBDw8WAh8FBQdSUS0wMDAxZGQCAg8PFgIfBQUIQWdlbmRhZG9kZAIDDw8WAh8FBQoxNS0xMi0yMDEwZGQCBA8PFgIfBQUFMjE6MTlkZAIFDw8WAh8FBQUyMjoxOWRkAgYPZBYCAgEPDxYCHwUFC0luc3BlY3RvciAxZGQCBw9kFgICAQ8PFgIfBQULRGlyZWNjaW9uIDFkZAIID2QWAgIBDw8WAh8FBQhVYmlnZW8g...
+
+12/12/2010 07:21:10 p.m. -- [Error 2] : Longitud no válida para una matriz de caracteres Base-64.
+
+12/12/2010 07:23:58 p.m. -- [INCIO DE LA CADENA DE ERRORES]
+
+12/12/2010 07:23:58 p.m. -- [Error 0] : Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
+
+12/12/2010 07:23:58 p.m. -- [Error 1] : No se pudo encontrar el tipo especificado en la propiedad TypeName de ObjectDataSource 'odsBroker'.
+

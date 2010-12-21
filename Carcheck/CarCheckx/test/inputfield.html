@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Documento sin t&iacute;tulo</title>
+<script type="text/javascript" src="../Scripts/lib/x.js">
+</script>
+<script type="text/javascript" src="../Scripts/lib/x_common.js">
+</script>
+<script type="text/javascript" >
+	CCSOL.Utiles.LoadCSS("../Scripts/xCommon/xCommon.css");
+</script>
+<script type="text/javascript">
+	function xInput(strElementId,strPClass,strInputClass) {
+		var theElement = $(strElementId);				
+		var theParent = theElement.parentNode;
+		
+		xAddEventListener(theElement,'click',onClickHandler,true);
+		
+		
+		function onClickHandler(evt) {				
+			var ActualInnerText = theElement.innerText;
+			theParent.innerHTML = '<input id="'+theElement.id+'" type="text" name="textfield" value="'+escape(theElement.innerText)+'" />'			
+			theElement = $(strElementId);
+			xAddEventListener(theElement,'blur',onBlurHandler,true);			
+		}
+		
+		
+		
+		function onBlurHandler(evt) {
+			/*var xe = new xEvent(evt);*/
+			theParent.innerHTML = '<p id="'+theElement.id+'">'+escape(theElement.value)+'</p>';
+			theElement = $(strElementId);
+			xAddEventListener(theElement,'click',onClickHandler,true);			
+		}
+	}
+	
+	window.onload = function() {
+		var xE = new xInput('changeIt');
+
+	}
+</script>
+
+</head>
+
+<body>
+<table width="500" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="108">tipo de cambio: </td>
+    <td width="392"><p id='changeIt'>3.25</p></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td></td>
+  </tr>
+</table>
+</body>
+
+</html>

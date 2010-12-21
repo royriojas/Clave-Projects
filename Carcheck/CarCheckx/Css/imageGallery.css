@@ -1,0 +1,42 @@
+/* CSS Document */
+	.galleryContent {
+		margin-bottom: 1em;
+	}
+	
+	.galleryContent a {
+		float: left;
+		margin: 4px;
+		border: solid 4px #ccc;
+		width:150px;
+		height:113px;
+		text-align:center;
+	}
+	.galleryContent a img {
+		vertical-align: bottom;
+		border-width: 0;
+	}
+	.galleryContent a:hover {
+		border-color: #f33;
+	}
+	.clear {
+		clear: both;
+		height: 0;
+	}
+	.clear:after {
+		content: "\a0";
+	}
+	.holder {
+		background:#FFFFCC;
+		width:230px;
+		w\idth: 240px; /* Moz */
+		padding: 5px;
+		position:absolute;
+		font-family: Verdana, Arial, Helvetica, sans-serif;		
+		border: 1px solid #336699;
+	}
+	.holder h4, p {
+		margin:1px;
+		font-size: 10px;
+	}
+	
+	

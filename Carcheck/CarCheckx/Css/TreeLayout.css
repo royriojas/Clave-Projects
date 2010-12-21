@@ -1,0 +1,44 @@
+/* CSS Document */
+
+.LoadingMessage {
+	width: 230px; 
+	background-color: #FFFFCC;
+	font-family:Verdana;font-size:10px;font-weight:bold;
+}
+.LoadingMessage p {
+	margin: 0px;
+	margin-left: 10px;
+	color:Teal;
+}
+
+.TreeViewPanel 
+{
+	background: url(../Images/TreeViewImg/bg.jpg) repeat-y White;
+	padding: 5px;
+	border : 1px solid #808080;
+	border-bottom: 1px solid #ebebe6;
+	border-right: 1px solid #ebebe6;
+	height:400px;
+	overflow:auto;
+	
+	
+}
+.TreeViewPanel a span
+{
+	color: #541c01;
+}
+.TreeViewPanel a:hover span
+{
+	background: #eee8e5;
+	
+}
+.TreeViewPanel a:hover 
+{
+	background: #eee8e5;	
+}
+.TreeViewPanel a.selected span 
+{
+	color: #541c01;
+	font-weight:bold;
+}
+

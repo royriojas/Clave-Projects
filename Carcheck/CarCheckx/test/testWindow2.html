@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+
+<script type="text/javascript" src="../Scripts/lib/x.js"> </script>
+<script type="text/javascript" src="../Scripts/lib/xpopup.js"> </script>
+<script type="text/javascript">
+var f;
+window.onload = function()
+{
+	/*
+	var popup = xCreateElement('DIV');
+	popup.innerHTML = "<div id='fen1' class='fenster' style='z-index:400;'><div id='fenMaxBtn1' class='fenMaxBtn' title='Click toMaximize/Restore'>&nbsp;</div><div id='btnMinimize1' class='btnMinimize' title='Click to Minimize'>&nbsp;</div><div id='fenBar1' class='fenBar' title='Drag to Move'><span style='position:relative;font-weight:bold;left:3px;top:3px;'>&nbsp;:.</span></div><div class='fenContent'><iframe id='myIframe' style='width:99%;height:91%;' src=''></iframe></div><div class='status'>&nbsp;</div><div id='fenResBtn1' class='fenResBtn' alt='resize'>&nbsp;</div></div>";
+	xAppendChild(document.body,popup);
+	*/
+	f = new xPopUp(1,'../loading.html');
+	 //new Rico.Effect.Round( null, 'roundNormal' );
+	//alert(/^div$/i.test('iv is div i'));
+}
+
+window.onunload = function()
+{
+	f.onunload();
+}
+</script> 
+
+<link href="../Scripts/xPopUpCSS/fen.css" rel="stylesheet" type="text/css" />
+</head>
+
+
+<body>
+
+<p>/* x.js co
+  <input type="submit" name="Submit" value="abrir" onclick="f.showPopUpModal('pruebasCSS.html',640,480);" />
+mpi
+<input type="submit" name="Submit2" value="cerrar" onclick="f.hide();" />
+led from X 4.0 with XC 0.27b. Distributed by GNU LGPL. For copyrights, license, documentation and more visit </p>
+<div id="contenedor" class="roundNormal" style="position:relative; overflow:hidden; background:#FFCC00; width:140px;height:90px;">
+&nbsp;
+</div>
+<select name="select">
+  <option value="b">a</option>
+  <option value="d">c</option>
+</select>
+<p>&nbsp;</p>
+</body>
+</html>

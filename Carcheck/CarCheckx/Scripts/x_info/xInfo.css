@@ -1,0 +1,38 @@
+/* CSS Document */
+.help_info {
+	cursor:pointer; background:url(info13.png) no-repeat;width:16px;height:16px;
+}
+.help_info span {
+	display:none;
+}
+
+.holder_info 
+{    
+		background:#FFFFCC;
+		width:230px;
+		w\idth: 240px; /* Moz */
+		padding: 5px;
+		position:absolute;
+		
+		border: 1px solid #336699;
+		
+	}
+.holder_info h4{
+	margin:1px;
+	font-size:11px;	
+	color:Black;
+}
+.holder_info div.tt_text {
+ 	margin:0px;	
+	font: 10px/10px Verdana, Arial, Helvetica, sans-serif;			
+	padding:0px;
+ }
+ .holder_info div {
+ 	text-align:left;
+ }
+ .holder_info span
+{
+	font: 10px/10px Verdana, Arial, Helvetica, sans-serif;		
+		text-align:left;
+	   color:#000000;
+}

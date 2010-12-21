@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Documento sin t&iacute;tulo</title>
+<script type="text/javascript" src="../Scripts/lib/x_common.js"></script>
+<script type="text/javascript" src="../Scripts/lib/x.js"></script>
+<script type="text/javascript">
+	var Class = {
+	  create: function() {
+		return function() {
+		  this.initialize.apply(this, arguments);
+		}
+	  }
+	};
+	
+	
+
+	
+	if(!window.addNamespace) {
+		window.addNamespace = function(ns) 
+		{		
+			var nsParts = ns.split(".");
+			var root = window;
+
+			for(var i=0; i<nsParts.length; i++) 
+			{
+				if(typeof root[nsParts[i]] == "undefined") 
+					root[nsParts[i]] = {};
+				root = root[nsParts[i]];				
+			}
+		}
+	}
+	window.addNamespace("CCSOL.xLibrary");
+	//alert (CCSOL.xLibray);
+	CCSOL.xLibrary.obj2 = function (theValue,noValue) {
+		var values = theValue;
+		var nV = noValue;
+		function doSomething() {
+			alert(values);
+		}
+		this.doSomeThingElse = function() {
+			doSomething();
+		}
+	};
+	/*CCSOL.xLibrary.obj = Class.create();*/
+	CCSOL.xLibrary.obj2.prototype = {
+		initialize: function (actualValue) {
+			var thisScopeValues = 2;
+		},
+		sayHello : function (value) {
+						alert(value);
+				   },
+		actualValue : "perro",		
+		otherFunction : function () {
+			//alert(thisScopeValues);
+		}				   
+	};
+	window.addNamespace("CCSOL.xLibrary.String");
+	CCSOL.xLibrary.String.format = function () {
+		alert ('hola estoy en otro namespace');
+	}
+	window.onload = function () {
+		a = new CCSOL.xLibrary.obj2("perro","nuevo");		
+		a.doSomeThingElse();
+		a.sayHello("Rosa");
+		a.otherFunction();
+		alert(CCSOL.Utiles.StringFormat('esta cadena tiene {0} que pueden ser {1}, y repetidos pero {1}','valores','raros'));
+		//xAddEventListener($('trigger'),'click',CCSOL.xLibrary.String.format,false);
+	}
+	
+	
+	
+</script>
+</head>
+<body>
+	<p id='trigger'>Pruebas de objetos javascript;</p>
+</body>
+</html>

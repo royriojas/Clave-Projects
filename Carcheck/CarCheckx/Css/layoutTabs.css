@@ -1,0 +1,85 @@
+﻿.mainTab
+{
+	height:22px; 
+	font-size: 0px; 
+	background: Transparent url(../images/tabBack.gif) repeat-x bottom;
+	margin-top: 1px; margin-bottom: 0px;
+}
+	
+.itemTab 
+{	
+	float:left; 
+	font-size: 10px; 
+	height:22px; 
+	cursor: pointer;
+}	
+.itemLeftTab
+{
+	float:left; 
+	width:5px; 
+	height:22px; 
+	background: Transparent url(../images/tab_s_left.gif) no-repeat top left; 
+	font-size: 0px
+}	
+.itemCenterTab
+{   
+	float:left; 
+	color: White;
+	height:22px; 
+	font-size: 10px; 
+	font-weight: bold; 
+	padding: 4px 4px 4px 4px; 
+	margin-bottom: -8px;
+	background: Transparent url(../images/tab_s_back.gif) repeat-x top center; 
+	cursor:pointer;
+}
+.itemRightTab
+{
+	float:left; 
+	width:7px; 
+	height:22px; 
+	background: Transparent url(../images/tab_s_right.gif) no-repeat top left; 
+	font-size: 0px
+}	
+.itemLeftBackTab
+{
+	float:left; 
+	width:5px; 
+	height:22px; 
+	background: Transparent url(../images/tab_n_left.gif) no-repeat top left; 
+	font-size: 0px
+}	
+.itemCenterBackTab
+{   
+	float:left; 
+	height:22px; 
+	font-size: 10px; 
+	font-weight: bold; 
+	padding: 4px 4px 4px 4px; 
+	margin-bottom: -8px;
+	background: Transparent url(../images/tab_n_back.gif) repeat-x top center; 
+}
+.itemRightBackTab
+{
+	float:left; 
+	width:7px; 
+	height:22px; 
+	background: Transparent url(../images/tab_n_right.gif) no-repeat top left; 
+	font-size: 0px
+}	
+.rightTab
+{
+	float:right; 
+	width:3px; 
+	height:22px; 
+	background: Transparent url(../images/tabBackRight.gif) no-repeat bottom;
+}	
+
+.PanelEncabezado
+{
+	height: 16px;
+	margin-bottom: 4px;
+	/*background-color:#d46420;*/
+}
+.PanelEncabezado SPAN{float: left; height: 16px; font-size: 14px; font-weight:bold; font-family: Verdana; cursor: pointer;}
+.PanelEncabezado IMG{ border: 0px; float: right; margin-left: 3px; cursor: pointer}

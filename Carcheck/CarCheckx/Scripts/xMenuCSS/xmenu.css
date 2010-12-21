@@ -1,0 +1,78 @@
+/* CSS Document */
+
+.ContextMenu {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	background: #FFFFFF url(MenuItems/mnBg.jpg) repeat-y;
+	width: 200px;		
+	position:absolute;	
+	z-index: 600;
+	filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=3, OffY=3, Color=#CCCCCC, Positive='true');	
+	display:none;
+}
+.ContextMenu .MenuGroup {
+	position:relative;
+}
+.MenuSeparator {	
+	border-left:1px solid #0099CC;
+	border-right:1px solid #0099CC;
+	overflow:hidden;
+	height:1px;
+	position:relative;
+}
+.hrSeparator
+{
+	width:150px;
+	margin-left:40px;
+	margin-right:5px;
+	height:0px;
+	border-bottom:1px solid #E9E9E9;
+	border-top:1px solid #CCCCCC;
+	font-size: 1px;
+	overflow:hidden;
+}
+
+.ContextMenu .MenuGroup a.MenuItem {
+	display:block;
+	cursor: pointer;
+	padding:2px;
+	vertical-align:middle;
+	color:#003366;
+	text-decoration:none;
+	height:20px;
+	position:relative;
+	border-left:1px solid #0099CC;
+	border-right:1px solid #0099CC;
+	
+}
+.ContextMenu .MenuGroup a.MenuItem p{
+	margin:0px;
+}
+.ContextMenu .MenuGroup a.MenuItem h4{
+	margin:0px;
+	margin-bottom:2px;
+	font-size:10px;	
+	font-weight:normal;
+}
+.ContextMenu .MenuGroup a.MenuItem img.MenuItemIco{				
+	border:none;
+	top:3px;left:8px;position:absolute; 
+}
+.ContextMenu .MenuGroup a.MenuItem:hover {	
+	background:url(MenuItems/MenuItemOverBrg.jpg) repeat-x;	
+}
+.ContextMenu .MenuGroup .MenuItem span {
+	float:left; padding:2px;
+}
+.MenuHeader {
+background-color:#D0E6EA;height:20px;border:1px solid #0066CC;border-bottom:none;
+overflow:hidden;
+}
+.MenuHeader p.MenuTitle {
+font-weight:bold;margin:0px; margin-left:5px;margin-top:2px;color:#006699;
+}
+.MenuItemTextHolder {
+padding:2px;margin-left:40px;margin-right:5px;
+}

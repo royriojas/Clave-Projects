@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Untitled Page</title>
+    <script type="text/javascript" src="../Scripts/lib/x.js"></script>
+    <script type="text/javascript" src="../Scripts/lib/x_common.js"></script>
+   <!-- <script type="text/javascript" src="../Scripts/lib/xKeyEvents.js"></script>-->
+   <script type="text/javascript">
+    function __showKeyEvents(e) {
+      var ex = new xEvent(e);
+      
+      if (ex.altKey) alert('alt');
+      CCSOL.Utiles.Trace(String.format('tecla : {0} => keycode : {1}',String.fromCharCode(ex.keyCode),ex.keyCode));
+      xPreventDefault(e);
+    }
+    function __cancelKeyDown(e) {
+      
+      //xPreventDefault(e);
+    }
+    
+    xAddEventListener(document,'keypress',__showKeyEvents,true);
+    //xAddEventListener(document,'keyDown',__cancelKeyDown,true);
+    
+   </script>
+    
+</head>
+<body>
+  <p>
+    Registro de Teclas
+  </p>
+  <input id="Text1" type="text" style="width: 204px" value="[ elija ]" />
+  <div id='trace' style="font-size:12px;font-family:Courier New">
+  </div>
+  
+</body>
+</html>

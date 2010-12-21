@@ -1,0 +1,132 @@
+/* CSS Document */
+
+.fenster {
+	position:absolute;
+	visibility:visible;
+	overflow:hidden;
+	width:322px;
+	margin:0;
+	padding:0;
+	font-size:x-small;
+	color:#000;
+	background:#fffbee;	
+	border:1px solid #596380;
+	left: 293px;
+	top: 62px;
+	height: 138px;
+}
+.fenBar {
+  overflow:hidden;
+  font-size:x-small;
+  height:20px;
+  margin:0;
+  padding:1px;
+  font-weight:bold;
+  color:#FFFFFF;
+  background:url(popupItems/fnd_bar.jpg) repeat-x;
+  cursor:move;
+  
+}
+.fenMaxBtn {
+  position:absolute;
+  overflow:hidden;
+  font-size:x-small;
+  margin:0;
+  padding:0;
+  color:#000;
+  background:url(popupItems/maximize.jpg);
+  cursor:pointer;  
+  right:20px;
+  top: 6px;
+  width:10px;
+  height:10px;
+}
+.fenResBtn {
+  position:absolute;
+  overflow:hidden;
+  font-size:x-small;
+/*  width:1.2em;
+  height:1.2em;*/
+  margin:0;
+  padding:0;
+  color:#000;
+  background:url(popupItems/resize.jpg) no-repeat #ebebe6;
+  cursor:se-resize;
+  right:0px;
+  bottom:0px;
+  width:15px;
+  height:15px;
+}
+
+.btnMinimize {
+  position:absolute;
+  overflow:hidden;
+  font-size:x-small;
+/*  width:1.2em;
+  height:1.2em;*/
+  margin:0;
+  padding:0;
+  color:#000;
+  background:url(popupItems/minimize.jpg);
+  cursor:pointer;
+  right:35px;
+  top: 6px;
+  width:10px;
+  height:10px;
+}
+
+.fenClose {
+  position:absolute;
+  overflow:hidden;
+  font-size:x-small;
+/*  width:1.2em;
+  height:1.2em;*/
+  margin:0;
+  padding:0;
+  color:#000;
+  background:url(popupItems/close.jpg);
+  cursor:pointer;
+  right:5px;
+  top: 6px;
+  width:10px;
+  height:10px;
+}
+
+
+.fenContent {
+  margin:0px;
+}
+
+.popupMask {
+	position: absolute;
+	z-index: 200;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: .4;
+	filter: alpha(opacity=40);
+	/* this hack is so it works in IE
+	 * I find setting the color in the css gives me more flexibility 
+	 * than the PNG solution.
+	 */
+	background-color:transparent !important;
+	background-color: #333333;
+	/* this hack is for opera support
+	 * you can uncomment the background-image if you don't care about opera.
+	 * this gives you the flexibility to use any bg color that you want, instead of the png
+	 */
+	background-image/**/:  url(../popUpWin/img/maskBG.png)!important; /*For browsers Moz, Opera, etc.*/
+	background-image:none;
+	background-repeat: repeat;
+	display:block;
+	
+}
+.status {
+	position:absolute;
+	bottom:0px;
+	height:15px;
+	background:#ebebe6;	
+	left:0px;	
+	width:100%;
+}

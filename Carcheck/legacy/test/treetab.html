@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Tree | Tab test</title>
+<script type="text/javascript" src="../Scripts/lib/x.js"></script>
+<script type="text/javascript" src="../Scripts/lib/x_common.js"></script>
+<script type="text/javascript">
+    //Estilos globales comunes, deben siempre cargarse luego del x_common.js    
+    CCSOL.Utiles.LoadCSS("../Scripts/xCommon/xCommon.css");
+	CCSOL.Utiles.LoadCSS("../Scripts/lib/dtree/dtree.css");	
+	CCSOL.Utiles.LoadScript("../Scripts/lib/dtree/dtree.js");	
+	
+	CCSOL.Utiles.LoadScript("../Scripts/lib/xTab.js");
+	CCSOL.Utiles.LoadCSS("../Scripts/x_Tab/xTab.css");
+			
+</script>
+<script type="text/javascript">
+	function changeCurrentTab(the_tab_number) {
+		//var the_tab_number = $('txtNumTab').value;
+		t.selectTab(the_tab_number);
+	}
+	function sayHello() {
+		alert('an example of how to call a function');
+	}
+	function createTreeView() {
+		d = new dTree('d','../Scripts/lib/dtree/img/dtreeImg/');
+		
+  		d.add(0,-1,'My example tree');           
+		d.add(1,0,'Nodo 1','javascript:sayHello()');
+			d.add(2,1,'Nodo Hijo 1',"javascript:changeCurrentTab(0);");
+			d.add(3,1,'Nodo Hijo 2',"javascript:changeCurrentTab(1);");
+			d.add(4,1,'Nodo Hijo 3',"javascript:changeCurrentTab(2);");
+			d.add(5,1,'Nodo Hijo 4',"javascript:alert('hijo 4');");		
+			
+		d.add(6,0,'Nodo 2','javascript:sayHello()');
+			d.add(7,6,'Nodo Hijo 1',"javascript:alert('hijo 1');");
+			d.add(8,6,'Nodo Hijo 2',"javascript:alert('hijo 2');");
+			d.add(9,6,'Nodo Hijo 3',"javascript:alert('hijo 3');");
+			d.add(10,6,'Nodo Hijo 4',"javascript:alert('hijo 4');");			
+
+		d.add(11,0,'Nodo 3','javascript:sayHello()');
+			d.add(12,11,'Nodo Hijo 1',"javascript:alert('hijo 1');");
+			d.add(13,11,'Nodo Hijo 2',"javascript:alert('hijo 2');");
+			d.add(14,11,'Nodo Hijo 3',"javascript:alert('hijo 3');");
+			d.add(15,11,'Nodo Hijo 4',"javascript:alert('hijo 4');");			
+  		
+		/*d.add(1,0,'Node 1','javascript:sayHello()'); 
+  		d.add(2,0,'Node 2','example01.html');
+  		d.add(3,1,'Node 1.1','example01.html');
+  		d.add(4,0,'Node 3','example01.html');
+  		d.add(5,3,'Node 1.1.1','example01.html');
+  		d.add(6,5,'Node 1.1.1.1','example01.html');
+  		d.add(7,0,'Node 4','example01.html');
+  		d.add(8,1,'Node 1.2','example01.html');
+  		d.add(9,0,'My Pictures','example01.html','Pictures I\'ve taken over the years','','','../Scripts/lib/dtree/img/dtreeImg/imgfolder.gif');
+  		d.add(10,9,'The trip to Iceland','example01.html','Pictures of Gullfoss and Geysir');
+  		d.add(11,9,'Mom\'s birthday','example01.html');
+  		d.add(12,0,'Recycle Bin','example01.html','','','../Scripts/lib/dtree/img/dtreeImg/trash.gif');*/
+      
+      	d.render('theTreeView');
+	}
+	var t = null;
+	function createTabsView() {
+		try {
+			t = new xTab('theTabPanel',	//nombre del Div principal que contiene a los links y a los divs de clase tabContainer
+						 'itemCenterTab'); //nombre del estilo Over
+			t.selectTab(1);		
+			//ChangeTheUrl();
+		}
+		catch(e) {
+			alert(e.message);
+		}
+	}
+	window.onload = function () {
+		createTreeView();
+		createTabsView();
+		
+	}
+</script>
+<style type="text/css">
+	p {
+		font-family:Verdana, Arial, Helvetica, sans-serif;
+		font-size:10px;		
+	}
+	h3,h4 {
+		font-family:Verdana, Arial, Helvetica, sans-serif;
+		font-size:12px;	
+		font-weight:bold;
+	}
+</style>
+</head>
+
+<body>
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="250" height="413" valign="top"><div id='theTreeView'></div></td>
+    <td width="588" valign="top">
+	<div id='theTabPanel' style="width:680px">
+	<!-- here begins the links (simulated tabs)
+		 I use a lot of divs in order to obtain the tab effect 
+		 you coul use a single image or only css to obtain the same effect
+		-->
+	<div class="mainTab"> 
+		<div id="tab1" class="itemTab">
+			<div class="itemLeftBackTab">
+			</div>
+			<a id="lnkTab1" onclick="return false;" class="itemCenterBackTab tabTrigger" href="##">
+			   :: Contenedor 1 ::</a>
+			<div  class="itemRightBackTab">
+			</div>
+		</div>
+		<div id="tab2"  class="itemTab">
+			<div class="itemLeftBackTab">
+			</div>
+			<a id="lnkTab2"  onclick="return false;"  class="itemCenterBackTab tabTrigger" href="##">
+				:: Contenedor 2 ::</a>
+			<div   class="itemRightBackTab">
+			</div>
+		</div>
+		<div  id="tab3"  class="itemTab">
+			<div class="itemLeftBackTab">
+			</div>
+			<a  id="lnkTab3"  onClick="return false;"  class="itemCenterBackTab tabTrigger" href="##">
+				:: Contenedor 3 :: </a>
+			<div   class="itemRightBackTab">
+			</div>
+		</div>    
+		<div  id="tab4"  class="itemTab">
+			<div class="itemLeftBackTab">
+			</div>
+			<a  id="lnkTab4"  onClick="return false;"  class="itemCenterBackTab tabTrigger" href="##">
+				:: Contenedor 4 :: </a>
+			<div   class="itemRightBackTab">
+			</div>
+		</div>    
+	</div>
+	<!--ends of the links-->
+	<!--here begins the divs-->	
+	<div class="TabBodyContent">			
+		<div class="tabPanelContainer">
+			<div id='FirstTab' class="tabContainer">
+			<h3>Probando el Contenedor 1
+			</h3>
+				<p>Esta es una prueba de solo texto incluida en este TabContainer 				</p>
+				<p>&nbsp;</p>
+				<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+					  
+					  Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+					  
+					  Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+					  
+					  Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+					  
+					  Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. </p>
+			</div>
+			<div id='SecondTab' class="tabContainer">
+				  <h3>Probando el Contenedor 2 </h3>
+				  <p>Como puede ver en este contenedor si es necesario el tabContainer crecer&aacute; o se reducir&aacute; para ajustarse al contenido que necesita mostrar...</p>
+				  <div class="DataTable">
+				<table  width="95%" border="0" cellspacing="0" cellpadding="0">
+				<tr class="Impar">
+				  <td width="100px;">Url</td>
+				  <td width="86%"><input name="txtAUrl" type="text" class="FormText" id="txtAUrl" style="width:300px;" value="http://www.google.com.pe" /></td>
+				</tr>
+				<tr class="Impar">
+				  <td>Width</td>
+				  <td><input  name="txtWidth" type="text" class="FormText" id="txtWidth" style="width:30px;" value="350" /> 
+				  px </td>
+				</tr>
+				<tr class="Impar">
+				  <td>Height</td>
+				  <td><input   name="txtHeight" type="text" class="FormText" id="txtHeight" style="width:30px;" value="325" />
+				  px</td>
+				</tr>
+				<tr class="Impar">
+				  <td>Tipo</td>
+				  <td><table width="170" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+					  <td width="23"><label>
+						<input name="chkTipoVentana" type="checkbox" id="chkTipoVentana" value="checkbox" checked="checked" />
+					  </label></td>
+					  <td width="147"><label>Modal</label></td>
+					</tr>
+					<tr>
+					  <td colspan="2"></td>
+					</tr>
+				  </table>              </td>
+				</tr>
+				<tr class="Impar">
+				  <td>&nbsp;</td>
+				  <td></td>
+				</tr>
+							<tr class="Impar">
+				  <td>&nbsp;</td>
+				  <td><select onchange="alert(this.value);" style="width:300px" name="select2" id="select2" class="FormText">
+						<option value="2">No hay manera que deba poder verse</option>
+						<option value="2">No hay manera que deba poder verse</option>
+						<option value="2">No hay manera que deba poder verse</option>
+					
+					<option value="2">No hay manera que deba poder verse</option>
+					<optgroup label="pruebita de un option group">
+					<option value="1">Este Select no debe poder verse cuando se muestre la ventana en modo modal</option>
+					<option value="2">No hay manera que deba poder verse</option>
+					</optgroup>
+				  </select></td>
+				</tr>
+				<tr class="Impar">
+				  <td>&nbsp;</td>
+				  <td>
+				  </td>
+				</tr>
+				<tr class="Impar">
+				  <td>&nbsp;</td>
+				  <td><button onclick="alert('just a test');return false" class="FormButton">Test It! </button></td>
+				</tr>
+			  </table>
+			</div>
+				  
+				</div>
+				<div id='thirdTab' class="tabContainer">
+				<h3> Testing an Iframe</h3>
+				<div class="DataTable">
+				<table  width="95%" border="0" cellspacing="0" cellpadding="0">
+				<tr class="Impar">
+				  <td width="89">Url</td>
+				  <td width="309"><input name="txtUrl" type="text" class="FormText" id="txtUrl" style="width:300px;" value="http://www.vabenne.com" /></td>
+				  <td width="237"><div class="help_info tt_help_info" tt_title='info' tt_text='Ingrese la URL para hacer que el Iframe inferior lo muestre, la url debe empezar por http://' ><span>?</span></div></td>
+				</tr>
+				<tr class="Impar">
+				  <td>&nbsp;</td>
+				  <td><button onclick="ChangeTheUrl();return false" style="width:180px;" class="FormButton">Change the Url of the Iframe </button></td>
+				  <td>&nbsp;</td>
+				  </tr>
+			  </table>
+			</div>
+			<br />
+				  <iframe src="../loading.html" id='myIframe' frameborder="0" style="width:98%;height:400px;"></iframe>
+				</div>
+				
+				<div id='thirdTab' class="tabContainer">
+					<p>Este es una nueva entrada Este es una nueva entrada Este es una nueva entrada Este es una nueva entrada Este es una nueva entrada Este es una nueva entrada Este es una nueva entrada Este es una nueva entrada </p>
+				</div>
+			</div>				
+	</div>
+	<!--here ends the divs-->
+</div>
+	</td>
+  </tr>
+</table>
+</body>
+</html>

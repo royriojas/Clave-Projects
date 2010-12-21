@@ -1,0 +1,13 @@
+﻿	.theGallery {
+		position:relative;	
+		font:Verdana, Arial, Helvetica, sans-serif;
+		font-size:10px;	
+	}
+	.galleryHolder {
+		float:left;
+		width:100px;
+		border: 2px solid #666699;
+		padding: 2px;
+		margin: 2px;
+		
+	}

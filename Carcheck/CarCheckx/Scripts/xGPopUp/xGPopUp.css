@@ -1,0 +1,29 @@
+/* CSS Document */
+
+.iwsw {
+	background:url(iw_sw.gif) no-repeat;
+	position:relative;	
+	width:25px;
+	height:25px;
+}
+.iwse {
+	background:url(iw_se.gif) no-repeat;
+	width:25px;
+	height:25px;
+}
+.iwnw {
+	background:url(iw_nw.gif) no-repeat;
+	width:25px;
+	height:25px;
+}
+.iwne {
+	background:url(iw_ne.gif) no-repeat;
+	width:25px;
+	height:25px;
+}
+.iwtop {
+	background:url(top.gif) repeat-x top;
+	height:25px;
+	margin-left:20px;
+	margin-right:20px;
+}

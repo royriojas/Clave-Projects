@@ -1,0 +1,25 @@
+/*
+  xTabPanelGroup Demo
+  default css
+*/
+
+.tabPanelGroup {
+  margin:10px; padding:0;
+  border:1px solid #CFD4E6;
+}
+.tabPanel {
+  margin:0; padding:10px;
+  color:#000; background:#CFD4E6;
+}
+.tabGroup {
+  margin:0; padding:0;
+}
+.tabDefault {
+  margin:0; padding:2px;
+  background:#FFF;
+}
+.tabSelected {
+  margin:0; padding:2px;
+  color:#000; background:#CFD4E6;
+}
+

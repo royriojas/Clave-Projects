@@ -1,0 +1,56 @@
+.heading {
+	FONT-SIZE: 10px; 
+	FONT-FAMILY: Verdana; 
+    BACKGROUND-COLOR: #973e08;
+	color: white;
+	font-weight: bold;
+    border-bottom:1px solid #ffffff;
+    border-right:1px solid #ffffff;
+    border-top:1px solid #ffffff;
+    border-left:1px solid #ffffff;
+    height:16px;
+    
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr= '#c1794b' , EndColorStr= '#933b08' );
+}
+.normal {
+	FONT-SIZE: xx-small; 
+	FONT-FAMILY: Tahoma; 
+	TEXT-ALIGN: center;
+	BACKGROUND-COLOR: #f5b400;
+	border-bottom:1px solid #c5772b;
+    border-right:1px solid #c5772b;
+    border-top:1px solid #c5772b;
+    border-left:1px solid #c5772b;
+    width:125px;
+
+    filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr= '#f5b400' , EndColorStr= '#fce7af' );
+}
+.normal2 {
+	FONT-SIZE: xx-small; 
+	FONT-FAMILY: Tahoma; 
+	TEXT-ALIGN: center;
+	BACKGROUND-COLOR: #eb4000;
+	 border-bottom:1px solid #c5772b;
+    border-right:1px solid #c5772b;
+    border-top:1px solid #c5772b;
+    border-left:1px solid #c5772b;
+    width:125px;
+}
+
+.normal a,  .normal2 a
+{
+	color : #FFFFFF;
+	text-decoration:none;
+	
+}	
+
+.empty {
+	FONT-SIZE: xx-small; 	
+	 border-bottom:1px solid #c5772b;
+    border-right:1px solid #c5772b;
+    border-top:1px solid #c5772b;
+    border-left:1px solid #c5772b;
+    background:#F4E1C4;
+    width:125px;
+}
+
