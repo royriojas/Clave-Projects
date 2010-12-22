@@ -12,7 +12,7 @@ tales como la placa del vehiculo, estado de inspeccion
 5) Validar que cuando se este creando una solicitud, no se pueda hacer click a otro tema y en caso se de, 
 eliminar la solicitud
 
-6) Validar que en el listado de solicitudes se pueda buscar al seleccionar departamentos, provincias y distritos; 
+6) Validar que en el listado de solicitudes se pueda buscar por departamentos, provincias y distritos; 
 con el objetivo de tener coordinadores de inspeccion distribuidos en zonas especificas
 
 7) Agregar en el registro de la solicitud campos para llenar los datos de los ejecutivos tanto de la compañía 
@@ -23,9 +23,14 @@ como del broker.
 9) Al mostrar los datos que forman parte de las coordinaciones que se hacen por inspeccion, mostrar los comentarios 
 del no Exito y que estos puedan incluirse en la notificación que se envíe.
 
-10) Eliminar BD histórica.
+10) Eliminar BD histórica.(OK)
 
-11) Validar que cuando se agenda una inspeccion, se controle se obligue el registro de hora de inicio de inspeccion.
+11) Validar que cuando se agenda una inspeccion, se controle se obligue el registro de hora de inicio de inspeccion
+dentro de un determinado horario establecido.
+
+12) Cuando se crea una solicitud por primera vez y se trata de un contacto que nunca antes se haya resgistrado, 
+genera un inconveniente y se cae, al volver a entrar a la solicitud se puede editar los datos y ya no existe 
+el problema. Por otro lado revisar el binding del ubigeo de la solicitud que se pierde.
 
 
 
