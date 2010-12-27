@@ -4,28 +4,30 @@
 2) Desactivar en el uccontroltab las opcion de características.
 (OK)
 
-3) Desactivar columna de ampliatorios para validar de que se trata en el listado de inspecciones.
 
-4) Desactivar check de pagada no pagada, etc; es necesario incorporar filtors para la busqueda de una inspeccion 
-tales como la placa del vehiculo, estado de inspeccion
+3) Desactivar check de pagada no pagada, etc en el listado de inspecciones; es necesario incorporar filtors para la busqueda de una inspeccion 
+tales como la placa del vehiculo, estado de inspeccion que permita ubicar facilmente a las inspecciones.
 
-5) Validar que cuando se este creando una solicitud, no se pueda hacer click a otro tema y en caso se de, 
+4) Validar que cuando se este creando una solicitud, no se pueda hacer click a otro tema y en caso se de, 
 eliminar la solicitud
 
-6) Validar que en el listado de solicitudes se pueda buscar por departamentos, provincias y distritos; 
+5) Validar que en el listado de solicitudes se pueda buscar por departamentos, provincias y distritos; 
 con el objetivo de tener coordinadores de inspeccion distribuidos en zonas especificas
 
-7) Agregar en el registro de la solicitud campos para llenar los datos de los ejecutivos tanto de la compañía 
-como del broker.
+6) Agregar en el registro de la solicitud campos para llenar los datos de los ejecutivos tanto de la compañía 
+como del broker (nombres, email, fonos).
 
-8) Incluir como parte de los campos de los inspectores el departamento de trabajo.
+7) Incluir como parte de los campos de los inspectores el departamento de trabajo dado que se debe filtrar dependiendo del
+lugar donde se lleve a cabo la inspección.
 
-9) Al mostrar los datos que forman parte de las coordinaciones que se hacen por inspeccion, mostrar los comentarios 
-del no Exito y que estos puedan incluirse en la notificación que se envíe.
+8) Al mostrar los datos que forman parte de las coordinaciones (comunicaciones) que se hacen por inspeccion, mostrar los comentarios 
+del no Exito y que estos puedan incluirse en la notificación que se envíe por correo.
 
-10) Eliminar BD histórica.(OK)
+9) Poner operativo el envío de email a través del sistema.
 
-11) Validar que cuando se agenda una inspeccion, se controle se obligue el registro de hora de inicio de inspeccion
+10) Eliminar BD histórica.
+
+11) Validar que cuando se agenda una inspeccion, se controle se obligue el registro de hora de inicio de inspección
 dentro de un determinado horario establecido.
 
 12) Cuando se crea una solicitud por primera vez y se trata de un contacto que nunca antes se haya resgistrado, 

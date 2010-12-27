@@ -222,17 +222,18 @@
         </div>
         <div id="SepAgenda" class="separador" runat="server">
         </div>
+         <div>
+         <asp:HyperLink ID="lnkAmpliatorios" runat="server" NavigateUrl="~/vGetAmpliatorio.aspx"
+            ToolTip="Búsqueda de Ampliatorios" TabIndex="20">Ampliatorios</asp:HyperLink></div>
+         <div id="SepAmpliatorios" class="separador" runat="server">
+        </div>
         <!-- +++++++++++++++++++++++++++++++++++++++esto es lo que tengo que liberar luego de la demo
             <div>
               <asp:HyperLink ID="lnkValores" runat="server" NavigateUrl="~/vValorComercial.aspx"
                 ToolTip="ver Búsqueda del Valor Comercial de los Vehículos" TabIndex="15">Valores Comerciales</asp:HyperLink></div>
             <div id="SepValores" class="separador" runat="server">
             </div>
-            <div>
-              <asp:HyperLink ID="lnkAmpliatorios" runat="server" NavigateUrl="~/vGetAmpliatorio.aspx"
-                ToolTip="Búsqueda de Ampliatorios" TabIndex="20">Ampliatorios</asp:HyperLink></div>
-            <div id="SepAmpliatorios" class="separador" runat="server">
-            </div>
+           
             <div>
               <asp:HyperLink ID="lnkReportes" runat="server" NavigateUrl="~/vReporte.aspx" ToolTip="Ver Reportes"
                 TabIndex="25">Reportes</asp:HyperLink></div>
