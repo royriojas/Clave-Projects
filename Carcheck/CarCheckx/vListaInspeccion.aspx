@@ -313,7 +313,7 @@
                         <asp:DropDownList ID="cbxEstadoInspeccion" runat="server" AppendDataBoundItems="True" CssClass="FormText tt_help_info aDropDownWithTitle"
                           DataSourceID="odsEstadoInspecciones" DataTextField="estadoInspeccion" DataValueField="estadoInspeccionId"
                           TabIndex="13" Width="140px" >
-                          <asp:ListItem Value="-1">[ - Todos - ]</asp:ListItem>
+                          <asp:ListItem Value="*">[ - Todos - ]</asp:ListItem>
                         </asp:DropDownList>
                       </td>
                       <td style="height: 17px; width: 130px;">

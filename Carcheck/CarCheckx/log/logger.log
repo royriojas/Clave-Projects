@@ -4913,3 +4913,127 @@ HelpLink:
 Source: System.Web
 
 
+[LOG => 30/12/2010 01:19:24 a.m. ] -- 
+Message: La cadena de entrada no tiene el formato correcto.
+Data: System.Collections.ListDictionaryInternal
+InnerException: 
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+StackTrace:    en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Convert.ToInt32(String value)
+   en CarCheck.Gestores.GestorInspeccion.getDatosCita(String inspeccionId, GridView comunicacionGridView) en d:\Proyectos de Sistemas\Repositorio de codigo\Carcheck\Clave-Projects\Carcheck\CarCheckx\App_Code\Gestores\GestorInspeccion.cs:línea 331
+HelpLink: 
+Source: mscorlib
+
+
+[LOG => 30/12/2010 01:19:28 a.m. ] -- 
+Message: La cadena de entrada no tiene el formato correcto.
+Data: System.Collections.ListDictionaryInternal
+InnerException: 
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+StackTrace:    en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Convert.ToInt32(String value)
+   en CarCheck.Gestores.GestorInspeccion.getDatosCita(String inspeccionId, GridView comunicacionGridView) en d:\Proyectos de Sistemas\Repositorio de codigo\Carcheck\Clave-Projects\Carcheck\CarCheckx\App_Code\Gestores\GestorInspeccion.cs:línea 331
+HelpLink: 
+Source: mscorlib
+
+
+[LOG => 30/12/2010 01:19:36 a.m. ] -- 
+Message: La cadena de entrada no tiene el formato correcto.
+Data: System.Collections.ListDictionaryInternal
+InnerException: 
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+StackTrace:    en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Convert.ToInt32(String value)
+   en CarCheck.Gestores.GestorInspeccion.getDatosCita(String inspeccionId, GridView comunicacionGridView) en d:\Proyectos de Sistemas\Repositorio de codigo\Carcheck\Clave-Projects\Carcheck\CarCheckx\App_Code\Gestores\GestorInspeccion.cs:línea 331
+HelpLink: 
+Source: mscorlib
+
+
+[LOG => 30/12/2010 01:19:48 a.m. ] -- 
+Message: La cadena de entrada no tiene el formato correcto.
+Data: System.Collections.ListDictionaryInternal
+InnerException: 
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+StackTrace:    en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   en System.Convert.ToInt32(String value)
+   en CarCheck.Gestores.GestorInspeccion.getDatosCita(String inspeccionId, GridView comunicacionGridView) en d:\Proyectos de Sistemas\Repositorio de codigo\Carcheck\Clave-Projects\Carcheck\CarCheckx\App_Code\Gestores\GestorInspeccion.cs:línea 331
+HelpLink: 
+Source: mscorlib
+
+
+[LOG => 30/12/2010 01:19:58 a.m. ] -- 
+ErrorCode: -2147467259
+Message: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
+Data: System.Collections.ListDictionaryInternal
+InnerException: System.FormatException: La cadena de entrada no tiene el formato correcto.
+   en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   en System.Convert.ToDecimal(String value)
+   en vFIDatosPersonales.Page_Load(Object sender, EventArgs e) en d:\Proyectos de Sistemas\Repositorio de codigo\Carcheck\Clave-Projects\Carcheck\CarCheckx\vFIDatosPersonales.aspx.cs:línea 33
+   en System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   en System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   en System.Web.UI.Control.OnLoad(EventArgs e)
+   en System.Web.UI.Control.LoadRecursive()
+   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+TargetSite: Boolean HandleError(System.Exception)
+StackTrace:    en System.Web.UI.Page.HandleError(Exception e)
+   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   en System.Web.UI.Page.ProcessRequest()
+   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   en System.Web.UI.Page.ProcessRequest(HttpContext context)
+   en ASP.vfidatospersonales_aspx.ProcessRequest(HttpContext context) en c:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Temporary ASP.NET Files\carcheckx\efbeba8c\714635b1\App_Web_tvsp_zlp.6.cs:línea 0
+   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+HelpLink: 
+Source: System.Web
+
+
+[LOG => 30/12/2010 01:19:58 a.m. ] -- 
+Message: La cadena de entrada no tiene el formato correcto.
+Data: System.Collections.ListDictionaryInternal
+InnerException: 
+TargetSite: Void StringToNumber(System.String, System.Globalization.NumberStyles, NumberBuffer ByRef, System.Globalization.NumberFormatInfo, Boolean)
+StackTrace:    en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   en System.Convert.ToDecimal(String value)
+   en vFIDatosPersonales.Page_Load(Object sender, EventArgs e) en d:\Proyectos de Sistemas\Repositorio de codigo\Carcheck\Clave-Projects\Carcheck\CarCheckx\vFIDatosPersonales.aspx.cs:línea 33
+   en System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)
+   en System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   en System.Web.UI.Control.OnLoad(EventArgs e)
+   en System.Web.UI.Control.LoadRecursive()
+   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+HelpLink: 
+Source: mscorlib
+
+
+[LOG => 30/12/2010 01:24:27 a.m. ] -- 
+Message: Referencia a objeto no establecida como instancia de un objeto.
+Data: System.Collections.ListDictionaryInternal
+InnerException: 
+TargetSite: Void PutUserDataLabels()
+StackTrace:    en ucHeader.PutUserDataLabels() en d:\Proyectos de Sistemas\Repositorio de codigo\Carcheck\Clave-Projects\Carcheck\CarCheckx\ucHeader.ascx.cs:línea 141
+HelpLink: 
+Source: App_Web_doyvaokg
+
+
+[LOG => 30/12/2010 01:24:27 a.m. ] -- 
+ExceptionState: System.Web.HttpApplication+CancelModuleException
+Message: Subproceso anulado.
+Data: System.Collections.ListDictionaryInternal
+InnerException: 
+TargetSite: Void AbortInternal()
+StackTrace:    en System.Threading.Thread.AbortInternal()
+   en System.Threading.Thread.Abort(Object stateInfo)
+   en System.Web.HttpResponse.End()
+   en System.Web.HttpResponse.Redirect(String url, Boolean endResponse)
+   en System.Web.HttpResponse.Redirect(String url)
+   en CCSOL.Utiles.Utilidades.redirectToUrlWhenIsNull(Object UserSessionData, String urlActual) en d:\Proyectos de Sistemas\Repositorio de codigo\Carcheck\Clave-Projects\Carcheck\CarCheckx\App_Code\Class\Utilidades.cs:línea 329
+HelpLink: 
+Source: mscorlib
+
+

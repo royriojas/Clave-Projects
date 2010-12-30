@@ -304,16 +304,7 @@ ________________________________________________________________________________
 
 USE [carcheck]
 GO
-/****** Object:  UserDefinedFunction [dbo].[uf_getDatosCitaInspeccion]    Script Date: 12/29/2010 23:50:43 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
----Text
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-USE [carcheck]
-GO
-/****** Object:  UserDefinedFunction [dbo].[uf_getDatosCitaInspeccion]    Script Date: 12/30/2010 00:30:04 ******/
+/****** Object:  UserDefinedFunction [dbo].[uf_getDatosCitaInspeccion]    Script Date: 12/30/2010 01:04:27 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -358,34 +349,10 @@ as begin
                         
 						SET @titulo = 'INSPECCIÓN NO AGENDADA'
 						
-						SET @cabeceraTable = 
-							'<table border="0" cellspacing="0" cellpadding="0">
-							<tr><td colspan="3" style="font-size: 11px;font-weight: bold;">' + @titulo + ' </td></tr>
-							<tr><td width="110"><b>Fecha</b></td> 
-								<td width="100"><b>Resultado</b></td>
-								<td width="150"><b>Observación</b></td>
-							</tr>'
+						declare @totalcomunicaciones decimal
 						
-						SELECT 
-                                @resultado = 
-								'<tr><td>'+ Convert(varchar(50), Car_Comunicacion.fcomunicacion,103)  
-								
-								+' ' + Convert (varchar, datePart(hour, Car_Comunicacion.fcomunicacion)) + ':' 
-								+ Case 
-									when len(Convert (varchar, datePart(minute, Car_Comunicacion.fcomunicacion))) = 1 then '0' 
-									+ Convert (varchar, datePart(minute, Car_Comunicacion.fcomunicacion))
-									else Convert(varchar, datePart(minute, Car_Comunicacion.fcomunicacion))
-								  end +
-								
-							     '</td><td style="text-align:center;">' + 
-							     Case 
-									when Car_Comunicacion.resultado = 'N' then 'NO EXITOSO' 
-									else 'EXITOSO'
-								  end  +							     
-							     
-							     '</td><td>' + ISNULL(Car_Comunicacion.observacion, '') + 
-							     '</td></tr>'
-                        FROM    dbo.Car_Solicitud
+						select @totalcomunicaciones = count(*)
+						FROM    dbo.Car_Solicitud
 								INNER JOIN dbo.Car_Inspeccion ON dbo.Car_Solicitud.solicitudId = dbo.Car_Inspeccion.solicitudId
 								INNER JOIN dbo.Car_Vehiculo ON dbo.Car_Inspeccion.vehiculoId = dbo.Car_Vehiculo.vehiculoId
 								INNER JOIN dbo.Car_EstadoInspeccion ON dbo.Car_Inspeccion.estadoInspeccionId = dbo.Car_EstadoInspeccion.estadoInspeccionId
@@ -394,7 +361,51 @@ as begin
 								INNER JOIN dbo.Car_Contacto ON dbo.Car_Inspeccion.contactoId = dbo.Car_Contacto.contactoId
 						WHERE   ( dbo.Car_Inspeccion.inspeccionId = @inspeccionId )
 						
-						SET @resultado = @cabeceraTable + @resultado + '</table>'
+						if (@totalcomunicaciones > 0)	
+							BEGIN
+													
+								SET @cabeceraTable = 
+									'<table border="0" cellspacing="0" cellpadding="0">
+									<tr><td colspan="3" style="font-size: 11px;font-weight: bold;">' + @titulo + ' </td></tr>
+									<tr><td width="110"><b>Fecha</b></td> 
+										<td width="100"><b>Resultado</b></td>
+										<td width="150"><b>Observación</b></td>
+									</tr>'
+									
+													
+								SELECT 
+										@resultado = 
+										'<tr><td>'+ Convert(varchar(50), Car_Comunicacion.fcomunicacion,103)  
+										
+										+' ' + Convert (varchar, datePart(hour, Car_Comunicacion.fcomunicacion)) + ':' 
+										+ Case 
+											when len(Convert (varchar, datePart(minute, Car_Comunicacion.fcomunicacion))) = 1 then '0' 
+											+ Convert (varchar, datePart(minute, Car_Comunicacion.fcomunicacion))
+											else Convert(varchar, datePart(minute, Car_Comunicacion.fcomunicacion))
+										  end +
+										
+										 '</td><td style="text-align:center;">' + 
+										 Case 
+											when Car_Comunicacion.resultado = 'N' then 'NO EXITOSO' 
+											else 'EXITOSO'
+										  end  +							     
+									     
+										 '</td><td>' + ISNULL(Car_Comunicacion.observacion, '') + 
+										 '</td></tr>'
+								FROM    dbo.Car_Solicitud
+										INNER JOIN dbo.Car_Inspeccion ON dbo.Car_Solicitud.solicitudId = dbo.Car_Inspeccion.solicitudId
+										INNER JOIN dbo.Car_Vehiculo ON dbo.Car_Inspeccion.vehiculoId = dbo.Car_Vehiculo.vehiculoId
+										INNER JOIN dbo.Car_EstadoInspeccion ON dbo.Car_Inspeccion.estadoInspeccionId = dbo.Car_EstadoInspeccion.estadoInspeccionId
+										INNER JOIN dbo.Car_ComunicacionInspeccion ON dbo.Car_Inspeccion.inspeccionId = dbo.Car_ComunicacionInspeccion.inspeccionId
+										INNER JOIN dbo.Car_Comunicacion ON dbo.Car_ComunicacionInspeccion.comunicacionId = dbo.Car_Comunicacion.comunicacionId
+										INNER JOIN dbo.Car_Contacto ON dbo.Car_Inspeccion.contactoId = dbo.Car_Contacto.contactoId
+								WHERE   ( dbo.Car_Inspeccion.inspeccionId = @inspeccionId )
+								
+								SET @resultado = @cabeceraTable + @resultado + '</table>'
+						   END
+						ELSE
+							SET @resultado = 'LA INSPECCION AÚN NO SE <br />HA COORDINADO'
+					   
                     END
                 ELSE 
                     BEGIN
@@ -443,6 +454,10 @@ as begin
 
 --SELECT * FROM [Car_EstadoInspeccion]
 
+
+
+
+-----------------------------------------------------------------------------------------------------
 
 
 
