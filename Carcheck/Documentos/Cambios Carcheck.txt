@@ -5,8 +5,8 @@
 (OK)
 
 
-3) Desactivar check de pagada no pagada, etc en el listado de inspecciones; es necesario incorporar filtors para la busqueda de una inspeccion 
-tales como la placa del vehiculo, estado de inspeccion que permita ubicar facilmente a las inspecciones.
+3) Desactivar check de pagada no pagada, etc (OK) en el listado de inspecciones; es necesario incorporar filtors para la busqueda de una inspeccion 
+tales como la placa del vehiculo, estado de inspeccion que permita ubicar facilmente a las inspecciones. (OK)
 
 4) Validar que cuando se este creando una solicitud, no se pueda hacer click a otro tema y en caso se de, 
 eliminar la solicitud
@@ -21,7 +21,7 @@ como del broker (nombres, email, fonos).
 lugar donde se lleve a cabo la inspección.
 
 8) Al mostrar los datos que forman parte de las coordinaciones (comunicaciones) que se hacen por inspeccion, mostrar los comentarios 
-del no Exito y que estos puedan incluirse en la notificación que se envíe por correo.
+del no Exito y que estos puedan incluirse en la notificación que se envíe por correo. (OK)
 
 9) Poner operativo el envío de email a través del sistema.
 

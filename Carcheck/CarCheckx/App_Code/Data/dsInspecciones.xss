@@ -7,7 +7,7 @@
 <DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="-11" ViewPortY="-10" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:InspeccionListaFiltros" ZOrder="5" X="-1" Y="1" Height="275" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="228" />
-    <Shape ID="DesignTable:ComunicacionInspeccion" ZOrder="4" X="319" Y="0" Height="173" Width="283" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="109" />
+    <Shape ID="DesignTable:ComunicacionInspeccion" ZOrder="4" X="319" Y="0" Height="190" Width="283" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="126" />
     <Shape ID="DesignTable:AlertasInspeccion" ZOrder="2" X="0" Y="280" Height="156" Width="244" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="109" />
     <Shape ID="DesignTable:proc_Car_InspeccionLoadAll" ZOrder="1" X="225" Y="606" Height="292" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="228" />
     <Shape ID="DesignSources:QueriesTableAdapter" ZOrder="3" X="325" Y="221" Height="334" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="330" />

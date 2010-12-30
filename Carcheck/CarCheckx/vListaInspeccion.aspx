@@ -7,8 +7,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
   <title>
-    <%= CCSOL.Utiles.Utilidades.GetSystemNameAndVersion() %>
-    | Lista de Inspecciones</title>
+      <%= CCSOL.Utiles.Utilidades.GetSystemNameAndVersion() %>| Lista de Inspecciones</title>
 
   <script type="text/javascript" src="Scripts/lib/x.js"></script>
 
@@ -157,6 +156,12 @@
  
   <link href="./Scripts/x_info/xInfo.css" rel="stylesheet" type="text/css" />
   <link href="./Scripts/xPopUpCSS/fen.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        #divGridComunicacion
+        {
+            margin-left: 40px;
+        }
+    </style>
  </head>
 <body>
   <form id="form1" method="post" runat="server">
@@ -303,12 +308,14 @@
                         </asp:DropDownList>
                       </td>
                       <td style="height: 17px; width: 130px;">
+                        Estado de Inspección</td>
+                      <td style="height: 17px" valign="bottom">
+                        <asp:DropDownList ID="cbxEstadoInspeccion" runat="server" AppendDataBoundItems="True" CssClass="FormText tt_help_info aDropDownWithTitle"
+                          DataSourceID="odsEstadoInspecciones" DataTextField="estadoInspeccion" DataValueField="estadoInspeccionId"
+                          TabIndex="13" Width="140px" >
+                          <asp:ListItem Value="-1">[ - Todos - ]</asp:ListItem>
+                        </asp:DropDownList>
                       </td>
-                      <td style="height: 17px">
-                        <asp:CheckBox ID="chkClienteVip" runat="server" CssClass="FormCheck" TabIndex="16"
-                          Text="VIP  " TextAlign="Left" />
-                        <asp:CheckBox ID="chkPagada" runat="server" Text="PAGADA" TextAlign="Left" CssClass="FormCheck"
-                          TabIndex="17" /></td>
                       <td style="height: 17px; width: 130px;">
                         En Control de Calidad</td>
                       <td style="height: 17px">
@@ -321,6 +328,26 @@
                       <td rowspan="1" style="height: 17px" valign="top">
                       </td>
                     </tr>                                                            
+                    <tr>
+                        <td style="height: 17px; width: 130px;">
+                        </td>
+                      <td style="height: 17px" valign="bottom">
+                        
+                      </td>
+                      <td style="height: 17px; width: 130px;">
+                      </td>
+                      <td style="height: 17px">
+                        <asp:CheckBox ID="chkClienteVip" runat="server" CssClass="FormCheck" TabIndex="16"
+                          Text="VIP  " TextAlign="Left" Visible="False" />
+                        <asp:CheckBox ID="chkPagada" runat="server" Text="PAGADA" TextAlign="Left" CssClass="FormCheck"
+                          TabIndex="17" Visible="False" /></td>
+                      <td style="height: 17px; width: 130px;">
+                        </td>
+                      <td style="height: 17px">
+                        
+                      <td rowspan="1" style="height: 17px" valign="top">
+                      </td>
+                    </tr>
                   </table>
                 </div>
                 <div style="clear: both; height: 1px">
@@ -348,7 +375,7 @@
                 <asp:GridView ID="ListaInspeccionGridView" runat="server" CssClass="GridLista" AutoGenerateColumns="False"
                   PageSize="15" EmptyDataText="No se encontraron ocurrencias" AllowPaging="True"
                   BorderStyle="Solid" DataSourceID="odsListaInspecciones" OnRowDataBound="ListaInspeccionGridView_RowDataBound"
-                  AllowSorting="True">
+                  AllowSorting="True" EnableModelValidation="True">
                   <HeaderStyle CssClass="HeaderStyle" />
                   <RowStyle CssClass="ItemStyle" />
                   <PagerStyle CssClass="PagerStyle" />
@@ -467,6 +494,13 @@
                 <asp:Parameter DefaultValue="" Name="estado" Type="String" />
               </SelectParameters>
             </asp:ObjectDataSource>
+            <asp:ObjectDataSource ID="odsEstadoInspecciones" runat="server" 
+                OldValuesParameterFormatString="original_{0}" SelectMethod="GetData" 
+                TypeName="dsComboTableAdapters.EstadoInspeccionComboTableAdapter">
+                <SelectParameters>
+                    <asp:Parameter DefaultValue="A" Name="estado" Type="String" />
+                </SelectParameters>
+            </asp:ObjectDataSource>
             <asp:ObjectDataSource ID="odsListaInspecciones" runat="server" OldValuesParameterFormatString="original_{0}"
               SelectMethod="GetData" TypeName="dsInspeccionesTableAdapters.InspeccionListaFiltrosTableAdapter"
               OnSelected="odsInspeccionLista_Selected">
@@ -508,8 +542,11 @@
                   Type="Decimal" />
                 <asp:ControlParameter ControlID="cbxControl" Name="enControlCalidad" PropertyName="SelectedValue"
                   Type="String" />
+                  <asp:ControlParameter ControlID="cbxEstadoInspeccion" Name="estadoInspeccionId" 
+                      PropertyName="SelectedValue" Type="String" />
               </SelectParameters>
             </asp:ObjectDataSource>
+              
           </td>
         </tr>
       </table>

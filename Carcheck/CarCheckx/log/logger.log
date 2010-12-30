@@ -4562,3 +4562,354 @@ Source: System.Web
 [LOG => 23/12/2010 17:38:56 ] -- 
 La Aplicación ha finalizado!!!!!
 
+[LOG => 29/12/2010 10:23:13 p.m. ] -- 
+La Aplicación se ha iniciado!!!!!
+
+[LOG => 29/12/2010 10:23:16 p.m. ] -- 
+ErrorCode: -2147467259
+Message: El archivo no existe.
+Data: System.Collections.ListDictionaryInternal
+InnerException: 
+TargetSite: System.IO.FileInfo GetFileInfo(System.String, System.String, System.Web.HttpResponse)
+StackTrace:    en System.Web.StaticFileHandler.GetFileInfo(String virtualPathWithPathInfo, String physicalPath, HttpResponse response)
+   en System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context)
+   en System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+HelpLink: 
+Source: System.Web
+
+
+[LOG => 29/12/2010 10:25:05 p.m. ] -- 
+ErrorCode: -2147467259
+Message: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
+Data: System.Collections.ListDictionaryInternal
+InnerException: System.Data.SqlClient.SqlException: Error mientras se establecía la conexión con el servidor. Al conectar con SQL Server 2005, el error se puede producir porque la configuración predeterminada de SQL Server no admite conexiones remotas. (provider: Interfaces de red SQL, error: 26 - Error al buscar el servidor o instancia especificado)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, SqlConnection owningObject)
+   en System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnection owningObject)
+   en System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(String host, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, Int64 timerStart)
+   en System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   en System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   en System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   en System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   en System.Data.SqlClient.SqlConnection.Open()
+   en System.Data.Common.DbDataAdapter.QuietOpen(IDbConnection connection, ConnectionState& originalState)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   en ADM_DAL.dsSYSTableAdapters.UsuarioLoginTableAdapter.GetData(String usuario, String clave) en E:\Proyectos\adm\ADM_DAL\ADM_DAL\dsSYS.Designer.cs:línea 12262
+   en ADM_DAL.dsSYS.isValidUserForAppplication(String UserName, String Password, String ApplicationId, Hashtable& ud) en E:\Proyectos\adm\ADM_DAL\ADM_DAL\dsSYS.cs:línea 17
+   en CarCheck.Gestores.GestorSeguridad.isValidUser(String User, String Password, UserData& ud) en d:\Proyectos de Sistemas\Repositorio de codigo\Carcheck\Clave-Projects\Carcheck\CarCheckx\App_Code\Gestores\GestorSeguridad.cs:línea 29
+   en vLogIn.btnIngresar_Click(Object sender, EventArgs e) en d:\Proyectos de Sistemas\Repositorio de codigo\Carcheck\Clave-Projects\Carcheck\CarCheckx\vLogIn.aspx.cs:línea 30
+   en System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   en System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   en System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   en System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   en System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+TargetSite: Boolean HandleError(System.Exception)
+StackTrace:    en System.Web.UI.Page.HandleError(Exception e)
+   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   en System.Web.UI.Page.ProcessRequest()
+   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   en System.Web.UI.Page.ProcessRequest(HttpContext context)
+   en ASP.vlogin_aspx.ProcessRequest(HttpContext context) en c:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Temporary ASP.NET Files\carcheckx\efbeba8c\714635b1\App_Web_vgfbk52p.26.cs:línea 0
+   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+HelpLink: 
+Source: System.Web
+
+
+[LOG => 29/12/2010 10:25:05 p.m. ] -- 
+Errors: System.Data.SqlClient.SqlErrorCollection
+Class: 20
+LineNumber: 0
+Number: -1
+Procedure: 
+Server: 
+State: 0
+Source: .Net SqlClient Data Provider
+ErrorCode: -2146232060
+Message: Error mientras se establecía la conexión con el servidor. Al conectar con SQL Server 2005, el error se puede producir porque la configuración predeterminada de SQL Server no admite conexiones remotas. (provider: Interfaces de red SQL, error: 26 - Error al buscar el servidor o instancia especificado)
+Data: System.Collections.ListDictionaryInternal
+InnerException: 
+TargetSite: Void OnError(System.Data.SqlClient.SqlException, Boolean)
+StackTrace:    en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, SqlConnection owningObject)
+   en System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnection owningObject)
+   en System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(String host, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, Int64 timerStart)
+   en System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   en System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   en System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   en System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   en System.Data.SqlClient.SqlConnection.Open()
+   en System.Data.Common.DbDataAdapter.QuietOpen(IDbConnection connection, ConnectionState& originalState)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   en ADM_DAL.dsSYSTableAdapters.UsuarioLoginTableAdapter.GetData(String usuario, String clave) en E:\Proyectos\adm\ADM_DAL\ADM_DAL\dsSYS.Designer.cs:línea 12262
+   en ADM_DAL.dsSYS.isValidUserForAppplication(String UserName, String Password, String ApplicationId, Hashtable& ud) en E:\Proyectos\adm\ADM_DAL\ADM_DAL\dsSYS.cs:línea 17
+   en CarCheck.Gestores.GestorSeguridad.isValidUser(String User, String Password, UserData& ud) en d:\Proyectos de Sistemas\Repositorio de codigo\Carcheck\Clave-Projects\Carcheck\CarCheckx\App_Code\Gestores\GestorSeguridad.cs:línea 29
+   en vLogIn.btnIngresar_Click(Object sender, EventArgs e) en d:\Proyectos de Sistemas\Repositorio de codigo\Carcheck\Clave-Projects\Carcheck\CarCheckx\vLogIn.aspx.cs:línea 30
+   en System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   en System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   en System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   en System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   en System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+HelpLink: 
+
+
+[LOG => 29/12/2010 10:27:03 p.m. ] -- 
+ErrorCode: -2147467259
+Message: Se produjo una excepción de tipo 'System.Web.HttpUnhandledException'.
+Data: System.Collections.ListDictionaryInternal
+InnerException: System.Data.SqlClient.SqlException: Error mientras se establecía la conexión con el servidor. Al conectar con SQL Server 2005, el error se puede producir porque la configuración predeterminada de SQL Server no admite conexiones remotas. (provider: Interfaces de red SQL, error: 26 - Error al buscar el servidor o instancia especificado)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, SqlConnection owningObject)
+   en System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnection owningObject)
+   en System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(String host, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, Int64 timerStart)
+   en System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   en System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   en System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   en System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   en System.Data.SqlClient.SqlConnection.Open()
+   en System.Data.Common.DbDataAdapter.QuietOpen(IDbConnection connection, ConnectionState& originalState)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   en ADM_DAL.dsSYSTableAdapters.UsuarioLoginTableAdapter.GetData(String usuario, String clave) en E:\Proyectos\adm\ADM_DAL\ADM_DAL\dsSYS.Designer.cs:línea 12262
+   en ADM_DAL.dsSYS.isValidUserForAppplication(String UserName, String Password, String ApplicationId, Hashtable& ud) en E:\Proyectos\adm\ADM_DAL\ADM_DAL\dsSYS.cs:línea 17
+   en CarCheck.Gestores.GestorSeguridad.isValidUser(String User, String Password, UserData& ud) en d:\Proyectos de Sistemas\Repositorio de codigo\Carcheck\Clave-Projects\Carcheck\CarCheckx\App_Code\Gestores\GestorSeguridad.cs:línea 29
+   en vLogIn.btnIngresar_Click(Object sender, EventArgs e) en d:\Proyectos de Sistemas\Repositorio de codigo\Carcheck\Clave-Projects\Carcheck\CarCheckx\vLogIn.aspx.cs:línea 30
+   en System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   en System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   en System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   en System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   en System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+TargetSite: Boolean HandleError(System.Exception)
+StackTrace:    en System.Web.UI.Page.HandleError(Exception e)
+   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   en System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+   en System.Web.UI.Page.ProcessRequest()
+   en System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)
+   en System.Web.UI.Page.ProcessRequest(HttpContext context)
+   en ASP.vlogin_aspx.ProcessRequest(HttpContext context) en c:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Temporary ASP.NET Files\carcheckx\efbeba8c\714635b1\App_Web_vgfbk52p.26.cs:línea 0
+   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+HelpLink: 
+Source: System.Web
+
+
+[LOG => 29/12/2010 10:27:03 p.m. ] -- 
+Errors: System.Data.SqlClient.SqlErrorCollection
+Class: 20
+LineNumber: 0
+Number: -1
+Procedure: 
+Server: 
+State: 0
+Source: .Net SqlClient Data Provider
+ErrorCode: -2146232060
+Message: Error mientras se establecía la conexión con el servidor. Al conectar con SQL Server 2005, el error se puede producir porque la configuración predeterminada de SQL Server no admite conexiones remotas. (provider: Interfaces de red SQL, error: 26 - Error al buscar el servidor o instancia especificado)
+Data: System.Collections.ListDictionaryInternal
+InnerException: 
+TargetSite: Void OnError(System.Data.SqlClient.SqlException, Boolean)
+StackTrace:    en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, SqlConnection owningObject)
+   en System.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnection owningObject)
+   en System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(String host, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, Int64 timerStart)
+   en System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   en System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   en System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   en System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   en System.Data.SqlClient.SqlConnection.Open()
+   en System.Data.Common.DbDataAdapter.QuietOpen(IDbConnection connection, ConnectionState& originalState)
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   en ADM_DAL.dsSYSTableAdapters.UsuarioLoginTableAdapter.GetData(String usuario, String clave) en E:\Proyectos\adm\ADM_DAL\ADM_DAL\dsSYS.Designer.cs:línea 12262
+   en ADM_DAL.dsSYS.isValidUserForAppplication(String UserName, String Password, String ApplicationId, Hashtable& ud) en E:\Proyectos\adm\ADM_DAL\ADM_DAL\dsSYS.cs:línea 17
+   en CarCheck.Gestores.GestorSeguridad.isValidUser(String User, String Password, UserData& ud) en d:\Proyectos de Sistemas\Repositorio de codigo\Carcheck\Clave-Projects\Carcheck\CarCheckx\App_Code\Gestores\GestorSeguridad.cs:línea 29
+   en vLogIn.btnIngresar_Click(Object sender, EventArgs e) en d:\Proyectos de Sistemas\Repositorio de codigo\Carcheck\Clave-Projects\Carcheck\CarCheckx\vLogIn.aspx.cs:línea 30
+   en System.Web.UI.WebControls.Button.OnClick(EventArgs e)
+   en System.Web.UI.WebControls.Button.RaisePostBackEvent(String eventArgument)
+   en System.Web.UI.WebControls.Button.System.Web.UI.IPostBackEventHandler.RaisePostBackEvent(String eventArgument)
+   en System.Web.UI.Page.RaisePostBackEvent(IPostBackEventHandler sourceControl, String eventArgument)
+   en System.Web.UI.Page.RaisePostBackEvent(NameValueCollection postData)
+   en System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+HelpLink: 
+
+
+[LOG => 29/12/2010 10:31:11 p.m. ] -- 
+La Aplicación ha finalizado!!!!!
+
+[LOG => 29/12/2010 10:31:22 p.m. ] -- 
+La Aplicación se ha iniciado!!!!!
+
+[LOG => 29/12/2010 10:31:22 p.m. ] -- 
+ErrorCode: -2147467259
+Message: El archivo no existe.
+Data: System.Collections.ListDictionaryInternal
+InnerException: 
+TargetSite: System.IO.FileInfo GetFileInfo(System.String, System.String, System.Web.HttpResponse)
+StackTrace:    en System.Web.StaticFileHandler.GetFileInfo(String virtualPathWithPathInfo, String physicalPath, HttpResponse response)
+   en System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context)
+   en System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+HelpLink: 
+Source: System.Web
+
+
+[LOG => 29/12/2010 11:15:38 p.m. ] -- 
+La Aplicación ha finalizado!!!!!
+
+[LOG => 29/12/2010 11:17:23 p.m. ] -- 
+La Aplicación se ha iniciado!!!!!
+
+[LOG => 29/12/2010 11:17:29 p.m. ] -- 
+Message: Referencia a objeto no establecida como instancia de un objeto.
+Data: System.Collections.ListDictionaryInternal
+InnerException: 
+TargetSite: Void PutUserDataLabels()
+StackTrace:    en ucHeader.PutUserDataLabels() en d:\Proyectos de Sistemas\Repositorio de codigo\Carcheck\Clave-Projects\Carcheck\CarCheckx\ucHeader.ascx.cs:línea 141
+HelpLink: 
+Source: App_Web_3tffjasi
+
+
+[LOG => 29/12/2010 11:17:29 p.m. ] -- 
+ExceptionState: System.Web.HttpApplication+CancelModuleException
+Message: Subproceso anulado.
+Data: System.Collections.ListDictionaryInternal
+InnerException: 
+TargetSite: Void AbortInternal()
+StackTrace:    en System.Threading.Thread.AbortInternal()
+   en System.Threading.Thread.Abort(Object stateInfo)
+   en System.Web.HttpResponse.End()
+   en System.Web.HttpResponse.Redirect(String url, Boolean endResponse)
+   en System.Web.HttpResponse.Redirect(String url)
+   en CCSOL.Utiles.Utilidades.redirectToUrlWhenIsNull(Object UserSessionData, String urlActual) en d:\Proyectos de Sistemas\Repositorio de codigo\Carcheck\Clave-Projects\Carcheck\CarCheckx\App_Code\Class\Utilidades.cs:línea 329
+HelpLink: 
+Source: mscorlib
+
+
+[LOG => 29/12/2010 11:45:20 p.m. ] -- 
+La Aplicación ha finalizado!!!!!
+
+[LOG => 29/12/2010 11:45:50 p.m. ] -- 
+La Aplicación se ha iniciado!!!!!
+
+[LOG => 29/12/2010 11:45:50 p.m. ] -- 
+ErrorCode: -2147467259
+Message: El archivo no existe.
+Data: System.Collections.ListDictionaryInternal
+InnerException: 
+TargetSite: System.IO.FileInfo GetFileInfo(System.String, System.String, System.Web.HttpResponse)
+StackTrace:    en System.Web.StaticFileHandler.GetFileInfo(String virtualPathWithPathInfo, String physicalPath, HttpResponse response)
+   en System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context)
+   en System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+HelpLink: 
+Source: System.Web
+
+
+[LOG => 30/12/2010 12:30:26 a.m. ] -- 
+Errors: System.Data.SqlClient.SqlErrorCollection
+Class: 16
+LineNumber: 49
+Number: 241
+Procedure: uf_getDatosCitaInspeccion
+Server: GARCIA
+State: 1
+Source: .Net SqlClient Data Provider
+ErrorCode: -2146232060
+Message: Error al convertir una cadena de caracteres en fecha y/u hora.
+Data: System.Collections.ListDictionaryInternal
+InnerException: 
+TargetSite: Void OnError(System.Data.SqlClient.SqlException, Boolean)
+StackTrace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en dsInspeccionesTableAdapters.ComunicacionInspeccionTableAdapter.DatosCitaInspeccion(Nullable`1 inspeccionId) en c:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Temporary ASP.NET Files\carcheckx\efbeba8c\714635b1\App_Code.a5wok71y.36.cs:línea 5287
+   en CarCheck.Gestores.GestorInspeccion.getDatosCita(String inspeccionId, GridView comunicacionGridView) en d:\Proyectos de Sistemas\Repositorio de codigo\Carcheck\Clave-Projects\Carcheck\CarCheckx\App_Code\Gestores\GestorInspeccion.cs:línea 333
+HelpLink: 
+
+
+[LOG => 30/12/2010 12:30:29 a.m. ] -- 
+Errors: System.Data.SqlClient.SqlErrorCollection
+Class: 16
+LineNumber: 49
+Number: 241
+Procedure: uf_getDatosCitaInspeccion
+Server: GARCIA
+State: 1
+Source: .Net SqlClient Data Provider
+ErrorCode: -2146232060
+Message: Error al convertir una cadena de caracteres en fecha y/u hora.
+Data: System.Collections.ListDictionaryInternal
+InnerException: 
+TargetSite: Void OnError(System.Data.SqlClient.SqlException, Boolean)
+StackTrace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   en System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   en System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(DbAsyncResult result, String methodName, Boolean sendToPipe)
+   en System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   en dsInspeccionesTableAdapters.ComunicacionInspeccionTableAdapter.DatosCitaInspeccion(Nullable`1 inspeccionId) en c:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Temporary ASP.NET Files\carcheckx\efbeba8c\714635b1\App_Code.a5wok71y.36.cs:línea 5287
+   en CarCheck.Gestores.GestorInspeccion.getDatosCita(String inspeccionId, GridView comunicacionGridView) en d:\Proyectos de Sistemas\Repositorio de codigo\Carcheck\Clave-Projects\Carcheck\CarCheckx\App_Code\Gestores\GestorInspeccion.cs:línea 333
+HelpLink: 
+
+
+[LOG => 30/12/2010 12:33:50 a.m. ] -- 
+ErrorCode: -2147467259
+Message: El archivo no existe.
+Data: System.Collections.ListDictionaryInternal
+InnerException: 
+TargetSite: System.IO.FileInfo GetFileInfo(System.String, System.String, System.Web.HttpResponse)
+StackTrace:    en System.Web.StaticFileHandler.GetFileInfo(String virtualPathWithPathInfo, String physicalPath, HttpResponse response)
+   en System.Web.StaticFileHandler.ProcessRequestInternal(HttpContext context)
+   en System.Web.DefaultHttpHandler.BeginProcessRequest(HttpContext context, AsyncCallback callback, Object state)
+   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+HelpLink: 
+Source: System.Web
+
+

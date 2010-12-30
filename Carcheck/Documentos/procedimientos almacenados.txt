@@ -1,0 +1,448 @@
+USE [carcheck]
+GO
+/****** Object:  StoredProcedure [dbo].[proc_Car_InspeccionListaFiltros]    Script Date: 12/29/2010 23:01:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[proc_Car_InspeccionListaFiltros]
+    (
+      @placa varchar(20) = null,--
+      @numSolicitudCliente varchar(100) = null,--
+      @numeroSolicitud varchar(100) = null,--
+      @numeroinspeccion varchar(100) = null,--
+      @aseguradoraId numeric(5, 0) = null,
+      @clienteId numeric(5, 0) = null,
+      @brokerId numeric(5, 0) = null,
+      @canalId numeric(2, 0) = null,
+      @fechasolicitud datetime = null,
+      @contratante varchar(1000) = null,--
+      @asegurado varchar(1000) = null,--	
+      @solitadopor varchar(400) = null,--
+      @tiporequerimientoId varchar(20) = null,--
+      @prioridadId varchar(20) = null,--
+      @estadoId varchar(20) = null,--
+      @clienteVIP bit = 0,--
+      @pagado bit = 0,
+      @inspectorId NUMERIC(5, 0) = NULL,
+	  @enControlCalidad VARCHAR (20) = NULL,
+	  @estadoInspeccionId varchar(20) = null
+
+    )
+AS 
+    DECLARE @sqlSentencia nvarchar(4000)
+    DECLARE @sqlCondicion nvarchar(4000)
+	
+    SET @sqlSentencia = ''
+    SET @sqlCondicion = ''
+	
+    SET NOCOUNT ON ;
+
+
+    SET @sqlSentencia = ''
+
+    SELECT  Car_Solicitud.solicitudId,
+            Car_Solicitud.numeVehiculos,
+            Car_Solicitud.numeSolicitudCliente,
+            Car_Solicitud.numeSolicitud,
+            Car_Solicitud.aseguradoraId,
+            Administracion.dbo.uf_getPersonaById(Car_Solicitud.aseguradoraId) AS aseguradora,
+            Car_Solicitud.brokerId,
+            Administracion.dbo.uf_getPersonaById(Car_Solicitud.brokerId) AS broker,
+            Car_Solicitud.canalId,
+            Car_Canal.canal,
+            Car_Solicitud.solicitadopor,
+            Car_Solicitud.trequerimientoId,
+            Car_TRequerimiento.trequerimiento,
+            Car_Solicitud.estadoSolicitudId,
+            Car_EstadoSolicitud.estadoSolicitud,
+            Car_Solicitud.prioridadId,
+            Car_Prioridad.prioridad,
+            Car_Solicitud.clienteVIP,
+            Car_Solicitud.observacion,
+            Car_Solicitud.fsolicitud,
+            Car_Solicitud.clienteId,
+            Administracion.dbo.uf_getPersonaById(Car_Solicitud.clienteId) AS cliente,
+            Car_Solicitud.usuarioId,
+            Administracion.dbo.uf_getUsuarioById(Car_Solicitud.usuarioId) AS usuario,
+            Car_Inspeccion.inspeccionId,
+            Car_Inspeccion.numeInspeccion,
+            Car_Inspeccion.aseguradoId,
+            Administracion.dbo.uf_getPersonaById(Car_Inspeccion.aseguradoId) AS asegurado,
+            Car_Vehiculo.vehiculoId,
+            Car_Vehiculo.placa,
+            Car_Solicitud.contratanteId,
+            Administracion.dbo.uf_getPersonaById(Car_Solicitud.contratanteId) AS contratante,
+            Car_Inspeccion.finspeccion,
+            Car_Vehiculo.claseVehiculoId,
+            Car_Vehiculo.marcaVehiculoId,
+            Administracion.dbo.uf_getMarcaVehiculo(Car_Vehiculo.marcaVehiculoId) AS marcaVehiculo,
+            Car_Vehiculo.modeloVehiculoId,
+            Administracion.dbo.uf_getModeloVehiculo(Car_Vehiculo.modeloVehiculoId,
+			Car_Vehiculo.marcaVehiculoId,
+			Car_Vehiculo.claseVehiculoId) AS modeloVehiculo,
+            Car_Vehiculo.anhoFabricacion,
+            Car_Vehiculo.valorComercial,
+            Car_Inspeccion.estadoInspeccionId,
+            ISNULL(Car_Inspeccion.pagado, 0) AS pagado,
+            Car_Solicitud.contactoId,
+            Car_Contacto.contacto,
+            dbo.uf_getInspectorByInspeccionId(Car_Inspeccion.inspeccionId) as Inspector,
+            dbo.uf_getInspectorIdByInspeccionId(Car_Inspeccion.inspeccionId) as InspectorId,
+			dbo.Car_Inspeccion.terminadaInspector,
+			dbo.uf_getNumeroAmpliatorios([Car_Inspeccion].[inspeccionId]) AS numAmpliatorios,
+			Car_EstadoInspeccion.estadoInspeccion
+	    
+	
+    INTO    #listasol
+    FROM    Car_Solicitud
+            INNER JOIN Car_Inspeccion ON Car_Solicitud.solicitudId = Car_Inspeccion.solicitudId
+            INNER JOIN Car_Canal ON Car_Solicitud.canalId = Car_Canal.canalId
+                                    AND Car_Solicitud.canalId = Car_Canal.canalId
+                                    AND Car_Solicitud.canalId = Car_Canal.canalId
+       INNER JOIN Car_TRequerimiento ON Car_Solicitud.trequerimientoId = Car_TRequerimiento.trequerimientoId
+                                             AND Car_Solicitud.trequerimientoId = Car_TRequerimiento.trequerimientoId
+                                             AND Car_Solicitud.trequerimientoId = Car_TRequerimiento.trequerimientoId
+            INNER JOIN Car_EstadoSolicitud ON Car_Solicitud.estadoSolicitudId = Car_EstadoSolicitud.estadoSolicitudId
+                                              AND Car_Solicitud.estadoSolicitudId = Car_EstadoSolicitud.estadoSolicitudId
+                                              AND Car_Solicitud.estadoSolicitudId = Car_EstadoSolicitud.estadoSolicitudId
+            INNER JOIN Car_Prioridad ON Car_Solicitud.prioridadId = Car_Prioridad.prioridadId
+                                        AND Car_Solicitud.prioridadId = Car_Prioridad.prioridadId
+                                        AND Car_Solicitud.prioridadId = Car_Prioridad.prioridadId
+            INNER JOIN Car_Vehiculo ON Car_Inspeccion.vehiculoId = Car_Vehiculo.vehiculoId
+            INNER JOIN Car_EstadoInspeccion ON Car_Inspeccion.estadoInspeccionId = Car_EstadoInspeccion.estadoInspeccionId
+            INNER JOIN Car_Contacto ON Car_Inspeccion.contactoId = Car_Contacto.contactoId
+    WHERE   [Car_Inspeccion].[estado] = 'A'
+
+
+    SET @sqlSentencia = '   SELECT  *
+				FROM #listasol
+				where 1=1 '
+
+	       
+    IF ( LEN(@contratante) > 0 ) 
+        begin
+            set @sqlCondicion = @sqlCondicion + ' AND (#listasol.contratante  like ''%' + @contratante + '%'' ) '				
+        end
+
+    IF ( LEN(@asegurado) > 0 ) 
+        begin
+            set @sqlCondicion = @sqlCondicion + ' AND (#listasol.asegurado  like ''%' + @asegurado + '%'' ) '
+        end				
+
+    IF ( LEN(@placa) > 0 ) 
+        begin
+            set @sqlCondicion = @sqlCondicion + ' AND (#listasol.placa  like ''%' + @placa + '%'' ) '
+        end
+
+    IF ( LEN(@solitadopor) > 0 ) 
+        begin
+            set @sqlCondicion = @sqlCondicion + ' AND (#listasol.solicitadopor  like ''%' + @solitadopor + '%'' ) '
+        end	
+
+    IF ( LEN(@numeroinspeccion) > 0 ) 
+        begin
+            set @sqlCondicion = @sqlCondicion + ' and #listasol.numeInspeccion  like ''%' + @numeroinspeccion + '%''  '
+        end	
+
+    IF ( LEN(@numeroSolicitud) > 0 ) 
+        begin
+            set @sqlCondicion = @sqlCondicion + ' AND #listasol.numeSolicitud like ''%' + @numeroSolicitud + '%''  '
+        end
+
+    IF ( LEN(@numSolicitudCliente) > 0 ) 
+        begin
+            set @sqlCondicion = @sqlCondicion + ' AND #listasol.numeSolicitudCliente like ''%' + @numSolicitudCliente + '%''  '
+        end
+
+    IF ( ( LEN(@estadoId) > 0 )
+         AND ( @estadoId <> '*' )
+       ) 
+        begin
+            set @sqlCondicion = @sqlCondicion + ' AND #listasol.estadoSolicitudId = ''' + @estadoId + '''  '
+        end
+
+    IF ( ( LEN(@prioridadId) > 0 )
+         AND ( @prioridadId <> '*' )
+       ) 
+        begin
+            set @sqlCondicion = @sqlCondicion + ' AND #listasol.prioridadId = ''' + @prioridadId + '''  '
+        end
+
+    IF ( ( LEN(@tiporequerimientoId) > 0 )
+         AND ( @tiporequerimientoId <> '*' )
+       ) 
+        begin
+            set @sqlCondicion = @sqlCondicion + ' AND (#listasol.trequerimientoId = ''' + @tiporequerimientoId + ''' ) '
+        end
+
+
+
+	IF (@clienteVIP = 1) 
+	begin
+		set @sqlCondicion = @sqlCondicion + 
+			' AND (#listasol.clienteVIP = 1 ) '
+	end
+
+
+
+    IF ( ( not ( @canalId ) is NULL
+         )
+         AND @canalId > 0
+       ) 
+        begin
+            set @sqlCondicion = @sqlCondicion + ' AND (#listasol.canalId =''' + convert(varchar, @canalId) + ''' ) '
+        end
+
+    IF not ( @fechasolicitud is NULL ) 
+        begin
+            set @sqlCondicion = @sqlCondicion + ' AND (#listasol.fsolicitud >=''' + convert(varchar, @fechasolicitud, 103) + ''' ) '
+        end
+
+
+    IF ( ( not ( @brokerId ) is NULL
+         )
+         AND @brokerId > 0
+       ) 
+        begin
+            set @sqlCondicion = @sqlCondicion + ' AND (#listasol.brokerId =' + convert(varchar, @brokerId) + ' ) '
+        end
+
+    IF ( not ( ( @aseguradoraId ) is NULL )
+         AND @aseguradoraId > 0
+       ) 
+        begin
+            set @sqlCondicion = @sqlCondicion + ' AND (#listasol.aseguradoraId =' + convert(varchar, @aseguradoraId) + ' ) '
+        end
+
+    IF ( not ( ( @clienteId ) is NULL )
+         AND @clienteId > 0
+       ) 
+        begin
+            set @sqlCondicion = @sqlCondicion + ' AND (#listasol.clienteId =' + convert(varchar, @clienteId) + ' ) '
+        end
+
+
+	IF (@pagado = 1 )
+	begin
+		set @sqlCondicion = @sqlCondicion + 
+			' AND (#listasol.pagado = 1 ) '
+	END
+
+
+    IF ( not ( ( @inspectorId ) is NULL )
+         AND @inspectorId > 0
+       ) 
+        begin
+            set @sqlCondicion = @sqlCondicion + ' AND (#listasol.inspectorId =' + convert(varchar, @inspectorId) + ' ) '
+        end
+
+   
+	-- Agregamos los filtros para el control de calidad
+
+	IF (( LEN(@enControlCalidad) > 0) AND (@enControlCalidad = 'SI' ))
+	begin
+		set @sqlCondicion = @sqlCondicion + 
+			' AND (#listasol.terminadaInspector = 1 ) '
+	END
+
+	IF (( LEN(@enControlCalidad) > 0) AND (@enControlCalidad = 'NO' ))
+	begin
+		set @sqlCondicion = @sqlCondicion + 
+			' AND (#listasol.terminadaInspector = 0 ) '
+	END
+	
+	-- Nuevos Filtros que se requieren Agregar
+	
+	IF ( ( LEN(@estadoId) > 0 ) AND ( @estadoId <> '*' )) 
+	begin
+		set @sqlCondicion = @sqlCondicion + 
+			' AND #listasol.estadoInspeccionId = ''' + @estadoInspeccionId + '''  '
+	end
+
+	
+	set @sqlSentencia = @sqlSentencia + ' ' + @sqlCondicion
+
+	
+    exec ( @sqlSentencia )
+
+	
+
+--SELECT * FROM car_log
+
+
+GO
+
+--------------------------------------------------------------------------------------------------------------
+
+USE [carcheck]
+GO
+/****** Object:  StoredProcedure [dbo].[proc_Car_ComunicacionInspeccionSelectByInspeccionId]    Script Date: 12/29/2010 23:43:54 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[proc_Car_ComunicacionInspeccionSelectByInspeccionId]
+    (
+      @inspeccionId numeric(5, 0)
+    )
+AS 
+    SELECT  Car_Comunicacion.tcomunicacionId,
+            Car_Comunicacion.fcomunicacion,
+            Car_Comunicacion.comunicacionId,
+            Car_ComunicacionInspeccion.inspeccionId,
+            Car_ComunicacionInspeccion.estadoInspeccion,
+            Car_Comunicacion.observacion
+            
+    FROM    Car_ComunicacionInspeccion
+            INNER JOIN Car_Comunicacion ON Car_ComunicacionInspeccion.comunicacionId = Car_Comunicacion.comunicacionId
+    WHERE   Car_ComunicacionInspeccion.inspeccionId = @inspeccionId AND [tcomunicacionId] != 'DUMMY'
+
+___________________________________________________________________________________________________________
+
+
+
+USE [carcheck]
+GO
+/****** Object:  UserDefinedFunction [dbo].[uf_getDatosCitaInspeccion]    Script Date: 12/29/2010 23:50:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+---Text
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+USE [carcheck]
+GO
+/****** Object:  UserDefinedFunction [dbo].[uf_getDatosCitaInspeccion]    Script Date: 12/30/2010 00:30:04 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+---Text
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ALTER function [dbo].[uf_getDatosCitaInspeccion]
+    (
+      @inspeccionId numeric(8, 0)
+    )
+returns varchar(1000)
+as begin
+    declare @resultado varchar(1000)
+    
+    declare @cabeceraTable varchar(1000)
+	
+    DECLARE @estadoInspeccionId VARCHAR(20)
+    
+    DECLARE @titulo VARCHAR(500)
+	
+    SELECT  @estadoInspeccionId = [estadoInspeccionId]
+    FROM    [Car_Inspeccion]
+    WHERE   inspeccionId = @inspeccionId
+
+    IF ( @estadoInspeccionId = 'ANULADA' ) 
+        BEGIN
+            SET @resultado = 'LA INSPECCIÓN ESTÁ ANULADA'
+        END
+    ELSE 
+        IF ( @estadoInspeccionId = 'FRUSTRADA' ) 
+            BEGIN
+                SET @resultado = 'LA INSPECCIÓN HA SIDO FRUSTRADA'
+            END
+        ELSE 
+            IF ( @estadoInspeccionId = 'REGISTRADA' ) 
+                BEGIN
+                    SET @resultado = 'LA INSPECCION AÚN NO SE <br />HA MARCADO COMO PENDIENTE'
+                END
+            ELSE 
+                IF ( @estadoInspeccionId = 'PENDIENTE' ) 
+                    BEGIN
+                        
+						SET @titulo = 'INSPECCIÓN NO AGENDADA'
+						
+						SET @cabeceraTable = 
+							'<table border="0" cellspacing="0" cellpadding="0">
+							<tr><td colspan="3" style="font-size: 11px;font-weight: bold;">' + @titulo + ' </td></tr>
+							<tr><td width="110"><b>Fecha</b></td> 
+								<td width="100"><b>Resultado</b></td>
+								<td width="150"><b>Observación</b></td>
+							</tr>'
+						
+						SELECT 
+                                @resultado = 
+								'<tr><td>'+ Convert(varchar(50), Car_Comunicacion.fcomunicacion,103)  
+								
+								+' ' + Convert (varchar, datePart(hour, Car_Comunicacion.fcomunicacion)) + ':' 
+								+ Case 
+									when len(Convert (varchar, datePart(minute, Car_Comunicacion.fcomunicacion))) = 1 then '0' 
+									+ Convert (varchar, datePart(minute, Car_Comunicacion.fcomunicacion))
+									else Convert(varchar, datePart(minute, Car_Comunicacion.fcomunicacion))
+								  end +
+								
+							     '</td><td style="text-align:center;">' + 
+							     Case 
+									when Car_Comunicacion.resultado = 'N' then 'NO EXITOSO' 
+									else 'EXITOSO'
+								  end  +							     
+							     
+							     '</td><td>' + ISNULL(Car_Comunicacion.observacion, '') + 
+							     '</td></tr>'
+                        FROM    dbo.Car_Solicitud
+								INNER JOIN dbo.Car_Inspeccion ON dbo.Car_Solicitud.solicitudId = dbo.Car_Inspeccion.solicitudId
+								INNER JOIN dbo.Car_Vehiculo ON dbo.Car_Inspeccion.vehiculoId = dbo.Car_Vehiculo.vehiculoId
+								INNER JOIN dbo.Car_EstadoInspeccion ON dbo.Car_Inspeccion.estadoInspeccionId = dbo.Car_EstadoInspeccion.estadoInspeccionId
+								INNER JOIN dbo.Car_ComunicacionInspeccion ON dbo.Car_Inspeccion.inspeccionId = dbo.Car_ComunicacionInspeccion.inspeccionId
+								INNER JOIN dbo.Car_Comunicacion ON dbo.Car_ComunicacionInspeccion.comunicacionId = dbo.Car_Comunicacion.comunicacionId
+								INNER JOIN dbo.Car_Contacto ON dbo.Car_Inspeccion.contactoId = dbo.Car_Contacto.contactoId
+						WHERE   ( dbo.Car_Inspeccion.inspeccionId = @inspeccionId )
+						
+						SET @resultado = @cabeceraTable + @resultado + '</table>'
+                    END
+                ELSE 
+                    BEGIN
+						
+						SET @titulo = 'INSPECCIÓN AGENDADA'
+						
+						IF (@estadoInspeccionId = 'TERMINADA') SET @titulo = 'LA INSPECCIÓN HA SIDO REALIZADA'
+                        SELECT TOP 1
+                                @resultado = 
+								'<table border="0" cellspacing="0" cellpadding="0"><tr><td colspan="3" style="font-size: 11px;font-weight: bold;">' + @titulo + ' </td></tr><tr><td width="63">FECHA</td><td width="4">:</td><td width="183" >' 
+								+ Convert(varchar(16), Car_Cita.fcitaInicio, 103) + ' DE <B>'
+								+ Convert (varchar, datePart(hour, dbo.Car_Cita.fcitaInicio)) + ':' 
+								+ Case 
+									when len(Convert (varchar, datePart(minute, dbo.Car_Cita.fcitaInicio))) = 1 then '0' 
+									+ Convert (varchar, datePart(minute, dbo.Car_Cita.fcitaInicio))
+									else Convert(varchar, datePart(minute, dbo.Car_Cita.fcitaInicio))
+								  end 
+								+ '</B> A <B>' 
+								+ Convert (varchar, datePart(hour, dbo.Car_Cita.fcitaFin)) + ':' + 
+								case 
+									when len(Convert (varchar, datePart(minute, dbo.Car_Cita.fcitaFin))) = 1 
+									then '0' + Convert (varchar, datePart(minute, dbo.Car_Cita.fcitaFin)) --+':00' 
+									else Convert (varchar, datePart(minute, dbo.Car_Cita.fcitaFin))
+								end 
+								+ '</td></tr><tr><td>EN</td><td>:</td><td>' + ISNULL(Car_Cita.direccion, '--') 
+								+ '</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>' 
+								+ Isnull(Administracion.dbo.uf_getDistritoFull(Car_Cita.ubigeoId), '--') 
+								+ '</td></tr><tr><td>INSPECTOR</td><td>:</td><td>' + ISNULL(Administracion.dbo.uf_getPersonaById(Car_Cita.inspectorId), '') 
+								+ '</td></tr></table>'
+                        FROM    Car_Cita
+                                INNER JOIN Car_CitaInspeccion ON Car_Cita.citaId = Car_CitaInspeccion.citaId
+                        WHERE   ( Car_CitaInspeccion.estado = 'A' )
+                                AND ( Car_Cita.estado = 'A' )
+                                AND ( Car_CitaInspeccion.inspeccionId = @inspeccionId )	
+                    END
+		
+    return @resultado
+   end
+
+ 
+
+
+--SELECT * FROM [Car_EstadoInspeccion]
+
+
+
+--SELECT * FROM [Car_EstadoInspeccion]
+
+
+
+
