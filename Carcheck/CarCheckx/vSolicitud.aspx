@@ -1147,6 +1147,56 @@
                     </table>
                   </div>
                 </div>
+                <div class="PanelStyle Carcheck">
+                    <div class="PanelEncabezado">
+                        <span>Datos de Contacto de Broker y de CIA de Seguros</span>
+                    </div>
+                    <div class="DatosContactoBroker DatosPanel">
+                        <div class="FormCSS">
+                           <div class="Field">
+                                <label>Contacto Broker</label>
+                                <input type="text" class="FormText ContactoName" />
+                           </div>     
+                           <div class="Field Double">
+                                <label>Tel&eacute;fonos</label>
+                                <input type="text" class="FormText Telefono1" />
+                                <input type="text" class="FormText Telefono2" />
+                           </div> 
+                            <div class="Field">
+                                <label>Email</label>
+                                <input type="text" class="FormText Email" />
+                                <input type="hidden" id="ContactoBrokerId" runat="server" class="hiddenId" />
+                           </div>     
+                        </div>
+                    </div>
+                    <div class="DatosContactoCIA DatosPanel">
+                        <div class="FormCSS">
+                           <div class="Field">
+                                <label>Contacto CIA</label>
+                                <input type="text" class="FormText ContactoName" />
+                           </div>     
+                           <div class="Field Double">
+                                <label>Tel&eacute;fonos</label>
+                                <input type="text" class="FormText Telefono1" />
+                                <input type="text" class="FormText Telefono2" />
+                           </div> 
+                            <div class="Field">
+                                <label>Email</label>
+                                <input type="text" class="FormText Email" />
+                           </div> 
+                           <input id="ContactoCIAId" type="hidden" runat="server" class="hiddenId" />
+                        </div>
+                    </div>
+                    <div class="doClear"></div>
+                    <script type="text/javascript" src="Scripts/contactSelector.js"></script>
+                    <script type="text/javascript">
+                        jQuery(function ($) {
+                            var url = '<%= CCSOL.Utiles.Utilidades.ResolveUrl("~/Handler/Contactos.ashx")  %>';
+                            $('.DatosContactoBroker').contactSelector({ type: 'Broker', serviceURL: url });
+                            $('.DatosContactoCIA').contactSelector({ type: 'CIA', serviceURL : url });
+                        });
+                    </script>
+                </div>
               </div>
             </div>
             <div class="DataBottom">

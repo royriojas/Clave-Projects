@@ -304,7 +304,7 @@ public partial class vSolicitud : System.Web.UI.Page
       asbContacto.Text = nombre;
       asbContacto.SelectedValue = id;
     }
-
+    
   }
 
   public string isNotAnuladaAndAtLeastOneRow()

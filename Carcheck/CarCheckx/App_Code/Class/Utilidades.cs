@@ -18,14 +18,13 @@ namespace CCSOL.Utiles
 {
   public class Utilidades
   {
-    public Utilidades()
+    public static string ResolveUrl(string url )
     {
-      //
-      // TODO: Add constructor logic here
-      //
+        Label ctx = new Label();
+        return ctx.ResolveUrl(url);
     }
 
-    public static decimal ConvertToDecimal(object obj) 
+      public static decimal ConvertToDecimal(object obj) 
     {
       decimal aValue = -1;
       try

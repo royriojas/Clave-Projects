@@ -264,3 +264,14 @@
   background-color: Red; padding: 5px; font: 12px/12px Arial,Verdana; color: #FFFFFF;
   font-weight: bold; width: auto; height: 15px">
   Cargando... espere por favor</div>
+
+  <script type="text/javascript" src="./Scripts/jquery-1.4.4.min.js"></script>
+  <script type="text/javascript">
+      jQuery.noConflict();
+  </script>
+  <script type="text/javascript" src="./Scripts/jquery-ui-1.8.7.custom.min.js"></script>
+  <script type="text/javascript" src="./Scripts/json2.js"></script>
+  <link type="text/css" rel="Stylesheet" href="./Scripts/css/ui-lightness/jquery-ui-1.8.7.custom.css" />
+  <link type="text/css" rel="Stylesheet" href="./Scripts/css/fix.css" />
+
+  

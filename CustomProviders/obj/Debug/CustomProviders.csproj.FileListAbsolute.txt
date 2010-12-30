@@ -1,0 +1,5 @@
+H:\Proyectos\clave-projects\Clave-Projects\CustomProviders\bin\Debug\CustomProviders.dll
+H:\Proyectos\clave-projects\Clave-Projects\CustomProviders\bin\Debug\CustomProviders.pdb
+H:\Proyectos\clave-projects\Clave-Projects\CustomProviders\obj\Debug\ResolveAssemblyReference.cache
+H:\Proyectos\clave-projects\Clave-Projects\CustomProviders\obj\Debug\CustomProviders.dll
+H:\Proyectos\clave-projects\Clave-Projects\CustomProviders\obj\Debug\CustomProviders.pdb
