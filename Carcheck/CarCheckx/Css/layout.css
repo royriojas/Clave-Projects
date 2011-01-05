@@ -1,9 +1,8 @@
 .MainTableDiv
 {
-  float:left;
-  margin-left:10px;
- /* position:relative;*/
-  width:100px;
+  float: left;
+  margin-left: 10px; /* position:relative;*/
+  width: 100px;
 }
 
 .deshabilitado
@@ -823,7 +822,7 @@ span
   font-size: 10px;
   font-weight: bold;
   color: Yellow;
-  z-index:1;
+  z-index: 1;
 }
 .summaryWarm li
 {
@@ -883,38 +882,38 @@ span
 
 
 
-.DatosPanel  
+.DatosPanel
 {
-   background-color: #F2C797;
-   padding: 5px;
-   color: #541C01;
-   font-size: 10px;
+  background-color: #F2C797;
+  padding: 5px;
+  color: #541C01;
+  font-size: 10px;
 }
 
-.doClear 
+.doClear
 {
-    clear: both;
+  clear: both;
 }
 
-.FormCSS .Field label 
+.FormCSS .Field label
 {
-    width:100px;
-    display:inline-block;
+  width: 100px;
+  display: inline-block;
 }
 
-.FormCSS .Field input 
+.FormCSS .Field input
 {
-    width:225px;
+  width: 225px;
 }
 
-.FormCSS .Field.Double input 
+.FormCSS .Field.Double input
 {
-    width:109px;
+  width: 109px;
 }
 
-.PanelStyle.Carcheck .DatosPanel 
+.PanelStyle.Carcheck .DatosPanel
 {
-    width:48%;
-    float:left;
-    margin-right:5px;
+  width: 48%;
+  float: left;
+  margin-right: 5px;
 }

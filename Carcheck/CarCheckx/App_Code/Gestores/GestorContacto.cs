@@ -22,6 +22,17 @@ namespace CarCheck.Gestores
             }
             return contactos;
         }
+
+      public static ContactoDto FindById(int cId)
+      {
+        ContactoDto contacto = new ContactoDto();
+        contacto.Name = string.Format("Dummy ContactName");
+        contacto.Id = 8;
+        contacto.Telefono1 = "001-28-012";
+        contacto.Telefono2 = "001-32-012";
+        contacto.Email = "dummycontact@gmail.com";
+        return contacto;
+      }
     }
 
     public class ContactoDto
