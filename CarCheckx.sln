@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CarCheckx", "H:\Proyectos\clave-projects\Clave-Projects\Carcheck\CarCheckx\", "{40CF3837-57BA-4158-88A3-05DE7979EE9F}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CarCheckx", "Carcheck\CarCheckx\", "{40CF3837-57BA-4158-88A3-05DE7979EE9F}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv2.0"
 		ProjectReferences = ""
@@ -22,9 +22,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CarCheckx", "H:\Proyectos\c
 		VWDPort = "53379"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomProviders", "H:\Proyectos\clave-projects\Clave-Projects\CustomProviders\CustomProviders.csproj", "{9BAC002E-921B-47B0-9698-DCD47F95BBA7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "C:\Users\Roy\Documents\Visual Studio 2010\Projects\CarCheckx\WebApplication1\WebApplication1.csproj", "{9B3AA0B8-0973-427C-9B70-DA556291168D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomProviders", "CustomProviders\CustomProviders.csproj", "{9BAC002E-921B-47B0-9698-DCD47F95BBA7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,10 +38,6 @@ Global
 		{9BAC002E-921B-47B0-9698-DCD47F95BBA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BAC002E-921B-47B0-9698-DCD47F95BBA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BAC002E-921B-47B0-9698-DCD47F95BBA7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9B3AA0B8-0973-427C-9B70-DA556291168D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9B3AA0B8-0973-427C-9B70-DA556291168D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9B3AA0B8-0973-427C-9B70-DA556291168D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9B3AA0B8-0973-427C-9B70-DA556291168D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
