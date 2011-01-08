@@ -16,11 +16,11 @@ public class Contactos : IHttpHandler
     context.Response.ContentType = "application/json";
 
     string method = CCSOL.Utiles.Utilidades.isNull(context.Request.Params["method"], "");
-    string data = CCSOL.Utiles.Utilidades.isNull(context.Request.Params["data"], "");
+    string json = CCSOL.Utiles.Utilidades.isNull(context.Request.Params["json"], "");
     string JsonOutput = "";
-    if (!String.IsNullOrEmpty(method) && !String.IsNullOrEmpty(data))
+    if (!String.IsNullOrEmpty(method) && !String.IsNullOrEmpty(json))
     {
-      JObject o = JObject.Parse(data);
+      JObject o = JObject.Parse(json);
       switch (method)
       {
         case "ContactsByName":

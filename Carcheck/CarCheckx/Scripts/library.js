@@ -1,16 +1,35 @@
 ﻿(function ($) {
-  $.ns = function () {
-    
+  $.ns = function (str) {
+    var nsParts = str.split(".");
+    var root = window;
+    for (var i = 0, len = nsParts.length; i < len; i++) {
+      if (typeof root[nsParts[i]] == "undefined") {
+        root[nsParts[i]] = {};
+      }
+      root = root[nsParts[i]];
+    }
+    return root;
   };
+
+  $.ns('$.string');
+
+  $.sFormat = function () {
+    var pattern = /\{\d+\}/g;
+    var args = arguments;
+    var s = Array.prototype.shift.apply(args);
+    return s.replace(pattern, function (c) {
+      return args[c.match(/\d+/)];
+    });
+  };
+
   $.registerAPI = function (opts) {
     $.each(opts.apiObjects, function () {
       var apiObject = this;
       var namespace = $.ns(apiObject.objName);
 
-      $.each(apiObject.funcs.split(','), function (i, val) {
+      $.each(apiObject.funcs, function (i, val) {
         val = $.trim(val);
         namespace[val] = function (obj, callback) {
-
           if (obj != null && !callback) {
             callback = obj;
             obj = null;
@@ -30,8 +49,8 @@
           _data.method = val;
 
           var ajaxOpts = {
-            url: $.stringFormat('{0}/{1}/{2}', opts.urlHanlder, _data.className, _data.method),
-            dataType: "jsonp",
+            url: $.sFormat('{0}/{1}/{2}', opts.urlHanlder, _data.className, _data.method),
+            dataType: "json",
             data: _data,
             success: function (dt) {
               var sc = dt != null;
