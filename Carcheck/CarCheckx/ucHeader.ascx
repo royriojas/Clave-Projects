@@ -271,6 +271,8 @@
   </script>
   <script type="text/javascript" src="./Scripts/jquery-ui-1.8.7.custom.min.js"></script>
   <script type="text/javascript" src="./Scripts/json2.js"></script>
+  <script type="text/javascript" src="./Scripts/library.js"></script>
+  <script type="text/javascript" src="./Scripts/api.js"></script>
   <link type="text/css" rel="Stylesheet" href="./Scripts/css/ui-lightness/jquery-ui-1.8.7.custom.css" />
   <link type="text/css" rel="Stylesheet" href="./Scripts/css/fix.css" />
 

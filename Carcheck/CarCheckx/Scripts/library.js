@@ -11,8 +11,6 @@
     return root;
   };
 
-  $.ns('$.string');
-
   $.sFormat = function () {
     var pattern = /\{\d+\}/g;
     var args = arguments;
@@ -26,6 +24,8 @@
     $.each(opts.apiObjects, function () {
       var apiObject = this;
       var namespace = $.ns(apiObject.objName);
+
+      namespace.serviceURL = opts.urlHandler;
 
       $.each(apiObject.funcs, function (i, val) {
         val = $.trim(val);
@@ -41,7 +41,7 @@
             _json = JSON.stringify(obj);
           }
 
-          var _data = { className: apiObject.className };
+          var _data = { };
 
           if (_json) {
             _data.json = _json;
@@ -49,7 +49,7 @@
           _data.method = val;
 
           var ajaxOpts = {
-            url: $.sFormat('{0}/{1}/{2}', opts.urlHanlder, _data.className, _data.method),
+            url: namespace.serviceURL, //$.sFormat('{0}/{1}/{2}', namespace.urlHandler, _data.className, _data.method),
             dataType: "json",
             data: _data,
             success: function (dt) {
@@ -81,6 +81,5 @@
         };
       });
     });
-
   };
 })(jQuery);

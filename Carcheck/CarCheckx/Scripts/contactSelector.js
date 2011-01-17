@@ -1,9 +1,12 @@
-﻿(function ($) {
+﻿/**
+* @author roylaptop
+*/
+(function ($) {
 
   $.fn.contactSelector = function (options) {
     var opts = {
       type: 'Broker',
-      serviceURL: ''
+      service: {}
     };
 
     $.extend(opts, options);
@@ -29,9 +32,19 @@
       });
       textField.autocomplete({
         source: function (request, response) {
-          Service.contactsByName({}, function (args) {
+          opts.service &&
+          opts.service.ContactsByName({
+            type: opts.type,
+            startsWith: request.term
+          }, function (args) {
             if (args.success) {
-              
+              response($.map(args.data, function (item) {
+                return {
+                  Id: item.Id,
+                  value: item.Name,
+                  data: item
+                }
+              }));
             }
           });
         },

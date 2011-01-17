@@ -1191,9 +1191,8 @@
                     <script type="text/javascript" src="Scripts/contactSelector.js"></script>
                     <script type="text/javascript">
                         jQuery(function ($) {
-                            var url = '<%= CCSOL.Utiles.Utilidades.ResolveUrl("~/Handler/Contactos.ashx")  %>';
-                            $('.DatosContactoBroker').contactSelector({ type: 'Broker', serviceURL: url });
-                            $('.DatosContactoCIA').contactSelector({ type: 'CIA', serviceURL : url });
+                            $('.DatosContactoBroker').contactSelector({ type: 'Broker' , service : Carcheck.Service});
+                            $('.DatosContactoCIA').contactSelector({ type: 'CIA', service: Carcheck.Service });
                         });
                     </script>
                 </div>
